@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{033AD85F-7E2E-4695-8C5D-54EE484F822C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Flower_Management_System</RootNamespace>
+    <AssemblyName>Flower Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account Management\Account Management Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account Management\Account Management Form.Designer.cs">
+      <DependentUpon>Account Management Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account Management\Add New Manager Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account Management\Add New Manager Account.Designer.cs">
+      <DependentUpon>Add New Manager Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account Management\Update Account Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account Management\Update Account Form.Designer.cs">
+      <DependentUpon>Update Account Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cart Management\Add Cart Detail Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart Management\Add Cart Detail Form.Designer.cs">
+      <DependentUpon>Add Cart Detail Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cart Management\Add New Cart Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart Management\Add New Cart Form.Designer.cs">
+      <DependentUpon>Add New Cart Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cart Management\Cart Management Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart Management\Cart Management Form.Designer.cs">
+      <DependentUpon>Cart Management Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Management\Add New Customer Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Management\Add New Customer Form.Designer.cs">
+      <DependentUpon>Add New Customer Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Management\Customer Management Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Management\Customer Management Form.Designer.cs">
+      <DependentUpon>Customer Management Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Management\Update_Customer_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Management\Update_Customer_Form.Designer.cs">
+      <DependentUpon>Update_Customer_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\System Database %28SQL%29.cs" />
+    <Compile Include="Employee Management\Add Employee Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management\Add Employee Form.Designer.cs">
+      <DependentUpon>Add Employee Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Management\Employee Management Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management\Employee Management Form.Designer.cs">
+      <DependentUpon>Employee Management Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Management\Update Employee Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management\Update Employee Form.Designer.cs">
+      <DependentUpon>Update Employee Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flower Management\Add Flower Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flower Management\Add Flower Form.Designer.cs">
+      <DependentUpon>Add Flower Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flower Management\Flower Management Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flower Management\Flower Management Form.Designer.cs">
+      <DependentUpon>Flower Management Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flower Management\Update Flower Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flower Management\Update Flower Form.Designer.cs">
+      <DependentUpon>Update Flower Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login Form.Designer.cs">
+      <DependentUpon>Login Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Form.Designer.cs">
+      <DependentUpon>Main Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Splash Screen\Splash Screen Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash Screen\Splash Screen Form.Designer.cs">
+      <DependentUpon>Splash Screen Form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Account Management\Account Management Form.resx">
+      <DependentUpon>Account Management Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account Management\Add New Manager Account.resx">
+      <DependentUpon>Add New Manager Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account Management\Update Account Form.resx">
+      <DependentUpon>Update Account Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart Management\Add Cart Detail Form.resx">
+      <DependentUpon>Add Cart Detail Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart Management\Add New Cart Form.resx">
+      <DependentUpon>Add New Cart Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart Management\Cart Management Form.resx">
+      <DependentUpon>Cart Management Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer Management\Add New Customer Form.resx">
+      <DependentUpon>Add New Customer Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer Management\Customer Management Form.resx">
+      <DependentUpon>Customer Management Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer Management\Update_Customer_Form.resx">
+      <DependentUpon>Update_Customer_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management\Add Employee Form.resx">
+      <DependentUpon>Add Employee Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management\Employee Management Form.resx">
+      <DependentUpon>Employee Management Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management\Update Employee Form.resx">
+      <DependentUpon>Update Employee Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flower Management\Add Flower Form.resx">
+      <DependentUpon>Add Flower Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flower Management\Flower Management Form.resx">
+      <DependentUpon>Flower Management Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flower Management\Update Flower Form.resx">
+      <DependentUpon>Update Flower Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login Form.resx">
+      <DependentUpon>Login Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Form.resx">
+      <DependentUpon>Main Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Splash Screen\Splash Screen Form.resx">
+      <DependentUpon>Splash Screen Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Class Diagram.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
