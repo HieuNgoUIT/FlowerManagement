@@ -52,7 +52,7 @@ namespace Flower_Management_System.Database
 
         internal System_Database_SQL()
         {
-            Connect = new SqlConnection(@"Data Source=DESKTOP-DLP1BUU;Initial Catalog=Flower_Management_System;Integrated Security=True");
+            Connect = new SqlConnection(@"Data Source=DESKTOP-J6PMV8B;Initial Catalog=Flower_Management_System;Integrated Security=True");
             Command = new SqlCommand();
         }
         internal bool Check_Exist_Value(string value_check)

@@ -47,6 +47,17 @@ namespace Flower_Management_System.Cart_Management
         }
         private void Label_Attribute_Setting()
         {
+            System_Database_SQL A = new System_Database_SQL();
+            string check_id = "select top 1 ID from Cart order by ID desc";
+            string result = A.GetColumnValue(check_id).ToString();
+            result = (int.Parse(result.Remove(0, 3)) + 1).ToString();
+            while (result.Length < 5)
+            {
+                result = "0" + result;
+            }
+
+            TB_CartID.Text = "SC-" + result;
+
             LB_CardID.BackColor = Color.Transparent;
             LB_CustomerID.BackColor = Color.Transparent;
             LB_DateBuy.BackColor = Color.Transparent;

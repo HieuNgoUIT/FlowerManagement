@@ -44,10 +44,20 @@ namespace Flower_Management_System.Customer_Management
         }
         private void Label_Attribute_Setting()
         {
+            System_Database_SQL A = new System_Database_SQL();
+            string check_id = "select top 1 ID from Customer order by ID desc";
+            string result = A.GetColumnValue(check_id).ToString();
+            result = (int.Parse(result.Remove(0, 2)) + 1).ToString();
+            while (result.Length < 5)
+            {
+                result = "0" + result;
+            }
 
             LB_Name.Text = "Name :";
             LB_Name.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
             LB_Name.BackColor = Color.Transparent;
+
+            TB_ID.Text = "C-" + result;
 
             LB_ID.Text = "ID :";
             LB_ID.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
