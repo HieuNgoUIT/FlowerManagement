@@ -359,7 +359,7 @@ namespace Flower_Management_System.Flower_Management
         }
         private void Data_Grid_View_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            byte[] imageData = (byte[])Data_Grid_View.CurrentRow.Cells[5].Value;
+            byte[] imageData = (byte[])Data_Grid_View.CurrentRow.Cells[6].Value;
             try
             {
                 MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length);
@@ -420,6 +420,9 @@ namespace Flower_Management_System.Flower_Management
 
             LB_Country_Data.DataBindings.Clear();
             LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
+
+            LB_Quantity_Data.DataBindings.Clear();
+            LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
         }
         // -------------------------------------------------------------------------
 

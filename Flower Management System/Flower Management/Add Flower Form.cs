@@ -17,7 +17,7 @@ namespace Flower_Management_System.Flower_Management
         public Add_Flower_Form()
         {
             InitializeComponent();
-        }        
+        }
 
         private void Add_Flower_Form_Load(object sender, EventArgs e)
         {
@@ -51,7 +51,8 @@ namespace Flower_Management_System.Flower_Management
             string check_id = "select top 1 ID from Flower order by ID desc";
             string result = A.GetColumnValue(check_id).ToString();
             result = (int.Parse(result.Remove(0, 2)) + 1).ToString();
-            while (result.Length < 5) {
+            while (result.Length < 5)
+            {
                 result = "0" + result;
             }
 
@@ -143,12 +144,13 @@ namespace Flower_Management_System.Flower_Management
             string check_id = "select ID from Flower where ID = '" + TB_ID.Text + "'";
             if (A.Check_Exist_Value(check_id) == false)
             {
-                string add_query = "insert into Flower (ID, FullName, Price, UseFor, Country, Picture) values"
+                string add_query = "insert into Flower (ID, FullName, Price, UseFor, Country, Quantity ,Picture) values"
                                                        + " ('" + TB_ID.Text + "'"
                                                        + ", '" + TB_Name.Text + "'"
                                                        + ", '" + TB_Price.Text + "'"
                                                        + ", '" + TB_UseFor.Text + "'"
                                                        + ", '" + TB_Country.Text + "'"
+                                                       + ", '" + TB_Quantity.Text + "'"
                                                        + ", @img)";
                 A.Advance_Query(image_location, add_query);
             }
@@ -234,6 +236,11 @@ namespace Flower_Management_System.Flower_Management
             {
                 BT_Save.Visible = false;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

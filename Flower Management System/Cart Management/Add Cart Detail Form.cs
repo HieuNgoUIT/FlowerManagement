@@ -15,7 +15,7 @@ namespace Flower_Management_System.Cart_Management
     public partial class Add_Cart_Detail_Form : Form
     {
         System_Database_SQL Cart_Detail = new System_Database_SQL();
-        
+
         public Add_Cart_Detail_Form()
         {
             InitializeComponent();
@@ -128,6 +128,9 @@ namespace Flower_Management_System.Cart_Management
                 LB_Saved.Visible = true;
                 Save_Process();
                 TB_Quantity.Text = "";
+
+                Get_Flower_Database();
+                Bing_Data();
             }
             else
             {
@@ -141,8 +144,10 @@ namespace Flower_Management_System.Cart_Management
                                      + " ('" + LB_CartID.Text + "'"
                                      + ", '" + LB_ID_Data.Text + "'"
                                      + ", '" + TB_Quantity.Text + "')";
+            string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
 
             Cart_Detail.Basic_Query(add_query);
+            Cart_Detail.Basic_Query(updateFlowerQuantity);
         }
         private void BT_CLose_Form_Click(object sender, EventArgs e)
         {
@@ -272,7 +277,7 @@ namespace Flower_Management_System.Cart_Management
         }
         private void Data_Grid_View_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            byte[] imageData = (byte[])Data_Grid_View.CurrentRow.Cells[5].Value;
+            byte[] imageData = (byte[])Data_Grid_View.CurrentRow.Cells[6].Value;
             try
             {
                 MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length);
@@ -333,6 +338,9 @@ namespace Flower_Management_System.Cart_Management
 
             LB_Country_Data.DataBindings.Clear();
             LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
+
+            LB_Quantity_Data.DataBindings.Clear();
+            LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
         }
 
         private void TB_Quantity_KeyPress(object sender, KeyPressEventArgs e)

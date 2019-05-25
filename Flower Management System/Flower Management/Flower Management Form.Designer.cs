@@ -60,6 +60,8 @@
             this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LB_Money = new System.Windows.Forms.Label();
             this.PB_Picture = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LB_Quantity_Data = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Data_Grid_View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Picture)).BeginInit();
             this.SuspendLayout();
@@ -70,9 +72,10 @@
             this.LB_UseFor_Data.BackColor = System.Drawing.Color.White;
             this.LB_UseFor_Data.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_UseFor_Data.ForeColor = System.Drawing.Color.Firebrick;
-            this.LB_UseFor_Data.Location = new System.Drawing.Point(701, 481);
+            this.LB_UseFor_Data.Location = new System.Drawing.Point(935, 592);
+            this.LB_UseFor_Data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_UseFor_Data.Name = "LB_UseFor_Data";
-            this.LB_UseFor_Data.Size = new System.Drawing.Size(27, 25);
+            this.LB_UseFor_Data.Size = new System.Drawing.Size(33, 32);
             this.LB_UseFor_Data.TabIndex = 82;
             this.LB_UseFor_Data.Text = "...";
             // 
@@ -81,9 +84,10 @@
             this.LB_UseFor.AutoSize = true;
             this.LB_UseFor.BackColor = System.Drawing.Color.White;
             this.LB_UseFor.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_UseFor.Location = new System.Drawing.Point(609, 481);
+            this.LB_UseFor.Location = new System.Drawing.Point(812, 592);
+            this.LB_UseFor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_UseFor.Name = "LB_UseFor";
-            this.LB_UseFor.Size = new System.Drawing.Size(86, 25);
+            this.LB_UseFor.Size = new System.Drawing.Size(110, 32);
             this.LB_UseFor.TabIndex = 81;
             this.LB_UseFor.Text = "Use For :";
             // 
@@ -91,9 +95,10 @@
             // 
             this.BT_Refresh.BackColor = System.Drawing.Color.White;
             this.BT_Refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Refresh.BackgroundImage")));
-            this.BT_Refresh.Location = new System.Drawing.Point(462, 196);
+            this.BT_Refresh.Location = new System.Drawing.Point(616, 241);
+            this.BT_Refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BT_Refresh.Name = "BT_Refresh";
-            this.BT_Refresh.Size = new System.Drawing.Size(64, 64);
+            this.BT_Refresh.Size = new System.Drawing.Size(85, 79);
             this.BT_Refresh.TabIndex = 80;
             this.BT_Refresh.UseVisualStyleBackColor = false;
             this.BT_Refresh.Click += new System.EventHandler(this.BT_Refresh_Click);
@@ -105,9 +110,10 @@
             this.LB_Country_Data.AutoSize = true;
             this.LB_Country_Data.BackColor = System.Drawing.Color.White;
             this.LB_Country_Data.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Country_Data.Location = new System.Drawing.Point(707, 557);
+            this.LB_Country_Data.Location = new System.Drawing.Point(943, 686);
+            this.LB_Country_Data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Country_Data.Name = "LB_Country_Data";
-            this.LB_Country_Data.Size = new System.Drawing.Size(27, 25);
+            this.LB_Country_Data.Size = new System.Drawing.Size(33, 32);
             this.LB_Country_Data.TabIndex = 79;
             this.LB_Country_Data.Text = "...";
             // 
@@ -117,9 +123,10 @@
             this.LB_Price_Data.BackColor = System.Drawing.Color.White;
             this.LB_Price_Data.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Price_Data.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.LB_Price_Data.Location = new System.Drawing.Point(699, 405);
+            this.LB_Price_Data.Location = new System.Drawing.Point(932, 498);
+            this.LB_Price_Data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Price_Data.Name = "LB_Price_Data";
-            this.LB_Price_Data.Size = new System.Drawing.Size(27, 25);
+            this.LB_Price_Data.Size = new System.Drawing.Size(33, 32);
             this.LB_Price_Data.TabIndex = 78;
             this.LB_Price_Data.Text = "...";
             // 
@@ -128,9 +135,10 @@
             this.LB_ID_Data.AutoSize = true;
             this.LB_ID_Data.BackColor = System.Drawing.Color.White;
             this.LB_ID_Data.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_ID_Data.Location = new System.Drawing.Point(657, 213);
+            this.LB_ID_Data.Location = new System.Drawing.Point(876, 262);
+            this.LB_ID_Data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_ID_Data.Name = "LB_ID_Data";
-            this.LB_ID_Data.Size = new System.Drawing.Size(27, 25);
+            this.LB_ID_Data.Size = new System.Drawing.Size(33, 32);
             this.LB_ID_Data.TabIndex = 76;
             this.LB_ID_Data.Text = "...";
             // 
@@ -140,9 +148,10 @@
             this.LB_Name_Data.BackColor = System.Drawing.Color.White;
             this.LB_Name_Data.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Name_Data.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.LB_Name_Data.Location = new System.Drawing.Point(624, 343);
+            this.LB_Name_Data.Location = new System.Drawing.Point(832, 422);
+            this.LB_Name_Data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Name_Data.Name = "LB_Name_Data";
-            this.LB_Name_Data.Size = new System.Drawing.Size(27, 25);
+            this.LB_Name_Data.Size = new System.Drawing.Size(33, 32);
             this.LB_Name_Data.TabIndex = 75;
             this.LB_Name_Data.Text = "...";
             this.LB_Name_Data.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -152,9 +161,10 @@
             this.LB_Price.AutoSize = true;
             this.LB_Price.BackColor = System.Drawing.Color.White;
             this.LB_Price.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Price.Location = new System.Drawing.Point(609, 405);
+            this.LB_Price.Location = new System.Drawing.Point(812, 498);
+            this.LB_Price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Price.Name = "LB_Price";
-            this.LB_Price.Size = new System.Drawing.Size(64, 25);
+            this.LB_Price.Size = new System.Drawing.Size(81, 32);
             this.LB_Price.TabIndex = 74;
             this.LB_Price.Text = "Price :";
             // 
@@ -162,9 +172,10 @@
             // 
             this.BT_Save.BackColor = System.Drawing.Color.White;
             this.BT_Save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Save.BackgroundImage")));
-            this.BT_Save.Location = new System.Drawing.Point(462, 281);
+            this.BT_Save.Location = new System.Drawing.Point(616, 346);
+            this.BT_Save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BT_Save.Name = "BT_Save";
-            this.BT_Save.Size = new System.Drawing.Size(64, 64);
+            this.BT_Save.Size = new System.Drawing.Size(85, 79);
             this.BT_Save.TabIndex = 72;
             this.BT_Save.UseVisualStyleBackColor = false;
             this.BT_Save.Click += new System.EventHandler(this.BT_Save_Click);
@@ -176,9 +187,10 @@
             this.BT_CLose_Form.BackColor = System.Drawing.Color.White;
             this.BT_CLose_Form.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_CLose_Form.BackgroundImage")));
             this.BT_CLose_Form.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BT_CLose_Form.Location = new System.Drawing.Point(878, 16);
+            this.BT_CLose_Form.Location = new System.Drawing.Point(1171, 20);
+            this.BT_CLose_Form.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BT_CLose_Form.Name = "BT_CLose_Form";
-            this.BT_CLose_Form.Size = new System.Drawing.Size(32, 32);
+            this.BT_CLose_Form.Size = new System.Drawing.Size(43, 39);
             this.BT_CLose_Form.TabIndex = 71;
             this.BT_CLose_Form.UseVisualStyleBackColor = false;
             this.BT_CLose_Form.Click += new System.EventHandler(this.BT_CLose_Form_Click);
@@ -189,9 +201,10 @@
             // 
             this.BT_Update.BackColor = System.Drawing.Color.White;
             this.BT_Update.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Update.BackgroundImage")));
-            this.BT_Update.Location = new System.Drawing.Point(462, 451);
+            this.BT_Update.Location = new System.Drawing.Point(616, 555);
+            this.BT_Update.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BT_Update.Name = "BT_Update";
-            this.BT_Update.Size = new System.Drawing.Size(64, 64);
+            this.BT_Update.Size = new System.Drawing.Size(85, 79);
             this.BT_Update.TabIndex = 70;
             this.BT_Update.UseVisualStyleBackColor = false;
             this.BT_Update.Click += new System.EventHandler(this.BT_Update_Click);
@@ -202,9 +215,10 @@
             // 
             this.BT_Delete.BackColor = System.Drawing.Color.White;
             this.BT_Delete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Delete.BackgroundImage")));
-            this.BT_Delete.Location = new System.Drawing.Point(462, 536);
+            this.BT_Delete.Location = new System.Drawing.Point(616, 660);
+            this.BT_Delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BT_Delete.Name = "BT_Delete";
-            this.BT_Delete.Size = new System.Drawing.Size(64, 64);
+            this.BT_Delete.Size = new System.Drawing.Size(85, 79);
             this.BT_Delete.TabIndex = 69;
             this.BT_Delete.UseVisualStyleBackColor = false;
             this.BT_Delete.Click += new System.EventHandler(this.BT_Delete_Click);
@@ -216,9 +230,10 @@
             this.LB_ID.AutoSize = true;
             this.LB_ID.BackColor = System.Drawing.Color.White;
             this.LB_ID.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_ID.Location = new System.Drawing.Point(609, 213);
+            this.LB_ID.Location = new System.Drawing.Point(812, 262);
+            this.LB_ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_ID.Name = "LB_ID";
-            this.LB_ID.Size = new System.Drawing.Size(42, 25);
+            this.LB_ID.Size = new System.Drawing.Size(52, 32);
             this.LB_ID.TabIndex = 68;
             this.LB_ID.Text = "ID :";
             // 
@@ -227,9 +242,10 @@
             this.LB_Country.AutoSize = true;
             this.LB_Country.BackColor = System.Drawing.Color.White;
             this.LB_Country.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Country.Location = new System.Drawing.Point(609, 557);
+            this.LB_Country.Location = new System.Drawing.Point(812, 686);
+            this.LB_Country.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Country.Name = "LB_Country";
-            this.LB_Country.Size = new System.Drawing.Size(92, 25);
+            this.LB_Country.Size = new System.Drawing.Size(116, 32);
             this.LB_Country.TabIndex = 66;
             this.LB_Country.Text = "Country :";
             // 
@@ -238,9 +254,10 @@
             this.LB_Name.AutoSize = true;
             this.LB_Name.BackColor = System.Drawing.Color.White;
             this.LB_Name.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Name.Location = new System.Drawing.Point(609, 289);
+            this.LB_Name.Location = new System.Drawing.Point(812, 356);
+            this.LB_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Name.Name = "LB_Name";
-            this.LB_Name.Size = new System.Drawing.Size(74, 25);
+            this.LB_Name.Size = new System.Drawing.Size(93, 32);
             this.LB_Name.TabIndex = 64;
             this.LB_Name.Text = "Name :";
             // 
@@ -250,9 +267,10 @@
             this.LB_Title.BackColor = System.Drawing.Color.White;
             this.LB_Title.Font = new System.Drawing.Font("Impact", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Title.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.LB_Title.Location = new System.Drawing.Point(102, 34);
+            this.LB_Title.Location = new System.Drawing.Point(136, 42);
+            this.LB_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Title.Name = "LB_Title";
-            this.LB_Title.Size = new System.Drawing.Size(303, 41);
+            this.LB_Title.Size = new System.Drawing.Size(382, 52);
             this.LB_Title.TabIndex = 63;
             this.LB_Title.Text = "FLOWER MANAGEMENT";
             // 
@@ -261,9 +279,10 @@
             this.BT_Add.BackColor = System.Drawing.Color.White;
             this.BT_Add.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Add.BackgroundImage")));
             this.BT_Add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BT_Add.Location = new System.Drawing.Point(462, 366);
+            this.BT_Add.Location = new System.Drawing.Point(616, 450);
+            this.BT_Add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BT_Add.Name = "BT_Add";
-            this.BT_Add.Size = new System.Drawing.Size(64, 64);
+            this.BT_Add.Size = new System.Drawing.Size(85, 79);
             this.BT_Add.TabIndex = 62;
             this.BT_Add.UseVisualStyleBackColor = false;
             this.BT_Add.Click += new System.EventHandler(this.BT_Add_Click);
@@ -274,9 +293,10 @@
             // 
             this.TB_Search.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Search.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Search.Location = new System.Drawing.Point(52, 115);
+            this.TB_Search.Location = new System.Drawing.Point(69, 142);
+            this.TB_Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TB_Search.Name = "TB_Search";
-            this.TB_Search.Size = new System.Drawing.Size(292, 28);
+            this.TB_Search.Size = new System.Drawing.Size(389, 35);
             this.TB_Search.TabIndex = 61;
             // 
             // BT_Search
@@ -284,9 +304,10 @@
             this.BT_Search.BackColor = System.Drawing.Color.White;
             this.BT_Search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Search.BackgroundImage")));
             this.BT_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BT_Search.Location = new System.Drawing.Point(378, 103);
+            this.BT_Search.Location = new System.Drawing.Point(504, 127);
+            this.BT_Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BT_Search.Name = "BT_Search";
-            this.BT_Search.Size = new System.Drawing.Size(56, 56);
+            this.BT_Search.Size = new System.Drawing.Size(75, 69);
             this.BT_Search.TabIndex = 60;
             this.BT_Search.UseVisualStyleBackColor = false;
             this.BT_Search.Click += new System.EventHandler(this.BT_Search_Click);
@@ -328,7 +349,8 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Data_Grid_View.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Data_Grid_View.Location = new System.Drawing.Point(34, 196);
+            this.Data_Grid_View.Location = new System.Drawing.Point(45, 241);
+            this.Data_Grid_View.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Data_Grid_View.MultiSelect = false;
             this.Data_Grid_View.Name = "Data_Grid_View";
             this.Data_Grid_View.RowHeadersVisible = false;
@@ -336,7 +358,7 @@
             this.Data_Grid_View.RowTemplate.ReadOnly = true;
             this.Data_Grid_View.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Data_Grid_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data_Grid_View.Size = new System.Drawing.Size(412, 407);
+            this.Data_Grid_View.Size = new System.Drawing.Size(549, 501);
             this.Data_Grid_View.TabIndex = 73;
             this.Data_Grid_View.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Data_Grid_View_CellClick);
             // 
@@ -390,9 +412,10 @@
             this.LB_Money.BackColor = System.Drawing.Color.White;
             this.LB_Money.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Money.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.LB_Money.Location = new System.Drawing.Point(679, 405);
+            this.LB_Money.Location = new System.Drawing.Point(905, 498);
+            this.LB_Money.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Money.Name = "LB_Money";
-            this.LB_Money.Size = new System.Drawing.Size(23, 25);
+            this.LB_Money.Size = new System.Drawing.Size(28, 32);
             this.LB_Money.TabIndex = 83;
             this.LB_Money.Text = "$";
             // 
@@ -400,19 +423,46 @@
             // 
             this.PB_Picture.BackColor = System.Drawing.Color.White;
             this.PB_Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PB_Picture.Location = new System.Drawing.Point(956, 147);
+            this.PB_Picture.Location = new System.Drawing.Point(1275, 181);
+            this.PB_Picture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PB_Picture.Name = "PB_Picture";
-            this.PB_Picture.Size = new System.Drawing.Size(345, 378);
+            this.PB_Picture.Size = new System.Drawing.Size(460, 465);
             this.PB_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Picture.TabIndex = 84;
             this.PB_Picture.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(812, 730);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 32);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "Quantity";
+            // 
+            // LB_Quantity_Data
+            // 
+            this.LB_Quantity_Data.AutoSize = true;
+            this.LB_Quantity_Data.BackColor = System.Drawing.Color.White;
+            this.LB_Quantity_Data.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Quantity_Data.Location = new System.Drawing.Point(943, 730);
+            this.LB_Quantity_Data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Quantity_Data.Name = "LB_Quantity_Data";
+            this.LB_Quantity_Data.Size = new System.Drawing.Size(33, 32);
+            this.LB_Quantity_Data.TabIndex = 86;
+            this.LB_Quantity_Data.Text = "...";
+            // 
             // Flower_Management_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1326, 650);
+            this.ClientSize = new System.Drawing.Size(1768, 800);
+            this.Controls.Add(this.LB_Quantity_Data);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.PB_Picture);
             this.Controls.Add(this.LB_Money);
             this.Controls.Add(this.LB_UseFor_Data);
@@ -436,6 +486,7 @@
             this.Controls.Add(this.BT_Search);
             this.Controls.Add(this.Data_Grid_View);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Flower_Management_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Flower_Management_Form";
@@ -476,5 +527,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Picture;
         private System.Windows.Forms.Label LB_Money;
         private System.Windows.Forms.PictureBox PB_Picture;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LB_Quantity_Data;
     }
 }

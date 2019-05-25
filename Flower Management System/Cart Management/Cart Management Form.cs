@@ -481,7 +481,7 @@ namespace Flower_Management_System.Cart_Management
 
         private void LB_CardID_Data_TextChanged(object sender, EventArgs e)
         {
-            string query_SQL_command = "select Cart_ID, Flower_ID, Flower.FullName, Quantity, CartDetail.Price, Flower.Picture from CartDetail, Flower, Cart where CartDetail.Cart_ID = Cart.ID and Cart.ID = '" + LB_CardID_Data.Text + "' and CartDetail.Flower_ID = Flower.ID order by Cart_ID asc";
+            string query_SQL_command = "select Cart_ID, Flower_ID, Flower.FullName, CartDetail.Quantity, CartDetail.Price, Flower.Picture from CartDetail, Flower, Cart where CartDetail.Cart_ID = Cart.ID and Cart.ID = '" + LB_CardID_Data.Text + "' and CartDetail.Flower_ID = Flower.ID order by Cart_ID asc";
             DGV_CartDetail.DataSource = Cart.Get_Database(query_SQL_command);
         }
     }
