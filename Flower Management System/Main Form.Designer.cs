@@ -107,7 +107,7 @@
             this.BT_CLose_Form.BackColor = System.Drawing.Color.White;
             this.BT_CLose_Form.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_CLose_Form.BackgroundImage")));
             this.BT_CLose_Form.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BT_CLose_Form.Location = new System.Drawing.Point(955, 15);
+            this.BT_CLose_Form.Location = new System.Drawing.Point(1378, 13);
             this.BT_CLose_Form.Margin = new System.Windows.Forms.Padding(4);
             this.BT_CLose_Form.Name = "BT_CLose_Form";
             this.BT_CLose_Form.Size = new System.Drawing.Size(43, 39);
@@ -123,7 +123,7 @@
             this.BT_FlowerShop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BT_FlowerShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_FlowerShop.ForeColor = System.Drawing.Color.Black;
-            this.BT_FlowerShop.Location = new System.Drawing.Point(987, 193);
+            this.BT_FlowerShop.Location = new System.Drawing.Point(999, 42);
             this.BT_FlowerShop.Margin = new System.Windows.Forms.Padding(4);
             this.BT_FlowerShop.Name = "BT_FlowerShop";
             this.BT_FlowerShop.Size = new System.Drawing.Size(333, 308);
