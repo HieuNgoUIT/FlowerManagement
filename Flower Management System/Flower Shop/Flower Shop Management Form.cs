@@ -7,31 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Flower_Management_System.Flower_Management;
 using Flower_Management_System.Database;
 using System.IO;
+using Flower_Management_System.Cart_Management;
 
-namespace Flower_Management_System.Cart_Management
+namespace Flower_Management_System.Flower_Management
 {
-    public partial class Cart_Management_Form : Form
+    public partial class FlowerShop_Management_Form : Form
     {
-        System_Database_SQL Cart = new System_Database_SQL();
+        System_Database_SQL Flower = new System_Database_SQL();
 
-        public Cart_Management_Form()
+        public FlowerShop_Management_Form()
         {
             InitializeComponent();
         }
 
-        private void Cart_Management_Load(object sender, EventArgs e)
+        // +--------------+
+        // | MAIN SETTING |
+        // +--------------+
+        // -------------------------------------------------------------------------
+        private void Flower_Management_Form_Load(object sender, EventArgs e)
         {
-            Cart_Management_Form_Setting();
+            Flower_Management_Form_Setting();
             Label_Setting();
             Button_Setting();
             TextBox_Setting();
             PictureBox_Setting();
-            DataGridView_Cart_Setting();
-            DataGridView_Cart_Detail_Setting();
-            Database_Cart_setting();
+            DataGridView_Setting();
+            Database_setting();
+            Database_setting2();
+            Database_Cart_Detail_setting();
+            DataGridView_Bunch_Detail_Setting();
         }
 
         // -------------------------------------------------------------------------
@@ -47,7 +53,7 @@ namespace Flower_Management_System.Cart_Management
         //      +--------------+
 
         // -------------------------------------------------------------------------
-        private void Cart_Management_Form_Setting()
+        private void Flower_Management_Form_Setting()
         {
             this.BackColor = Color.FromArgb(237, 28, 36);
             this.TransparencyKey = Color.FromArgb(237, 28, 36);
@@ -65,31 +71,54 @@ namespace Flower_Management_System.Cart_Management
         {
             Label_Title_Setting();
             Label_Attribute_Setting();
-            Label_Attribute_Data_Setting();
         }
 
         // -------------------------------------------------------------------------
         private void Label_Title_Setting()
         {
-            LB_Title.Text = "CART MANAGEMENT";
+            LB_Title.Text = "FLOWERSHOP";
             LB_Title.Font = new Font("Impact", 25, FontStyle.Regular);
             LB_Title.BackColor = Color.Transparent;
         }
         private void Label_Attribute_Setting()
         {
-            LB_CustomerID.BackColor = Color.Transparent;            
-            LB_CardID.BackColor = Color.Transparent;            
-            LB_DateBuy.BackColor = Color.Transparent;            
-            LB_TotalPrice.BackColor = Color.Transparent;            
-            LB_CustomerName.BackColor = Color.Transparent;
+            LB_Name.Text = "Name :";
+            LB_Name.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            LB_Name.BackColor = Color.Transparent;
+
+            LB_ID.Text = "ID :";
+            LB_ID.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            LB_ID.BackColor = Color.Transparent;
+
+            LB_Price.Text = "Price :";
+            LB_Price.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            LB_Price.BackColor = Color.Transparent;
+
+            LB_UseFor.Text = "Use For :";
+            LB_UseFor.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            LB_UseFor.BackColor = Color.Transparent;
+
+            LB_Country.Text = "Country :";
+            LB_Country.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            LB_Country.BackColor = Color.Transparent;
         }
         private void Label_Attribute_Data_Setting()
         {
-            LB_CardID_Data.BackColor = Color.Transparent;
-            LB_CustomerID_Data.BackColor = Color.Transparent;
-            LB_CustomerName_Data.BackColor = Color.Transparent;
-            LB_DateBuy_Data.BackColor = Color.Transparent;
+            LB_Name_Data.Text = "...";
+            LB_Name.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            LB_Name_Data.BackColor = Color.Transparent;
+
+            LB_ID_Data.Text = "...";
+            LB_Name.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            LB_ID_Data.BackColor = Color.Transparent;
+
+            LB_Price_Data.Text = "...";
+            LB_Name.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
             LB_Price_Data.BackColor = Color.Transparent;
+
+            LB_Country_Data.Text = "...";
+            LB_Name.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            LB_Country_Data.BackColor = Color.Transparent;
         }
         // -------------------------------------------------------------------------
 
@@ -102,6 +131,7 @@ namespace Flower_Management_System.Cart_Management
         {
             Button_Search_Setting();
             Button_Add_Employee_Setting();
+            Button_Update_Employee_Setting();
             Button_Delete_Employee_Setting();
             Button_Save_Employee_Setting();
             Button_Close_Form_Setting();
@@ -118,6 +148,11 @@ namespace Flower_Management_System.Cart_Management
         {
             BT_Add.FlatStyle = FlatStyle.Flat;
             BT_Add.FlatAppearance.BorderSize = 0;
+        }
+        private void Button_Update_Employee_Setting()
+        {
+            BT_Update.FlatStyle = FlatStyle.Flat;
+            BT_Update.FlatAppearance.BorderSize = 0;
         }
         private void Button_Delete_Employee_Setting()
         {
@@ -142,25 +177,27 @@ namespace Flower_Management_System.Cart_Management
         // -------------------------------------------------------------------------
         private void BT_Search_Click(object sender, EventArgs e)
         {
-            string search_name_query = "select Cart.ID, Customer_ID, Customer.FullName, OnDate, TotalPrice from Cart, Customer where Customer_ID = Customer.ID and Cart.ID like '%" + TB_Search.Text + "%'";
-            this.Data_Grid_View.DataSource = Cart.Search_Value_From_Database(search_name_query);
-            Bing_Cart_Data();
+            string search_name_query = "select * from FlowerShop where FullName collate Latin1_General_CS_AS like N'%" + TB_Search.Text + "%'";
+            this.Data_Grid_View.DataSource = Flower.Search_Value_From_Database(search_name_query);
+            Bing_Data();
         }
         private void BT_Refresh_Click(object sender, EventArgs e)
         {
-            Database_Cart_setting();
+            Database_setting();
         }
         private void BT_Add_Click(object sender, EventArgs e)
         {
-            Open_Add_Cart_Form();
+            Open_Add_Flower_Form();
+        }
+        private void BT_Update_Click(object sender, EventArgs e)
+        {
+            Open_Update_Flower_Form();
         }
         private void BT_Delete_Click(object sender, EventArgs e)
         {
-            string delete_query_from_CartDetail_table = "delete from CartDetail where Cart_ID = '" + LB_CardID_Data.Text + "'";
-            Cart.Basic_Query(delete_query_from_CartDetail_table);
-            string delete_query_from_Cart_table = "delete from Cart where ID = '" + LB_CardID_Data.Text + "'";
-            Cart.Basic_Query(delete_query_from_Cart_table);
-            Database_Cart_setting();
+            string delete_query_from_Customer_table = "delete from FlowerShop where ID = '" + LB_ID_Data.Text + "'";
+            Flower.Basic_Query(delete_query_from_Customer_table);
+            Database_setting();
         }
         private void BT_Save_Click(object sender, EventArgs e)
         {
@@ -185,6 +222,15 @@ namespace Flower_Management_System.Cart_Management
             this.Cursor = Cursors.Hand;
         }
         private void BT_Add_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+        // -------------------------------------------------------------------------
+        private void BT_Update_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+        private void BT_Update_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
         }
@@ -250,7 +296,7 @@ namespace Flower_Management_System.Cart_Management
         //      +----------------------+
 
         // -------------------------------------------------------------------------
-        private void DataGridView_Cart_Setting()
+        private void DataGridView_Setting()
         {
             this.Data_Grid_View.AllowUserToAddRows = false;
             this.Data_Grid_View.AllowUserToDeleteRows = false;
@@ -269,18 +315,28 @@ namespace Flower_Management_System.Cart_Management
             this.Data_Grid_View.MultiSelect = false;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.Columns[0].DataPropertyName = "ID";
-            this.Data_Grid_View.Columns[1].DataPropertyName = "Customer_ID";
-            this.Data_Grid_View.Columns[2].DataPropertyName = "OnDate";
-            this.Data_Grid_View.Columns[3].DataPropertyName = "TotalPrice";
+            this.Data_Grid_View.Columns[0].Width = 110;
+            this.Data_Grid_View.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.Data_Grid_View.Columns[1].DataPropertyName = "FullName";
+            this.Data_Grid_View.Columns[1].Width = 275;
+            this.Data_Grid_View.Columns[2].DataPropertyName = "Price";
+            this.Data_Grid_View.Columns[2].Visible = false;
+            this.Data_Grid_View.Columns[3].DataPropertyName = "UseFor";
+            this.Data_Grid_View.Columns[3].Visible = false;
+            this.Data_Grid_View.Columns[4].DataPropertyName = "Country";
+            this.Data_Grid_View.Columns[4].Visible = false;
+            this.Data_Grid_View.Columns[5].DataPropertyName = "Picture";
+            this.Data_Grid_View.Columns[5].Visible = false;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
-            this.Data_Grid_View.ColumnHeadersDefaultCellStyle.ForeColor = Color.OrangeRed;
+            this.Data_Grid_View.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            this.Data_Grid_View.ColumnHeadersDefaultCellStyle.ForeColor = Color.Navy;
             this.Data_Grid_View.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
             this.Data_Grid_View.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // căn giữa chữ ô header
-            // -------------------------------------------------------------------------
-            this.Data_Grid_View.ColumnHeadersHeight = 35;
+                                                                                                                     // -------------------------------------------------------------------------
+            this.Data_Grid_View.ColumnHeadersHeight = 50;
             this.Data_Grid_View.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.Cursor = Cursors.Hand;
@@ -288,72 +344,25 @@ namespace Flower_Management_System.Cart_Management
             this.Data_Grid_View.EnableHeadersVisualStyles = false;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.DefaultCellStyle.BackColor = Color.White;
+            this.Data_Grid_View.DefaultCellStyle.Font = new Font("Segoe UI", 13, FontStyle.Bold);
             this.Data_Grid_View.DefaultCellStyle.ForeColor = Color.Black;
             this.Data_Grid_View.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            this.Data_Grid_View.DefaultCellStyle.SelectionBackColor = Color.OrangeRed;
+            this.Data_Grid_View.DefaultCellStyle.SelectionBackColor = Color.MediumPurple;
             this.Data_Grid_View.DefaultCellStyle.SelectionForeColor = Color.White;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.RowHeadersVisible = false; // false : có thể chỉnh design theo ý mình
                                                            // -------------------------------------------------------------------------
             this.Data_Grid_View.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             // -------------------------------------------------------------------------
-            this.Data_Grid_View.RowTemplate.Height = 35;
+            this.Data_Grid_View.RowTemplate.Height = 49;
             this.Data_Grid_View.RowTemplate.ReadOnly = true;
             this.Data_Grid_View.RowTemplate.Resizable = DataGridViewTriState.False;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-        private void DataGridView_Cart_Detail_Setting()
-        {
-            this.DGV_CartDetail.AllowUserToAddRows = false;
-            this.DGV_CartDetail.AllowUserToDeleteRows = false;
-            this.DGV_CartDetail.AllowUserToResizeColumns = false;
-            this.DGV_CartDetail.AllowUserToResizeRows = false;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            this.DGV_CartDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.BackgroundColor = Color.White;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.BorderStyle = BorderStyle.None;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.MultiSelect = false;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
-            this.DGV_CartDetail.ColumnHeadersDefaultCellStyle.ForeColor = Color.DarkViolet;
-            this.DGV_CartDetail.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            this.DGV_CartDetail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // căn giữa chữ ô header
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.ColumnHeadersHeight = 35;
-            this.DGV_CartDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.Cursor = Cursors.Hand;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.EnableHeadersVisualStyles = false;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.DefaultCellStyle.BackColor = Color.White;
-            this.DGV_CartDetail.DefaultCellStyle.ForeColor = Color.Black;
-            this.DGV_CartDetail.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            this.DGV_CartDetail.DefaultCellStyle.SelectionBackColor = Color.DarkViolet;
-            this.DGV_CartDetail.DefaultCellStyle.SelectionForeColor = Color.White;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.RowHeadersVisible = false; // false : có thể chỉnh design theo ý mình
-                                                           // -------------------------------------------------------------------------
-            this.DGV_CartDetail.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.RowTemplate.Height = 35;
-            this.DGV_CartDetail.RowTemplate.ReadOnly = true;
-            this.DGV_CartDetail.RowTemplate.Resizable = DataGridViewTriState.False;
-            // -------------------------------------------------------------------------
-            this.DGV_CartDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
         private void Data_Grid_View_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            byte[] imageData = (byte[])Data_Grid_View.CurrentRow.Cells[5].Value;
+            byte[] imageData = (byte[])Data_Grid_View.CurrentRow.Cells[7].Value;
             try
             {
                 MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length);
@@ -387,45 +396,126 @@ namespace Flower_Management_System.Cart_Management
         //      +------------------+
 
         // -------------------------------------------------------------------------
-        private void Database_Cart_setting()
+        private void Database_setting()
         {
-            Get_Cart_Database();
-            Bing_Cart_Data();
-        }
-        private void Database_Cart_Detail_setting()
-        {
-            Get_Cart_Detail_Database();
-            Bing_Cart_Detail_Data();
+            Get_Flower_Database();
+            Bing_Data();
         }
         // -------------------------------------------------------------------------
-        private void Get_Cart_Database()
+        private void Get_Flower_Database()
         {
-            string query_SQL_command = "select Cart.ID, Customer_ID, Customer.FullName, OnDate, TotalPrice from Cart, Customer where Customer_ID = Customer.ID order by Cart.ID asc";
-            Data_Grid_View.DataSource = Cart.Get_Database(query_SQL_command);
+            string query_SQL_command = "select * from FlowerShop order by ID asc";
+            Data_Grid_View.DataSource = Flower.Get_Database(query_SQL_command);
         }
-        public void Bing_Cart_Data()
+        public void Bing_Data()
         {
-            LB_CardID_Data.DataBindings.Clear();
-            LB_CardID_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "ID");
+            LB_Name_Data.DataBindings.Clear();
+            LB_Name_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "FullName");
 
-            LB_CustomerID_Data.DataBindings.Clear();
-            LB_CustomerID_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Customer_ID");
-
-            LB_CustomerName_Data.DataBindings.Clear();
-            LB_CustomerName_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "FullName");
-
-            LB_DateBuy_Data.DataBindings.Clear();
-            LB_DateBuy_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "OnDate");
+            LB_ID_Data.DataBindings.Clear();
+            LB_ID_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "ID");
 
             LB_Price_Data.DataBindings.Clear();
-            LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "TotalPrice");
+            LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Price");
+
+            LB_UseFor_Data.DataBindings.Clear();
+            LB_UseFor_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "UseFor");
+
+            LB_Country_Data.DataBindings.Clear();
+            LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
+
+            LB_Quantity_Data.DataBindings.Clear();
+            LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
+        }
+
+        private void Database_setting2()
+        {
+            Get_Flower_Database2();
+            Bing_Data2();
         }
         // -------------------------------------------------------------------------
-        private void Get_Cart_Detail_Database()
+        private void Get_Flower_Database2()
         {
-            string query_SQL_command = "select Cart_ID, Flower_ID, Flower.FullName, Quantity, CartDetail.Price, Flower.Picture from CartDetail, Flower, Cart where CartDetail.Cart_ID = Cart.ID and CartDetail.Flower_ID = Flower.ID order by Cart_ID asc";
-            DGV_CartDetail.DataSource = Cart.Get_Database(query_SQL_command);
+            string query_SQL_command = "select * from BunchFlowersShop order by ID asc";
+            Data_Grid_View2.DataSource = Flower.Get_Database(query_SQL_command);
         }
+        public void Bing_Data2()
+        {
+            TB_BunchID.DataBindings.Clear();
+            TB_BunchID.DataBindings.Add("Text", this.Data_Grid_View2.DataSource, "ID");
+
+        }
+
+        private void DataGridView_Bunch_Detail_Setting()
+        {
+            this.DGV_BunchDetail.AllowUserToAddRows = false;
+            this.DGV_BunchDetail.AllowUserToDeleteRows = false;
+            this.DGV_BunchDetail.AllowUserToResizeColumns = false;
+            this.DGV_BunchDetail.AllowUserToResizeRows = false;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            this.DGV_BunchDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.BackgroundColor = Color.White;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.BorderStyle = BorderStyle.None;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.MultiSelect = false;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            this.DGV_BunchDetail.ColumnHeadersDefaultCellStyle.ForeColor = Color.DarkViolet;
+            this.DGV_BunchDetail.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
+            this.DGV_BunchDetail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // căn giữa chữ ô header
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.ColumnHeadersHeight = 35;
+            this.DGV_BunchDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.Cursor = Cursors.Hand;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.EnableHeadersVisualStyles = false;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.DefaultCellStyle.BackColor = Color.White;
+            this.DGV_BunchDetail.DefaultCellStyle.ForeColor = Color.Black;
+            this.DGV_BunchDetail.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
+            this.DGV_BunchDetail.DefaultCellStyle.SelectionBackColor = Color.DarkViolet;
+            this.DGV_BunchDetail.DefaultCellStyle.SelectionForeColor = Color.White;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.RowHeadersVisible = false; // false : có thể chỉnh design theo ý mình
+                                                           // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.RowTemplate.Height = 35;
+            this.DGV_BunchDetail.RowTemplate.ReadOnly = true;
+            this.DGV_BunchDetail.RowTemplate.Resizable = DataGridViewTriState.False;
+            // -------------------------------------------------------------------------
+            this.DGV_BunchDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void Database_Cart_Detail_setting()
+        {
+            //Get_Cart_Detail_Database();
+            Bing_Cart_Detail_Data();
+        }
+
+        private void TB_BunchID_TextChanged(object sender, EventArgs e)
+        {
+           // string query_SQL_command = "select Cart_ID, Flower_ID, Flower.FullName, CartDetail.Quantity, CartDetail.Price, Flower.Picture from CartDetail, Flower, Cart where CartDetail.Cart_ID = Cart.ID and Cart.ID = '" + LB_CardID_Data.Text + "' and CartDetail.Flower_ID = Flower.ID order by Cart_ID asc";
+           // DGV_CartDetail.DataSource = Cart.Get_Database(query_SQL_command);
+
+            string query_SQL_command = "select BunchFlowersID, FlowerID, BunchFlowersDetail.Quantity from BunchFlowersDetail, BunchFlowersShop where BunchFlowersDetail.BunchFlowersID = '" + TB_BunchID.Text + "';";
+            DGV_BunchDetail.DataSource = Flower.Get_Database(query_SQL_command);
+        }
+
+
+        //private void Get_Cart_Detail_Database()
+        //{
+        //    string query_SQL_command = "select BunchFlowersID, FlowerID, BunchFlowersDetail.Quantity from BunchFlowersDetail, BunchFlowersShop where BunchFlowersDetail.BunchFlowersID = BunchFlowersShop.ID";
+        //    DGV_CartDetail.DataSource = Flower.Get_Database(query_SQL_command);
+        //}
         public void Bing_Cart_Detail_Data()
         {
             //LB_CardID_Data.DataBindings.Clear();
@@ -443,21 +533,6 @@ namespace Flower_Management_System.Cart_Management
             //LB_Price_Data.DataBindings.Clear();
             //LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "TotalPrice");
         }
-
-        private void DGV_CartDetail_Click(object sender, EventArgs e)
-        {
-            byte[] imageData = (byte[])DGV_CartDetail.CurrentRow.Cells[5].Value;
-            try
-            {
-                MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length);
-                ms.Write(imageData, 0, imageData.Length);
-                PB_Picture.Image = Image.FromStream(ms, true);
-            }
-            catch
-            {
-                MessageBox.Show("Error");
-            }
-        }
         // -------------------------------------------------------------------------
 
         //      +-----------+
@@ -465,35 +540,37 @@ namespace Flower_Management_System.Cart_Management
         //      +-----------+
 
         // -------------------------------------------------------------------------
-        private void Open_Add_Cart_Form()
+        private void Open_Add_Flower_Form()
         {
-            Add_New_Cart_Form add_cart_form = new Add_New_Cart_Form();
-            add_cart_form.Show();
+            Add_FlowerShop_Form add_flower_form = new Add_FlowerShop_Form();
+            add_flower_form.Show();
         }
-        private void Open_Update_Cart_Form()
+        private void Open_Update_Flower_Form()
         {
             Update_Flower_Form Update_Employee_Form = new Update_Flower_Form();
             Update_Employee_Form.Show();
-            Update_Employee_Form.ID = LB_CardID_Data.Text;
-            Update_Employee_Form.FullName = LB_CustomerName_Data.Text;
+            Update_Employee_Form.ID = LB_ID_Data.Text;
+            Update_Employee_Form.FullName = LB_Name_Data.Text;
             Update_Employee_Form.Price = LB_Price_Data.Text;
+            Update_Employee_Form.UseFor = LB_UseFor_Data.Text;
+            Update_Employee_Form.Country = LB_Country_Data.Text;
             Update_Employee_Form.Flower_Image = PB_Picture.Image;
         }
 
-        private void LB_CardID_Data_TextChanged(object sender, EventArgs e)
-        {
-            string query_SQL_command = "select Cart_ID, Flower_ID, Flower.FullName, CartDetail.Quantity, CartDetail.Price, Flower.Picture from CartDetail, Flower, Cart where CartDetail.Cart_ID = Cart.ID and Cart.ID = '" + LB_CardID_Data.Text + "' and CartDetail.Flower_ID = Flower.ID order by Cart_ID asc";
-            DGV_CartDetail.DataSource = Cart.Get_Database(query_SQL_command);
-        }
-
-        private void DGV_CartDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Data_Grid_View_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void LB_CardID_Data_Click(object sender, EventArgs e)
+        private void LB_Name_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BT_Add2_Click(object sender, EventArgs e)
+        {
+            Add_BunchFlowers_Form add_flower_form = new Add_BunchFlowers_Form();
+            add_flower_form.Show();
         }
     }
 }

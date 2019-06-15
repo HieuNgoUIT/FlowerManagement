@@ -12,11 +12,11 @@ using System.IO;
 
 namespace Flower_Management_System.Cart_Management
 {
-    public partial class Add_Cart_Detail_Form : Form
+    public partial class Add_BunchFlowers_Detail_Form : Form
     {
         System_Database_SQL Cart_Detail = new System_Database_SQL();
 
-        public Add_Cart_Detail_Form()
+        public Add_BunchFlowers_Detail_Form()
         {
             InitializeComponent();
         }
@@ -73,15 +73,15 @@ namespace Flower_Management_System.Cart_Management
         {
             LB_Name.BackColor = Color.Transparent;
             LB_ID.BackColor = Color.Transparent;
-            LB_Price.BackColor = Color.Transparent;
-            LB_UseFor.BackColor = Color.Transparent;
+            //LB_Price.BackColor = Color.Transparent;
+           // LB_UseFor.BackColor = Color.Transparent;
             LB_Country.BackColor = Color.Transparent;
         }
         private void Label_Attribute_Data_Setting()
         {
             LB_Name_Data.BackColor = Color.Transparent;
-            LB_ID_Data.BackColor = Color.Transparent;
-            LB_Price_Data.BackColor = Color.Transparent;
+            LB_FlowerID.BackColor = Color.Transparent;
+          //  LB_Price_Data.BackColor = Color.Transparent;
             LB_Country_Data.BackColor = Color.Transparent;
         }
         // -------------------------------------------------------------------------
@@ -140,11 +140,11 @@ namespace Flower_Management_System.Cart_Management
 
         private void Save_Process()
         {
-            string add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity) values"
-                                     + " ('" + LB_CartID.Text + "'"
-                                     + ", '" + LB_ID_Data.Text + "'"
+            string add_query = "insert into BunchFlowersDetail (BunchFlowersID, FlowerID, Quantity) values"
+                                     + " ('" + LB_BunchID.Text + "'"
+                                     + ", '" + LB_FlowerID.Text + "'"
                                      + ", '" + TB_Quantity.Text + "')";
-            string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
+            string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_FlowerID.Text + "';";
 
             Cart_Detail.Basic_Query(add_query);
             Cart_Detail.Basic_Query(updateFlowerQuantity);
@@ -153,7 +153,7 @@ namespace Flower_Management_System.Cart_Management
         {
             string update_price_Cart_Detail = "update CartDetail set Price = (Quantity * (select Price from Flower where CartDetail.Flower_ID = Flower.ID))";
             Cart_Detail.Basic_Query(update_price_Cart_Detail);
-            string update_total_price_Cart = "update Cart set TotalPrice = (select sum(Price) from CartDetail where CartDetail.Cart_ID = '" + LB_CartID.Text + "') where Cart.ID = '" + LB_CartID.Text + "'";
+            string update_total_price_Cart = "update Cart set TotalPrice = (select sum(Price) from CartDetail where CartDetail.Cart_ID = '" + LB_BunchID.Text + "') where Cart.ID = '" + LB_BunchID.Text + "'";
             Cart_Detail.Basic_Query(update_total_price_Cart);
             Close();
         }
@@ -327,14 +327,14 @@ namespace Flower_Management_System.Cart_Management
             LB_Name_Data.DataBindings.Clear();
             LB_Name_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "FullName");
 
-            LB_ID_Data.DataBindings.Clear();
-            LB_ID_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "ID");
+            LB_FlowerID.DataBindings.Clear();
+            LB_FlowerID.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "ID");
 
-            LB_Price_Data.DataBindings.Clear();
-            LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Price");
+          //  LB_Price_Data.DataBindings.Clear();
+          //  LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Price");
 
-            LB_UseFor_Data.DataBindings.Clear();
-            LB_UseFor_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "UseFor");
+          //  LB_UseFor_Data.DataBindings.Clear();
+          //  LB_UseFor_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "UseFor");
 
             LB_Country_Data.DataBindings.Clear();
             LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
@@ -356,7 +356,7 @@ namespace Flower_Management_System.Cart_Management
         {
             set
             {
-                LB_CartID.Text = value;
+                LB_BunchID.Text = value;
             }
         }
     }

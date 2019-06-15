@@ -3,31 +3,29 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Flower_Management_System.Database;
 
 namespace Flower_Management_System.Flower_Management
 {
-    public partial class Add_Flower_Form : Form
+    public partial class Update_FlowerShop_Form : Form
     {
-        string image_location;
-        public Add_Flower_Form()
+        string image_location = "";
+        public Update_FlowerShop_Form()
         {
             InitializeComponent();
         }
 
-        private void Add_Flower_Form_Load(object sender, EventArgs e)
+        private void Update_Flower_Form_Load(object sender, EventArgs e)
         {
-            Add_Flower_Form_Setting();
+            Update_Flower_Form_Setting();
             Label_Setting();
             Button_Setting();
             PictureBox_Setting();
+            TextBox_Setting();
         }
 
-        private void Add_Flower_Form_Setting()
+        private void Update_Flower_Form_Setting()
         {
             this.BackColor = Color.FromArgb(237, 28, 36);
             this.TransparencyKey = Color.FromArgb(237, 28, 36);
@@ -47,20 +45,9 @@ namespace Flower_Management_System.Flower_Management
         }
         private void Label_Attribute_Setting()
         {
-            System_Database_SQL A = new System_Database_SQL();
-            string check_id = "select top 1 ID from Flower order by ID desc";
-            string result = A.GetColumnValue(check_id).ToString();
-            result = (int.Parse(result.Remove(0, 2)) + 1).ToString();
-            while (result.Length < 5)
-            {
-                result = "0" + result;
-            }
-
             LB_Name.Text = "Name :";
             LB_Name.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
             LB_Name.BackColor = Color.Transparent;
-
-            TB_ID.Text = "F-" + result;
 
             LB_ID.Text = "ID :";
             LB_ID.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
@@ -81,18 +68,7 @@ namespace Flower_Management_System.Flower_Management
         // -------------------------------------------------------------------------
         private void LB_Browse_Click(object sender, EventArgs e)
         {
-            OpenFileDialog browse_2 = new OpenFileDialog();
-            browse_2.Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png|All Files (*.*)|*.*";
-            browse_2.Title = "Select Flower Image";
-            if (browse_2.ShowDialog(this) == DialogResult.OK)
-            {
-                image_location = browse_2.FileName.ToString();
-                PB_Picture.ImageLocation = image_location;
-            }
-            else
-            {
-                image_location = "";
-            }
+            BT_Browse_Click(sender, e);
         }
         // -------------------------------------------------------------------------
         private void LB_Browse_MouseEnter(object sender, EventArgs e)
@@ -117,7 +93,6 @@ namespace Flower_Management_System.Flower_Management
         {
             BT_Save.FlatStyle = FlatStyle.Flat;
             BT_Save.FlatAppearance.BorderSize = 0;
-            BT_Save.Visible = false;
         }
         private void Button_Close_Form_Setting()
         {
@@ -132,37 +107,48 @@ namespace Flower_Management_System.Flower_Management
         // -------------------------------------------------------------------------
         private void BT_Save_Click(object sender, EventArgs e)
         {
-            if (image_location != "")
-            {
-                Save_Process();
-                BT_CLose_Form_Click(sender, e);
-            }
+            Save_Process();
+            BT_CLose_Form_Click(sender, e);
         }
         private void Save_Process()
         {
-            System_Database_SQL A = new System_Database_SQL();
-            string check_id = "select ID from Flower where ID = '" + TB_ID.Text + "'";
-            if (A.Check_Exist_Value(check_id) == false)
+            System_Database_SQL U = new System_Database_SQL();
+            if (image_location != "")
             {
-                string add_query = "insert into Flower (ID, FullName, Price, UseFor, Country, Quantity ,ImportDate,Picture) values"
-                                                       + " ('" + TB_ID.Text + "'"
-                                                       + ", '" + TB_Name.Text + "'"
-                                                       + ", '" + TB_Price.Text + "'"
-                                                       + ", '" + TB_UseFor.Text + "'"
-                                                       + ", '" + TB_Country.Text + "'"
-                                                       + ", '" + TB_Quantity.Text + "'"
-                                                       + ", '" + TB_ImportDate.Text + "'"
-                                                       + ", @img)";
-                A.Advance_Query(image_location, add_query);
+                string update_query = "update FLower set "
+                                  + "FullName = N'" + TB_Name.Text + "'"
+                                  + ", Price = '" + TB_Price.Text + "'"
+                                  + ", UseFor = N'" + TB_UseFor.Text + "'"
+                                  + ", Country = '" + TB_Country.Text + "'"
+                                  + ", Picture = @img"
+                                  + " where ID = '" + TB_ID.Text + "'";
+                U.Advance_Query(image_location, update_query);
             }
             else
             {
-                LB_Notice.Visible = true;
+                string update_query = "update FLower set "
+                                  + "FullName = N'" + TB_Name.Text + "'"
+                                  + ", Price = '" + TB_Price.Text + "'"
+                                  + ", UseFor = N'" + TB_UseFor.Text + "'"
+                                  + ", Country = '" + TB_Country.Text + "'"
+                                  + " where ID = '" + TB_ID.Text + "'";
+                U.Basic_Query(update_query);
             }
         }
         private void BT_Browse_Click(object sender, EventArgs e)
         {
-            LB_Browse_Click(sender, e);
+            OpenFileDialog browse = new OpenFileDialog();
+            browse.Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png|All Files (*.*)|*.*";
+            browse.Title = "Select Flower Image";
+            if (browse.ShowDialog() == DialogResult.OK)
+            {
+                image_location = browse.FileName.ToString();
+                PB_Picture.ImageLocation = image_location;
+            }
+            else
+            {
+                image_location = "";
+            }
         }
         private void BT_CLose_Form_Click(object sender, EventArgs e)
         {
@@ -205,10 +191,9 @@ namespace Flower_Management_System.Flower_Management
         private void PictureBox_Setting()
         {
             this.PB_Picture.BackColor = Color.Transparent;
-            this.PB_Picture.BackgroundImageLayout = ImageLayout.Center;
+            this.PB_Picture.BackgroundImageLayout = ImageLayout.Stretch;
             // -------------------------------------------------------------------------
             this.PB_Picture.Size = new Size(345, 378);
-            this.PB_Picture.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         // -------------------------------------------------------------------------
 
@@ -217,7 +202,12 @@ namespace Flower_Management_System.Flower_Management
         //      +-----------------+
 
         // -------------------------------------------------------------------------
-
+        private void TextBox_Setting()
+        {
+            TB_ID.ReadOnly = true;
+            TB_ID.Enabled = true;
+        }
+        // -------------------------------------------------------------------------
         private void TB_Price_KeyPress(object sender, KeyPressEventArgs e)
         {
             char c = e.KeyChar;
@@ -226,37 +216,49 @@ namespace Flower_Management_System.Flower_Management
                 e.Handled = true;
             }
         }
+        // -------------------------------------------------------------------------
 
-        private void TB_ID_TextChanged(object sender, EventArgs e)
+        public string FullName
         {
-            if (TB_ID.Text != "")
+            set
             {
-                BT_Save.Visible = true;
-            }
-            else
-            {
-                BT_Save.Visible = false;
+                TB_Name.Text = value;
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        public string ID
         {
-
+            set
+            {
+                TB_ID.Text = value;
+            }
         }
-
-        private void TB_Quantity_TextChanged(object sender, EventArgs e)
+        public string Price
         {
-
+            set
+            {
+                TB_Price.Text = value;
+            }
         }
-
-        private void LB_Money_Click(object sender, EventArgs e)
+        public string UseFor
         {
-
+            set
+            {
+                TB_UseFor.Text = value;
+            }
         }
-
-        private void TB_Country_TextChanged(object sender, EventArgs e)
+        public string Country
         {
-
+            set
+            {
+                TB_Country.Text = value;
+            }
+        }
+        public Image Flower_Image
+        {
+            set
+            {
+                PB_Picture.Image = value;
+            }
         }
     }
 }

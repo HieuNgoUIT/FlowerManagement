@@ -119,6 +119,36 @@
     <Compile Include="Employee Management\Update Employee Form.Designer.cs">
       <DependentUpon>Update Employee Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flower Shop\Add Flower Shop Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flower Shop\Add Flower Shop Form.Designer.cs">
+      <DependentUpon>Add Flower Shop Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flower Shop\Add Bunch Flowers Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flower Shop\Add Bunch Flowers Detail.Designer.cs">
+      <DependentUpon>Add Bunch Flowers Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flower Shop\Add Bunch Flowers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flower Shop\Add Bunch Flowers.Designer.cs">
+      <DependentUpon>Add Bunch Flowers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flower Shop\Flower Shop Management Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flower Shop\Flower Shop Management Form.Designer.cs">
+      <DependentUpon>Flower Shop Management Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flower Shop\Update Flower Shop Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flower Shop\Update Flower Shop Form.Designer.cs">
+      <DependentUpon>Update Flower Shop Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flower Management\Add Flower Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +222,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee Management\Update Employee Form.resx">
       <DependentUpon>Update Employee Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flower Shop\Add Flower Shop Form.resx">
+      <DependentUpon>Add Flower Shop Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flower Shop\Add Bunch Flowers Detail.resx">
+      <DependentUpon>Add Bunch Flowers Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flower Shop\Add Bunch Flowers.resx">
+      <DependentUpon>Add Bunch Flowers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flower Shop\Flower Shop Management Form.resx">
+      <DependentUpon>Flower Shop Management Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flower Shop\Update Flower Shop Form.resx">
+      <DependentUpon>Update Flower Shop Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Flower Management\Add Flower Form.resx">
       <DependentUpon>Add Flower Form.cs</DependentUpon>
