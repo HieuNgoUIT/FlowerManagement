@@ -133,7 +133,7 @@ namespace Flower_Management_System.Flower_Management
             Button_Add_Employee_Setting();
             Button_Update_Employee_Setting();
             Button_Delete_Employee_Setting();
-            Button_Save_Employee_Setting();
+            //Button_Save_Employee_Setting();
             Button_Close_Form_Setting();
             Button_Refresh_Form_Setting();
         }
@@ -159,11 +159,11 @@ namespace Flower_Management_System.Flower_Management
             BT_Delete.FlatStyle = FlatStyle.Flat;
             BT_Delete.FlatAppearance.BorderSize = 0;
         }
-        private void Button_Save_Employee_Setting()
-        {
-            BT_Save.FlatStyle = FlatStyle.Flat;
-            BT_Save.FlatAppearance.BorderSize = 0;
-        }
+        //private void Button_Save_Employee_Setting()
+        //{
+        //    BT_Save.FlatStyle = FlatStyle.Flat;
+        //    BT_Save.FlatAppearance.BorderSize = 0;
+        //}
         private void Button_Close_Form_Setting()
         {
             BT_CLose_Form.FlatStyle = FlatStyle.Flat;
@@ -493,6 +493,15 @@ namespace Flower_Management_System.Flower_Management
             this.DGV_BunchDetail.RowTemplate.Resizable = DataGridViewTriState.False;
             // -------------------------------------------------------------------------
             this.DGV_BunchDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            //this.DGV_BunchDetail.Columns[0].DataPropertyName = "FlowerID";
+            //this.DGV_BunchDetail.Columns[0].Width = 110;
+            //this.DGV_BunchDetail.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            //this.DGV_BunchDetail.Columns[1].DataPropertyName = "FullName";
+            //this.DGV_BunchDetail.Columns[1].Width = 275;
+            //this.DGV_BunchDetail.Columns[2].DataPropertyName = "Quantity";
+            //this.DGV_BunchDetail.Columns[2].Visible = false;
+           
         }
 
         private void Database_Cart_Detail_setting()
@@ -502,11 +511,8 @@ namespace Flower_Management_System.Flower_Management
         }
 
         private void TB_BunchID_TextChanged(object sender, EventArgs e)
-        {
-           // string query_SQL_command = "select Cart_ID, Flower_ID, Flower.FullName, CartDetail.Quantity, CartDetail.Price, Flower.Picture from CartDetail, Flower, Cart where CartDetail.Cart_ID = Cart.ID and Cart.ID = '" + LB_CardID_Data.Text + "' and CartDetail.Flower_ID = Flower.ID order by Cart_ID asc";
-           // DGV_CartDetail.DataSource = Cart.Get_Database(query_SQL_command);
-
-            string query_SQL_command = "select BunchFlowersID, FlowerID, BunchFlowersDetail.Quantity from BunchFlowersDetail, BunchFlowersShop where BunchFlowersDetail.BunchFlowersID = '" + TB_BunchID.Text + "';";
+        {          
+            string query_SQL_command = "select  FlowerID, Flower.FullName , BunchFlowersDetail.Quantity from BunchFlowersDetail, BunchFlowersShop ,Flower where BunchFlowersDetail.BunchFlowersID = BunchFlowersShop.ID and BunchFlowersShop.ID = '"+ TB_BunchID.Text +"'and BunchFlowersDetail.FlowerID = Flower.ID;";
             DGV_BunchDetail.DataSource = Flower.Get_Database(query_SQL_command);
         }
 
@@ -571,6 +577,11 @@ namespace Flower_Management_System.Flower_Management
         {
             Add_BunchFlowers_Form add_flower_form = new Add_BunchFlowers_Form();
             add_flower_form.Show();
+        }
+
+        private void DGV_BunchDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
