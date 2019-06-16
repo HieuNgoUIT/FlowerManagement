@@ -119,7 +119,7 @@
             // 
             // BT_FlowerShop
             // 
-            this.BT_FlowerShop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_FlowerShop.BackgroundImage")));
+            this.BT_FlowerShop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Shop.BackgroundImage")));
             this.BT_FlowerShop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BT_FlowerShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_FlowerShop.ForeColor = System.Drawing.Color.Black;

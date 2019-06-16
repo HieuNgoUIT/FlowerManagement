@@ -79,7 +79,7 @@
             // 
             this.BT_Save.BackColor = System.Drawing.Color.White;
             this.BT_Save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Save.BackgroundImage")));
-            this.BT_Save.Location = new System.Drawing.Point(710, 281);
+            this.BT_Save.Location = new System.Drawing.Point(860, 563);
             this.BT_Save.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Save.Name = "BT_Save";
             this.BT_Save.Size = new System.Drawing.Size(85, 79);
@@ -214,12 +214,12 @@
             this.LB_Quantity.AutoSize = true;
             this.LB_Quantity.BackColor = System.Drawing.Color.White;
             this.LB_Quantity.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Quantity.Location = new System.Drawing.Point(27, 673);
+            this.LB_Quantity.Location = new System.Drawing.Point(7, 671);
             this.LB_Quantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Quantity.Name = "LB_Quantity";
-            this.LB_Quantity.Size = new System.Drawing.Size(123, 32);
+            this.LB_Quantity.Size = new System.Drawing.Size(117, 32);
             this.LB_Quantity.TabIndex = 107;
-            this.LB_Quantity.Text = "Quantity :";
+            this.LB_Quantity.Text = "Quantity ";
             // 
             // TB_Quantity
             // 
