@@ -8,6 +8,7 @@ namespace Flower_Management_System.Cart_Management
 {
     public partial class Add_BunchFlowers_Form : Form
     {
+        string image_location;
         public Add_BunchFlowers_Form()
         {
             InitializeComponent();
@@ -71,12 +72,12 @@ namespace Flower_Management_System.Cart_Management
             BT_CLose_Form.FlatStyle = FlatStyle.Flat;
             BT_CLose_Form.FlatAppearance.BorderSize = 0;
 
-           
+
         }
         // -------------------------------------------------------------------------
         private void BT_Save_Click(object sender, EventArgs e)
         {
-            if (TB_BunchFlowersID.Text != "" && TB_Fullname.Text != "" )
+            if (TB_BunchFlowersID.Text != "" && TB_Fullname.Text != "")
             {
                 if (Save_Process() == true)
                 {
@@ -96,16 +97,17 @@ namespace Flower_Management_System.Cart_Management
             System_Database_SQL A = new System_Database_SQL();
             string check_id_cart = "select ID from BunchFlowersShop where ID = '" + TB_BunchFlowersID.Text + "'";
             if (A.Check_Exist_Value(check_id_cart) == false)
-            {                             
-                    string add_query = "insert into BunchFlowersShop (ID, Fullname, Price,Quantity,DueDate) values"
-                                             + " ('" + TB_BunchFlowersID.Text + "'"
-                                             + ", '" + TB_Fullname.Text + "'"
-                                             + ", '" + TB_Price.Text + "'"
-                                             + ", '" + TB_Quantity.Text + "'"
-                                             + ", '" + TB_DueDate.Text + "')";
-                    A.Basic_Query(add_query);
-                    return true;
-                
+            {
+                string add_query = "insert into BunchFlowersShop (ID, Fullname, Price,Quantity,DueDate,Picture) values"
+                                         + " ('" + TB_BunchFlowersID.Text + "'"
+                                         + ", '" + TB_Fullname.Text + "'"
+                                         + ", '" + TB_Price.Text + "'"
+                                         + ", '" + TB_Quantity.Text + "'"
+                                         + ", '" + TB_DueDate.Text + "'"
+                                         + ", @img)";
+                A.Advance_Query(image_location, add_query);
+                return true;
+
             }
             else
             {
@@ -149,5 +151,22 @@ namespace Flower_Management_System.Cart_Management
         {
             this.Cursor = Cursors.Default;
         }
+
+        private void LB_Browse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog browse_2 = new OpenFileDialog();
+            browse_2.Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png|All Files (*.*)|*.*";
+            browse_2.Title = "Select Flower Image";
+            if (browse_2.ShowDialog(this) == DialogResult.OK)
+            {
+                image_location = browse_2.FileName.ToString();
+                PB_Picture.ImageLocation = image_location;
+            }
+            else
+            {
+                image_location = "";
+            }
+        }
+       
     }
 }

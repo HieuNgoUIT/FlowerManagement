@@ -44,6 +44,9 @@
             this.TB_Quantity = new System.Windows.Forms.TextBox();
             this.LB_DueDate = new System.Windows.Forms.Label();
             this.TB_DueDate = new System.Windows.Forms.TextBox();
+            this.PB_Picture = new System.Windows.Forms.PictureBox();
+            this.LB_Browse = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Picture)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Price
@@ -230,13 +233,41 @@
             this.TB_DueDate.TabIndex = 128;
             this.TB_DueDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // PB_Picture
+            // 
+            this.PB_Picture.BackColor = System.Drawing.Color.White;
+            this.PB_Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PB_Picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PB_Picture.Location = new System.Drawing.Point(465, 29);
+            this.PB_Picture.Margin = new System.Windows.Forms.Padding(4);
+            this.PB_Picture.Name = "PB_Picture";
+            this.PB_Picture.Size = new System.Drawing.Size(459, 465);
+            this.PB_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Picture.TabIndex = 129;
+            this.PB_Picture.TabStop = false;
+            // 
+            // LB_Browse
+            // 
+            this.LB_Browse.AutoSize = true;
+            this.LB_Browse.BackColor = System.Drawing.Color.White;
+            this.LB_Browse.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Browse.Location = new System.Drawing.Point(572, 513);
+            this.LB_Browse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Browse.Name = "LB_Browse";
+            this.LB_Browse.Size = new System.Drawing.Size(105, 37);
+            this.LB_Browse.TabIndex = 130;
+            this.LB_Browse.Text = "Browse";
+            this.LB_Browse.Click += new System.EventHandler(this.LB_Browse_Click);
+            // 
             // Add_BunchFlowers_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(412, 651);
+            this.ClientSize = new System.Drawing.Size(1011, 651);
+            this.Controls.Add(this.LB_Browse);
+            this.Controls.Add(this.PB_Picture);
             this.Controls.Add(this.TB_DueDate);
             this.Controls.Add(this.LB_DueDate);
             this.Controls.Add(this.TB_Quantity);
@@ -258,6 +289,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_New_Cart";
             this.Load += new System.EventHandler(this.Add_New_Cart_Form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +311,7 @@
         private System.Windows.Forms.TextBox TB_Quantity;
         private System.Windows.Forms.Label LB_DueDate;
         private System.Windows.Forms.TextBox TB_DueDate;
+        private System.Windows.Forms.PictureBox PB_Picture;
+        private System.Windows.Forms.Label LB_Browse;
     }
 }

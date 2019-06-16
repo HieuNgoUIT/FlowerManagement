@@ -33,10 +33,12 @@ namespace Flower_Management_System.Flower_Management
             Button_Setting();
             TextBox_Setting();
             PictureBox_Setting();
+
             DataGridView_Setting();
+            DataGridView2_Setting();
+
             Database_setting();
             Database_setting2();
-            Database_Cart_Detail_setting();
             DataGridView_Bunch_Detail_Setting();
         }
 
@@ -316,6 +318,7 @@ namespace Flower_Management_System.Flower_Management
             // -------------------------------------------------------------------------
             this.Data_Grid_View.Columns[0].DataPropertyName = "ID";
             this.Data_Grid_View.Columns[0].Width = 110;
+            this.Data_Grid_View.Columns[0].Visible = false;
             this.Data_Grid_View.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             this.Data_Grid_View.Columns[1].DataPropertyName = "FullName";
             this.Data_Grid_View.Columns[1].Width = 275;
@@ -327,6 +330,7 @@ namespace Flower_Management_System.Flower_Management
             this.Data_Grid_View.Columns[4].Visible = false;
             this.Data_Grid_View.Columns[5].DataPropertyName = "Picture";
             this.Data_Grid_View.Columns[5].Visible = false;
+           
             // -------------------------------------------------------------------------
             this.Data_Grid_View.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             // -------------------------------------------------------------------------
@@ -359,6 +363,74 @@ namespace Flower_Management_System.Flower_Management
             this.Data_Grid_View.RowTemplate.Resizable = DataGridViewTriState.False;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+        private void DataGridView2_Setting()
+        {
+            this.Data_Grid_View2.AllowUserToAddRows = false;
+            this.Data_Grid_View2.AllowUserToDeleteRows = false;
+            this.Data_Grid_View2.AllowUserToResizeColumns = false;
+            this.Data_Grid_View2.AllowUserToResizeRows = false;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            this.Data_Grid_View2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.BackgroundColor = Color.White;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.BorderStyle = BorderStyle.None;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.MultiSelect = false;
+            // -------------------------------------------------------------------------
+          //  this.Data_Grid_View2.Columns[0].DataPropertyName = "ID";
+          //  this.Data_Grid_View2.Columns[0].Width = 110;
+          //  this.Data_Grid_View2.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+          //  this.Data_Grid_View2.Columns[1].DataPropertyName = "FullName";
+          //  this.Data_Grid_View2.Columns[1].Width = 275;
+          //  this.Data_Grid_View2.Columns[2].DataPropertyName = "Price";
+            this.Data_Grid_View2.Columns[0].Visible = false;
+           // this.DGV_BunchDetail.Columns[0].Visible = false;
+            //  this.Data_Grid_View2.Columns[3].DataPropertyName = "UseFor";
+            // // this.Data_Grid_View2.Columns[3].Visible = false;
+            //  this.Data_Grid_View2.Columns[4].DataPropertyName = "Country";
+            // // this.Data_Grid_View2.Columns[4].Visible = false;
+            //  this.Data_Grid_View2.Columns[5].DataPropertyName = "Picture";
+            //  //this.Data_Grid_View2.Columns[5].Visible = false;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            this.Data_Grid_View2.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            this.Data_Grid_View2.ColumnHeadersDefaultCellStyle.ForeColor = Color.Navy;
+            this.Data_Grid_View2.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
+            this.Data_Grid_View2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // căn giữa chữ ô header
+                                                                                                                     // -------------------------------------------------------------------------
+            this.Data_Grid_View2.ColumnHeadersHeight = 50;
+            this.Data_Grid_View2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.Cursor = Cursors.Hand;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.EnableHeadersVisualStyles = false;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.DefaultCellStyle.BackColor = Color.White;
+            this.Data_Grid_View2.DefaultCellStyle.Font = new Font("Segoe UI", 13, FontStyle.Bold);
+            this.Data_Grid_View2.DefaultCellStyle.ForeColor = Color.Black;
+            this.Data_Grid_View2.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
+            this.Data_Grid_View2.DefaultCellStyle.SelectionBackColor = Color.MediumPurple;
+            this.Data_Grid_View2.DefaultCellStyle.SelectionForeColor = Color.White;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.RowHeadersVisible = false; // false : có thể chỉnh design theo ý mình
+                                                           // -------------------------------------------------------------------------
+            this.Data_Grid_View2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.RowTemplate.Height = 49;
+            this.Data_Grid_View2.RowTemplate.ReadOnly = true;
+            this.Data_Grid_View2.RowTemplate.Resizable = DataGridViewTriState.False;
+            // -------------------------------------------------------------------------
+            this.Data_Grid_View2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+
+
         }
         private void Data_Grid_View_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -424,8 +496,8 @@ namespace Flower_Management_System.Flower_Management
             LB_Country_Data.DataBindings.Clear();
             LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
 
-            LB_Quantity_Data.DataBindings.Clear();
-            LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
+            //LB_Quantity_Data.DataBindings.Clear();
+           // LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
         }
 
         private void Database_setting2()
@@ -443,6 +515,12 @@ namespace Flower_Management_System.Flower_Management
         {
             TB_BunchID.DataBindings.Clear();
             TB_BunchID.DataBindings.Add("Text", this.Data_Grid_View2.DataSource, "ID");
+
+            //TB_DueDate.DataBindings.Clear();
+            //TB_DueDate.DataBindings.Add("Text", this.Data_Grid_View2.DataSource, "DueDate");
+
+            TB_Price.DataBindings.Clear();
+            TB_Price.DataBindings.Add("Text", this.Data_Grid_View2.DataSource, "Price");
 
         }
 
@@ -485,7 +563,7 @@ namespace Flower_Management_System.Flower_Management
             this.DGV_BunchDetail.DefaultCellStyle.SelectionForeColor = Color.White;
             // -------------------------------------------------------------------------
             this.DGV_BunchDetail.RowHeadersVisible = false; // false : có thể chỉnh design theo ý mình
-                                                           // -------------------------------------------------------------------------
+                                                            // -------------------------------------------------------------------------
             this.DGV_BunchDetail.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             // -------------------------------------------------------------------------
             this.DGV_BunchDetail.RowTemplate.Height = 35;
@@ -501,18 +579,18 @@ namespace Flower_Management_System.Flower_Management
             //this.DGV_BunchDetail.Columns[1].Width = 275;
             //this.DGV_BunchDetail.Columns[2].DataPropertyName = "Quantity";
             //this.DGV_BunchDetail.Columns[2].Visible = false;
-           
+
         }
 
-        private void Database_Cart_Detail_setting()
+        private void DatabaseDetail_setting()
         {
-            //Get_Cart_Detail_Database();
-            Bing_Cart_Detail_Data();
+            string query_SQL_command = "select * from BunchFlowersDetail";
+            DGV_BunchDetail.DataSource = Flower.Get_Database(query_SQL_command);
         }
 
         private void TB_BunchID_TextChanged(object sender, EventArgs e)
-        {          
-            string query_SQL_command = "select  FlowerID, Flower.FullName , BunchFlowersDetail.Quantity from BunchFlowersDetail, BunchFlowersShop ,Flower where BunchFlowersDetail.BunchFlowersID = BunchFlowersShop.ID and BunchFlowersShop.ID = '"+ TB_BunchID.Text +"'and BunchFlowersDetail.FlowerID = Flower.ID;";
+        {
+            string query_SQL_command = "select Flower.FullName , BunchFlowersDetail.Quantity from BunchFlowersDetail, BunchFlowersShop ,Flower where BunchFlowersDetail.BunchFlowersID = BunchFlowersShop.ID and BunchFlowersShop.ID = '" + TB_BunchID.Text + "'and BunchFlowersDetail.FlowerID = Flower.ID;";
             DGV_BunchDetail.DataSource = Flower.Get_Database(query_SQL_command);
         }
 
@@ -522,23 +600,7 @@ namespace Flower_Management_System.Flower_Management
         //    string query_SQL_command = "select BunchFlowersID, FlowerID, BunchFlowersDetail.Quantity from BunchFlowersDetail, BunchFlowersShop where BunchFlowersDetail.BunchFlowersID = BunchFlowersShop.ID";
         //    DGV_CartDetail.DataSource = Flower.Get_Database(query_SQL_command);
         //}
-        public void Bing_Cart_Detail_Data()
-        {
-            //LB_CardID_Data.DataBindings.Clear();
-            //LB_CardID_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "ID");
-
-            //LB_CustomerID_Data.DataBindings.Clear();
-            //LB_CustomerID_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Customer_ID");
-
-            //LB_CustomerName_Data.DataBindings.Clear();
-            //LB_CustomerName_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "FullName");
-
-            //LB_DateBuy_Data.DataBindings.Clear();
-            //LB_DateBuy_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "OnDate");
-
-            //LB_Price_Data.DataBindings.Clear();
-            //LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "TotalPrice");
-        }
+       
         // -------------------------------------------------------------------------
 
         //      +-----------+
@@ -581,6 +643,48 @@ namespace Flower_Management_System.Flower_Management
 
         private void DGV_BunchDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void BT_Delete2_Click(object sender, EventArgs e)
+        {
+            string delete_query_1 = "delete from BunchFlowersDetail where BunchFlowersID ='" + TB_BunchID.Text + "' ";
+            string delete_query_2 = "delete from BunchFlowersShop where ID = '" + TB_BunchID.Text + "'";
+            try
+            {
+                Flower.Basic_Query(delete_query_1);
+                Flower.Basic_Query(delete_query_2);
+            }
+            catch
+            {
+
+            }
+            
+            Database_setting2();
+            DatabaseDetail_setting();
+
+
+        }
+
+        private void BT_Refresh2_Click(object sender, EventArgs e)
+        {
+            Database_setting2();
+        }
+
+        private void Data_Grid_View2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            byte[] imageData = (byte[])Data_Grid_View2.CurrentRow.Cells[7].Value;
+            try
+            {
+                MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length);
+                ms.Write(imageData, 0, imageData.Length);
+                PB_Picture.Image = Image.FromStream(ms, true);
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
 
         }
     }

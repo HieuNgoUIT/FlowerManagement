@@ -158,8 +158,8 @@ namespace Flower_Management_System.Flower_Management
         }
         private void Button_Save_Employee_Setting()
         {
-            BT_Save.FlatStyle = FlatStyle.Flat;
-            BT_Save.FlatAppearance.BorderSize = 0;
+            //BT_Save.FlatStyle = FlatStyle.Flat;
+           // BT_Save.FlatAppearance.BorderSize = 0;
         }
         private void Button_Close_Form_Setting()
         {

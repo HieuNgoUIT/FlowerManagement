@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cart_Management_Form));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PB_Picture = new System.Windows.Forms.PictureBox();
             this.LB_Money = new System.Windows.Forms.Label();
             this.LB_TotalPrice = new System.Windows.Forms.Label();
@@ -43,7 +43,6 @@
             this.LB_CardID_Data = new System.Windows.Forms.Label();
             this.LB_CustomerName_Data = new System.Windows.Forms.Label();
             this.LB_DateBuy = new System.Windows.Forms.Label();
-            this.BT_Save = new System.Windows.Forms.Button();
             this.BT_CLose_Form = new System.Windows.Forms.Button();
             this.BT_Delete = new System.Windows.Forms.Button();
             this.LB_CardID = new System.Windows.Forms.Label();
@@ -78,7 +77,7 @@
             this.PB_Picture.BackColor = System.Drawing.Color.White;
             this.PB_Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PB_Picture.Location = new System.Drawing.Point(1260, 158);
-            this.PB_Picture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_Picture.Margin = new System.Windows.Forms.Padding(4);
             this.PB_Picture.Name = "PB_Picture";
             this.PB_Picture.Size = new System.Drawing.Size(460, 465);
             this.PB_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -116,7 +115,7 @@
             this.BT_Refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Refresh.BackgroundImage")));
             this.BT_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BT_Refresh.Location = new System.Drawing.Point(567, 121);
-            this.BT_Refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BT_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Refresh.Name = "BT_Refresh";
             this.BT_Refresh.Size = new System.Drawing.Size(80, 74);
             this.BT_Refresh.TabIndex = 102;
@@ -179,28 +178,13 @@
             this.LB_DateBuy.TabIndex = 97;
             this.LB_DateBuy.Text = "Date buy :";
             // 
-            // BT_Save
-            // 
-            this.BT_Save.BackColor = System.Drawing.Color.White;
-            this.BT_Save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Save.BackgroundImage")));
-            this.BT_Save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BT_Save.Location = new System.Drawing.Point(1051, 121);
-            this.BT_Save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BT_Save.Name = "BT_Save";
-            this.BT_Save.Size = new System.Drawing.Size(88, 74);
-            this.BT_Save.TabIndex = 95;
-            this.BT_Save.UseVisualStyleBackColor = false;
-            this.BT_Save.Click += new System.EventHandler(this.BT_Save_Click);
-            this.BT_Save.MouseEnter += new System.EventHandler(this.BT_Save_MouseEnter);
-            this.BT_Save.MouseLeave += new System.EventHandler(this.BT_Save_MouseLeave);
-            // 
             // BT_CLose_Form
             // 
             this.BT_CLose_Form.BackColor = System.Drawing.Color.White;
             this.BT_CLose_Form.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_CLose_Form.BackgroundImage")));
             this.BT_CLose_Form.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BT_CLose_Form.Location = new System.Drawing.Point(1168, 22);
-            this.BT_CLose_Form.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BT_CLose_Form.Margin = new System.Windows.Forms.Padding(4);
             this.BT_CLose_Form.Name = "BT_CLose_Form";
             this.BT_CLose_Form.Size = new System.Drawing.Size(43, 39);
             this.BT_CLose_Form.TabIndex = 94;
@@ -215,7 +199,7 @@
             this.BT_Delete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Delete.BackgroundImage")));
             this.BT_Delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BT_Delete.Location = new System.Drawing.Point(887, 121);
-            this.BT_Delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BT_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Delete.Name = "BT_Delete";
             this.BT_Delete.Size = new System.Drawing.Size(88, 74);
             this.BT_Delete.TabIndex = 92;
@@ -267,7 +251,7 @@
             this.BT_Add.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Add.BackgroundImage")));
             this.BT_Add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BT_Add.Location = new System.Drawing.Point(723, 121);
-            this.BT_Add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BT_Add.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Add.Name = "BT_Add";
             this.BT_Add.Size = new System.Drawing.Size(88, 74);
             this.BT_Add.TabIndex = 87;
@@ -281,7 +265,7 @@
             this.TB_Search.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Search.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_Search.Location = new System.Drawing.Point(137, 135);
-            this.TB_Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_Search.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Search.Name = "TB_Search";
             this.TB_Search.Size = new System.Drawing.Size(177, 35);
             this.TB_Search.TabIndex = 86;
@@ -292,7 +276,7 @@
             this.BT_Search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Search.BackgroundImage")));
             this.BT_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BT_Search.Location = new System.Drawing.Point(351, 121);
-            this.BT_Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BT_Search.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Search.Name = "BT_Search";
             this.BT_Search.Size = new System.Drawing.Size(67, 74);
             this.BT_Search.TabIndex = 85;
@@ -310,14 +294,14 @@
             this.Data_Grid_View.BackgroundColor = System.Drawing.Color.White;
             this.Data_Grid_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Data_Grid_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Data_Grid_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Data_Grid_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Data_Grid_View.ColumnHeadersHeight = 35;
             this.Data_Grid_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Data_Grid_View.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -327,16 +311,16 @@
             this.Column1,
             this.Column3});
             this.Data_Grid_View.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Data_Grid_View.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Data_Grid_View.DefaultCellStyle = dataGridViewCellStyle3;
             this.Data_Grid_View.Location = new System.Drawing.Point(29, 217);
-            this.Data_Grid_View.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Data_Grid_View.Margin = new System.Windows.Forms.Padding(4);
             this.Data_Grid_View.MultiSelect = false;
             this.Data_Grid_View.Name = "Data_Grid_View";
             this.Data_Grid_View.RowHeadersVisible = false;
@@ -357,8 +341,8 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "FullName";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column2.HeaderText = "Customer ID";
             this.Column2.Name = "Column2";
             // 
@@ -429,14 +413,14 @@
             this.DGV_CartDetail.BackgroundColor = System.Drawing.Color.White;
             this.DGV_CartDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV_CartDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_CartDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_CartDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_CartDetail.ColumnHeadersHeight = 35;
             this.DGV_CartDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGV_CartDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -447,17 +431,17 @@
             this.dataGridViewTextBoxColumn5,
             this.Column4});
             this.DGV_CartDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_CartDetail.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_CartDetail.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGV_CartDetail.EnableHeadersVisualStyles = false;
             this.DGV_CartDetail.Location = new System.Drawing.Point(567, 425);
-            this.DGV_CartDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGV_CartDetail.Margin = new System.Windows.Forms.Padding(4);
             this.DGV_CartDetail.MultiSelect = false;
             this.DGV_CartDetail.Name = "DGV_CartDetail";
             this.DGV_CartDetail.RowHeadersVisible = false;
@@ -481,8 +465,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Flower_ID";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn2.HeaderText = "Flower ID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 85;
@@ -534,7 +518,6 @@
             this.Controls.Add(this.LB_CardID_Data);
             this.Controls.Add(this.LB_CustomerName_Data);
             this.Controls.Add(this.LB_DateBuy);
-            this.Controls.Add(this.BT_Save);
             this.Controls.Add(this.BT_CLose_Form);
             this.Controls.Add(this.BT_Delete);
             this.Controls.Add(this.LB_CardID);
@@ -545,7 +528,7 @@
             this.Controls.Add(this.BT_Search);
             this.Controls.Add(this.Data_Grid_View);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Cart_Management_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cart_Management";
@@ -568,7 +551,6 @@
         private System.Windows.Forms.Label LB_CardID_Data;
         private System.Windows.Forms.Label LB_CustomerName_Data;
         private System.Windows.Forms.Label LB_DateBuy;
-        private System.Windows.Forms.Button BT_Save;
         private System.Windows.Forms.Button BT_CLose_Form;
         private System.Windows.Forms.Button BT_Delete;
         private System.Windows.Forms.Label LB_CardID;
