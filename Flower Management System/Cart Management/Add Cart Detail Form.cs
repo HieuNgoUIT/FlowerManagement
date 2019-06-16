@@ -140,14 +140,30 @@ namespace Flower_Management_System.Cart_Management
 
         private void Save_Process()
         {
-            string add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity) values"
-                                     + " ('" + LB_CartID.Text + "'"
-                                     + ", '" + LB_ID_Data.Text + "'"
-                                     + ", '" + TB_Quantity.Text + "')";
-            string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
+            string FirstCharacter = LB_ID_Data.Text.Substring(0, 1);
+            string add_query="";
+            string updateFlowerQuantity="";
+            if (FirstCharacter == "F")
+            {
+                add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity) values"
+                                    + " ('" + LB_CartID.Text + "'"
+                                    + ", '" + LB_ID_Data.Text + "'"
+                                    + ", '" + TB_Quantity.Text + "')";
+                updateFlowerQuantity = "UPDATE FlowerShop set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
+            }
+            else
+            {
+                add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity) values"
+                                  + " ('" + LB_CartID.Text + "'"
+                                  + ", '" + LB_ID_Data.Text + "'"
+                                  + ", '" + TB_Quantity.Text + "')";
+                updateFlowerQuantity = "UPDATE BunchFlowersShop set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
+            }
+
 
             Cart_Detail.Basic_Query(add_query);
             Cart_Detail.Basic_Query(updateFlowerQuantity);
+
         }
         private void BT_CLose_Form_Click(object sender, EventArgs e)
         {
@@ -231,6 +247,7 @@ namespace Flower_Management_System.Cart_Management
             // -------------------------------------------------------------------------
             this.Data_Grid_View.Columns[0].DataPropertyName = "ID";
             this.Data_Grid_View.Columns[0].Width = 110;
+            this.Data_Grid_View.Columns[0].Visible = false;
             this.Data_Grid_View.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             this.Data_Grid_View.Columns[1].DataPropertyName = "FullName";
             this.Data_Grid_View.Columns[1].Width = 275;
@@ -277,6 +294,7 @@ namespace Flower_Management_System.Cart_Management
         }
         private void Data_Grid_View_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Bing_Data();
             byte[] imageData = (byte[])Data_Grid_View.CurrentRow.Cells[7].Value;
             try
             {
@@ -319,8 +337,11 @@ namespace Flower_Management_System.Cart_Management
         // -------------------------------------------------------------------------
         private void Get_Flower_Database()
         {
-            string query_SQL_command = "select * from Flower order by ID asc";
+            string query_SQL_command = "select * from FlowerShop order by ID asc";
             Data_Grid_View.DataSource = Cart_Detail.Get_Database(query_SQL_command);
+
+            string query_SQL_command2 = "select * from BunchFlowersShop order by ID asc";
+            Data_Grid_View2.DataSource = Cart_Detail.Get_Database(query_SQL_command2);
         }
         public void Bing_Data()
         {
@@ -339,8 +360,34 @@ namespace Flower_Management_System.Cart_Management
             LB_Country_Data.DataBindings.Clear();
             LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
 
-            LB_Quantity_Data.DataBindings.Clear();
-            LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
+            // LB_Quantity_Data.DataBindings.Clear();
+            //  LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
+        }
+
+
+
+        private void Data_Grid_View2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LB_Name_Data.DataBindings.Clear();
+            LB_Name_Data.DataBindings.Add("Text", this.Data_Grid_View2.DataSource, "FullName");
+
+            LB_ID_Data.DataBindings.Clear();
+            LB_ID_Data.DataBindings.Add("Text", this.Data_Grid_View2.DataSource, "ID");
+
+            LB_Price_Data.DataBindings.Clear();
+            LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View2.DataSource, "Price");
+
+            byte[] imageData = (byte[])Data_Grid_View2.CurrentRow.Cells[7].Value;
+            try
+            {
+                MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length);
+                ms.Write(imageData, 0, imageData.Length);
+                PB_Picture.Image = Image.FromStream(ms, true);
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
         }
 
         private void TB_Quantity_KeyPress(object sender, KeyPressEventArgs e)
