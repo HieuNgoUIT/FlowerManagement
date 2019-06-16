@@ -152,7 +152,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Data_Grid_View.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Data_Grid_View.Location = new System.Drawing.Point(13, 98);
+            this.Data_Grid_View.Location = new System.Drawing.Point(13, 124);
             this.Data_Grid_View.Margin = new System.Windows.Forms.Padding(4);
             this.Data_Grid_View.MultiSelect = false;
             this.Data_Grid_View.Name = "Data_Grid_View";
@@ -161,7 +161,7 @@
             this.Data_Grid_View.RowTemplate.ReadOnly = true;
             this.Data_Grid_View.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Data_Grid_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data_Grid_View.Size = new System.Drawing.Size(607, 372);
+            this.Data_Grid_View.Size = new System.Drawing.Size(607, 518);
             this.Data_Grid_View.TabIndex = 105;
             this.Data_Grid_View.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Data_Grid_View_CellContentClick);
             // 
@@ -214,7 +214,7 @@
             this.LB_Quantity.AutoSize = true;
             this.LB_Quantity.BackColor = System.Drawing.Color.White;
             this.LB_Quantity.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Quantity.Location = new System.Drawing.Point(86, 516);
+            this.LB_Quantity.Location = new System.Drawing.Point(27, 673);
             this.LB_Quantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Quantity.Name = "LB_Quantity";
             this.LB_Quantity.Size = new System.Drawing.Size(123, 32);
@@ -225,7 +225,7 @@
             // 
             this.TB_Quantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Quantity.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Quantity.Location = new System.Drawing.Point(237, 516);
+            this.TB_Quantity.Location = new System.Drawing.Point(182, 671);
             this.TB_Quantity.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Quantity.Name = "TB_Quantity";
             this.TB_Quantity.Size = new System.Drawing.Size(125, 34);

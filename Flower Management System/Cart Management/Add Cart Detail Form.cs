@@ -141,22 +141,27 @@ namespace Flower_Management_System.Cart_Management
         private void Save_Process()
         {
             string FirstCharacter = LB_ID_Data.Text.Substring(0, 1);
-            string add_query="";
-            string updateFlowerQuantity="";
+            string add_query = "";
+            string updateFlowerQuantity = "";
+            float price = float.Parse(LB_Price_Data.Text.ToString());
+            float quantity = float.Parse(TB_Quantity.Text.ToString());
+            float result = price * quantity;
             if (FirstCharacter == "F")
             {
-                add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity) values"
+                add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity,Price) values"
                                     + " ('" + LB_CartID.Text + "'"
                                     + ", '" + LB_ID_Data.Text + "'"
-                                    + ", '" + TB_Quantity.Text + "')";
+                                    + ", '" + TB_Quantity.Text + "'"
+                                     + ", '" + result + "')";
                 updateFlowerQuantity = "UPDATE FlowerShop set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
             }
             else
             {
-                add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity) values"
+                add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity,Price) values"
                                   + " ('" + LB_CartID.Text + "'"
                                   + ", '" + LB_ID_Data.Text + "'"
-                                  + ", '" + TB_Quantity.Text + "')";
+                                  + ", '" + TB_Quantity.Text + "'"
+                                   + ", '" + result + "')";
                 updateFlowerQuantity = "UPDATE BunchFlowersShop set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
             }
 
@@ -166,9 +171,7 @@ namespace Flower_Management_System.Cart_Management
 
         }
         private void BT_CLose_Form_Click(object sender, EventArgs e)
-        {
-            string update_price_Cart_Detail = "update CartDetail set Price = (Quantity * (select Price from Flower where CartDetail.Flower_ID = Flower.ID))";
-            Cart_Detail.Basic_Query(update_price_Cart_Detail);
+        {         
             string update_total_price_Cart = "update Cart set TotalPrice = (select sum(Price) from CartDetail where CartDetail.Cart_ID = '" + LB_CartID.Text + "') where Cart.ID = '" + LB_CartID.Text + "'";
             Cart_Detail.Basic_Query(update_total_price_Cart);
             Close();

@@ -167,6 +167,15 @@ namespace Flower_Management_System.Cart_Management
                 image_location = "";
             }
         }
-       
+
+        private void TB_Price_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TB_BunchFlowersID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
