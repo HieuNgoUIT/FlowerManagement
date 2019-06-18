@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Flower_Management_System.Login;
 using Flower_Management_System.Cart_Management;
 using Flower_Management_System.Splash_Screen;
+using Flower_Management_System.Flower_Management;
 
 namespace Flower_Management_System
 {
@@ -16,7 +17,7 @@ namespace Flower_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_Form());
+            Application.Run(new Main_Form(""));
         }
     }
 }

@@ -52,7 +52,7 @@ namespace Flower_Management_System.Database
 
         internal System_Database_SQL()
         {
-            Connect = new SqlConnection(@"Data Source=DESKTOP-J6PMV8B;Initial Catalog=Flower_Management_System;Integrated Security=True");
+            Connect = new SqlConnection(@"Data Source=DESKTOP-DLP1BUU;Initial Catalog=Flower_Management_System;Integrated Security=True");
             Command = new SqlCommand();
         }
         internal bool Check_Exist_Value(string value_check)
@@ -81,6 +81,7 @@ namespace Flower_Management_System.Database
                 return false;
             }
         }
+
         internal DataTable Get_Database(string query_SQL_command)
         {
             Connect.Open();
@@ -138,6 +139,25 @@ namespace Flower_Management_System.Database
 
             Connect.Close();
         }
+        internal void Advance_Query(byte[] image_byte, string query)
+        {
+            Connect.Open();
+         
+            Command.CommandText = query;
+
+            Command.CommandType = CommandType.Text;
+            Command.Connection = Connect;
+            Command.Parameters.Clear();
+            Command.Parameters.Add(new SqlParameter("@img", image_byte));
+
+            Command.ExecuteNonQuery();
+
+            Command.Dispose();
+
+            Connect.Close();
+        }
+
+
         internal object Search_Value_From_Database(string search_query)
         {
             object DataSource;

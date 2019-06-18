@@ -15,7 +15,7 @@ namespace Flower_Management_System.Cart_Management
     public partial class Add_Cart_Detail_Form : Form
     {
         System_Database_SQL Cart_Detail = new System_Database_SQL();
-        
+
         public Add_Cart_Detail_Form()
         {
             InitializeComponent();
@@ -128,6 +128,9 @@ namespace Flower_Management_System.Cart_Management
                 LB_Saved.Visible = true;
                 Save_Process();
                 TB_Quantity.Text = "";
+
+                Get_Flower_Database();
+                Bing_Data();
             }
             else
             {
@@ -137,17 +140,38 @@ namespace Flower_Management_System.Cart_Management
 
         private void Save_Process()
         {
-            string add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity) values"
-                                     + " ('" + LB_CartID.Text + "'"
-                                     + ", '" + LB_ID_Data.Text + "'"
-                                     + ", '" + TB_Quantity.Text + "')";
+            string FirstCharacter = LB_ID_Data.Text.Substring(0, 1);
+            string add_query = "";
+            string updateFlowerQuantity = "";
+            float price = float.Parse(LB_Price_Data.Text.ToString());
+            float quantity = float.Parse(TB_Quantity.Text.ToString());
+            float result = price * quantity;
+            if (FirstCharacter == "F")
+            {
+                add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity,Price) values"
+                                    + " ('" + LB_CartID.Text + "'"
+                                    + ", '" + LB_ID_Data.Text + "'"
+                                    + ", '" + TB_Quantity.Text + "'"
+                                     + ", '" + result + "')";
+                updateFlowerQuantity = "UPDATE FlowerShop set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
+            }
+            else
+            {
+                add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity,Price) values"
+                                  + " ('" + LB_CartID.Text + "'"
+                                  + ", '" + LB_ID_Data.Text + "'"
+                                  + ", '" + TB_Quantity.Text + "'"
+                                   + ", '" + result + "')";
+                updateFlowerQuantity = "UPDATE BunchFlowersShop set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
+            }
+
 
             Cart_Detail.Basic_Query(add_query);
+            Cart_Detail.Basic_Query(updateFlowerQuantity);
+
         }
         private void BT_CLose_Form_Click(object sender, EventArgs e)
-        {
-            string update_price_Cart_Detail = "update CartDetail set Price = (Quantity * (select Price from Flower where CartDetail.Flower_ID = Flower.ID))";
-            Cart_Detail.Basic_Query(update_price_Cart_Detail);
+        {         
             string update_total_price_Cart = "update Cart set TotalPrice = (select sum(Price) from CartDetail where CartDetail.Cart_ID = '" + LB_CartID.Text + "') where Cart.ID = '" + LB_CartID.Text + "'";
             Cart_Detail.Basic_Query(update_total_price_Cart);
             Close();
@@ -226,6 +250,7 @@ namespace Flower_Management_System.Cart_Management
             // -------------------------------------------------------------------------
             this.Data_Grid_View.Columns[0].DataPropertyName = "ID";
             this.Data_Grid_View.Columns[0].Width = 110;
+            this.Data_Grid_View.Columns[0].Visible = false;
             this.Data_Grid_View.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             this.Data_Grid_View.Columns[1].DataPropertyName = "FullName";
             this.Data_Grid_View.Columns[1].Width = 275;
@@ -272,7 +297,8 @@ namespace Flower_Management_System.Cart_Management
         }
         private void Data_Grid_View_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            byte[] imageData = (byte[])Data_Grid_View.CurrentRow.Cells[5].Value;
+            Bing_Data();
+            byte[] imageData = (byte[])Data_Grid_View.CurrentRow.Cells[7].Value;
             try
             {
                 MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length);
@@ -314,8 +340,11 @@ namespace Flower_Management_System.Cart_Management
         // -------------------------------------------------------------------------
         private void Get_Flower_Database()
         {
-            string query_SQL_command = "select * from Flower order by ID asc";
+            string query_SQL_command = "select * from FlowerShop order by ID asc";
             Data_Grid_View.DataSource = Cart_Detail.Get_Database(query_SQL_command);
+
+            string query_SQL_command2 = "select * from BunchFlowersShop order by ID asc";
+            Data_Grid_View2.DataSource = Cart_Detail.Get_Database(query_SQL_command2);
         }
         public void Bing_Data()
         {
@@ -333,6 +362,35 @@ namespace Flower_Management_System.Cart_Management
 
             LB_Country_Data.DataBindings.Clear();
             LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
+
+            // LB_Quantity_Data.DataBindings.Clear();
+            //  LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
+        }
+
+
+
+        private void Data_Grid_View2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LB_Name_Data.DataBindings.Clear();
+            LB_Name_Data.DataBindings.Add("Text", this.Data_Grid_View2.DataSource, "FullName");
+
+            LB_ID_Data.DataBindings.Clear();
+            LB_ID_Data.DataBindings.Add("Text", this.Data_Grid_View2.DataSource, "ID");
+
+            LB_Price_Data.DataBindings.Clear();
+            LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View2.DataSource, "Price");
+
+            byte[] imageData = (byte[])Data_Grid_View2.CurrentRow.Cells[7].Value;
+            try
+            {
+                MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length);
+                ms.Write(imageData, 0, imageData.Length);
+                PB_Picture.Image = Image.FromStream(ms, true);
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
         }
 
         private void TB_Quantity_KeyPress(object sender, KeyPressEventArgs e)

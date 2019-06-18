@@ -1,6 +1,6 @@
 ﻿namespace Flower_Management_System.Cart_Management
 {
-    partial class Add_Cart_Detail_Form
+    partial class Add_BunchFlowers_Detail_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Cart_Detail_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_BunchFlowers_Detail_Form));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PB_Picture = new System.Windows.Forms.PictureBox();
             this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,14 +39,9 @@
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LB_Money = new System.Windows.Forms.Label();
-            this.LB_UseFor_Data = new System.Windows.Forms.Label();
-            this.LB_UseFor = new System.Windows.Forms.Label();
             this.LB_Country_Data = new System.Windows.Forms.Label();
-            this.LB_Price_Data = new System.Windows.Forms.Label();
-            this.LB_ID_Data = new System.Windows.Forms.Label();
+            this.LB_FlowerID = new System.Windows.Forms.Label();
             this.LB_Name_Data = new System.Windows.Forms.Label();
-            this.LB_Price = new System.Windows.Forms.Label();
             this.BT_Save = new System.Windows.Forms.Button();
             this.BT_CLose_Form = new System.Windows.Forms.Button();
             this.LB_ID = new System.Windows.Forms.Label();
@@ -62,18 +54,12 @@
             this.LB_Quantity = new System.Windows.Forms.Label();
             this.TB_Quantity = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.LB_CartID = new System.Windows.Forms.Label();
+            this.LB_BunchID = new System.Windows.Forms.Label();
             this.LB_Saved = new System.Windows.Forms.Label();
-            this.Data_Grid_View2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LB_Quantity_Data = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data_Grid_View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Data_Grid_View2)).BeginInit();
             this.SuspendLayout();
             // 
             // PB_Picture
@@ -132,44 +118,6 @@
             this.c1.Name = "c1";
             this.c1.Width = 110;
             // 
-            // LB_Money
-            // 
-            this.LB_Money.AutoSize = true;
-            this.LB_Money.BackColor = System.Drawing.Color.White;
-            this.LB_Money.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Money.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.LB_Money.Location = new System.Drawing.Point(929, 491);
-            this.LB_Money.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_Money.Name = "LB_Money";
-            this.LB_Money.Size = new System.Drawing.Size(28, 32);
-            this.LB_Money.TabIndex = 105;
-            this.LB_Money.Text = "$";
-            // 
-            // LB_UseFor_Data
-            // 
-            this.LB_UseFor_Data.AutoSize = true;
-            this.LB_UseFor_Data.BackColor = System.Drawing.Color.White;
-            this.LB_UseFor_Data.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_UseFor_Data.ForeColor = System.Drawing.Color.Firebrick;
-            this.LB_UseFor_Data.Location = new System.Drawing.Point(959, 585);
-            this.LB_UseFor_Data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_UseFor_Data.Name = "LB_UseFor_Data";
-            this.LB_UseFor_Data.Size = new System.Drawing.Size(33, 32);
-            this.LB_UseFor_Data.TabIndex = 104;
-            this.LB_UseFor_Data.Text = "...";
-            // 
-            // LB_UseFor
-            // 
-            this.LB_UseFor.AutoSize = true;
-            this.LB_UseFor.BackColor = System.Drawing.Color.White;
-            this.LB_UseFor.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_UseFor.Location = new System.Drawing.Point(836, 585);
-            this.LB_UseFor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_UseFor.Name = "LB_UseFor";
-            this.LB_UseFor.Size = new System.Drawing.Size(110, 32);
-            this.LB_UseFor.TabIndex = 103;
-            this.LB_UseFor.Text = "Use For :";
-            // 
             // LB_Country_Data
             // 
             this.LB_Country_Data.AutoSize = true;
@@ -182,30 +130,17 @@
             this.LB_Country_Data.TabIndex = 101;
             this.LB_Country_Data.Text = "...";
             // 
-            // LB_Price_Data
+            // LB_FlowerID
             // 
-            this.LB_Price_Data.AutoSize = true;
-            this.LB_Price_Data.BackColor = System.Drawing.Color.White;
-            this.LB_Price_Data.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Price_Data.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.LB_Price_Data.Location = new System.Drawing.Point(956, 491);
-            this.LB_Price_Data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_Price_Data.Name = "LB_Price_Data";
-            this.LB_Price_Data.Size = new System.Drawing.Size(33, 32);
-            this.LB_Price_Data.TabIndex = 100;
-            this.LB_Price_Data.Text = "...";
-            // 
-            // LB_ID_Data
-            // 
-            this.LB_ID_Data.AutoSize = true;
-            this.LB_ID_Data.BackColor = System.Drawing.Color.White;
-            this.LB_ID_Data.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_ID_Data.Location = new System.Drawing.Point(900, 255);
-            this.LB_ID_Data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_ID_Data.Name = "LB_ID_Data";
-            this.LB_ID_Data.Size = new System.Drawing.Size(33, 32);
-            this.LB_ID_Data.TabIndex = 99;
-            this.LB_ID_Data.Text = "...";
+            this.LB_FlowerID.AutoSize = true;
+            this.LB_FlowerID.BackColor = System.Drawing.Color.White;
+            this.LB_FlowerID.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_FlowerID.Location = new System.Drawing.Point(900, 255);
+            this.LB_FlowerID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_FlowerID.Name = "LB_FlowerID";
+            this.LB_FlowerID.Size = new System.Drawing.Size(33, 32);
+            this.LB_FlowerID.TabIndex = 99;
+            this.LB_FlowerID.Text = "...";
             // 
             // LB_Name_Data
             // 
@@ -220,18 +155,6 @@
             this.LB_Name_Data.TabIndex = 98;
             this.LB_Name_Data.Text = "...";
             this.LB_Name_Data.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LB_Price
-            // 
-            this.LB_Price.AutoSize = true;
-            this.LB_Price.BackColor = System.Drawing.Color.White;
-            this.LB_Price.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Price.Location = new System.Drawing.Point(836, 491);
-            this.LB_Price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_Price.Name = "LB_Price";
-            this.LB_Price.Size = new System.Drawing.Size(81, 32);
-            this.LB_Price.TabIndex = 97;
-            this.LB_Price.Text = "Price :";
             // 
             // BT_Save
             // 
@@ -381,7 +304,7 @@
             this.Data_Grid_View.RowTemplate.ReadOnly = true;
             this.Data_Grid_View.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Data_Grid_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data_Grid_View.Size = new System.Drawing.Size(549, 246);
+            this.Data_Grid_View.Size = new System.Drawing.Size(549, 501);
             this.Data_Grid_View.TabIndex = 96;
             this.Data_Grid_View.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Data_Grid_View_CellClick);
             // 
@@ -418,22 +341,22 @@
             this.label1.Location = new System.Drawing.Point(823, 140);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 32);
+            this.label1.Size = new System.Drawing.Size(127, 32);
             this.label1.TabIndex = 109;
-            this.label1.Text = "CART ID :";
+            this.label1.Text = "Bunch ID :";
             // 
-            // LB_CartID
+            // LB_BunchID
             // 
-            this.LB_CartID.AutoSize = true;
-            this.LB_CartID.BackColor = System.Drawing.Color.White;
-            this.LB_CartID.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_CartID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.LB_CartID.Location = new System.Drawing.Point(956, 142);
-            this.LB_CartID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_CartID.Name = "LB_CartID";
-            this.LB_CartID.Size = new System.Drawing.Size(31, 29);
-            this.LB_CartID.TabIndex = 110;
-            this.LB_CartID.Text = "id";
+            this.LB_BunchID.AutoSize = true;
+            this.LB_BunchID.BackColor = System.Drawing.Color.White;
+            this.LB_BunchID.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_BunchID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.LB_BunchID.Location = new System.Drawing.Point(956, 142);
+            this.LB_BunchID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_BunchID.Name = "LB_BunchID";
+            this.LB_BunchID.Size = new System.Drawing.Size(31, 29);
+            this.LB_BunchID.TabIndex = 110;
+            this.LB_BunchID.Text = "id";
             // 
             // LB_Saved
             // 
@@ -449,120 +372,49 @@
             this.LB_Saved.Text = "Added";
             this.LB_Saved.Visible = false;
             // 
-            // Data_Grid_View2
+            // label2
             // 
-            this.Data_Grid_View2.AllowUserToAddRows = false;
-            this.Data_Grid_View2.AllowUserToDeleteRows = false;
-            this.Data_Grid_View2.AllowUserToResizeColumns = false;
-            this.Data_Grid_View2.AllowUserToResizeRows = false;
-            this.Data_Grid_View2.BackgroundColor = System.Drawing.Color.White;
-            this.Data_Grid_View2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Data_Grid_View2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Data_Grid_View2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.Data_Grid_View2.ColumnHeadersHeight = 50;
-            this.Data_Grid_View2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Data_Grid_View2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.Data_Grid_View2.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Data_Grid_View2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Data_Grid_View2.Location = new System.Drawing.Point(43, 522);
-            this.Data_Grid_View2.Margin = new System.Windows.Forms.Padding(4);
-            this.Data_Grid_View2.MultiSelect = false;
-            this.Data_Grid_View2.Name = "Data_Grid_View2";
-            this.Data_Grid_View2.RowHeadersVisible = false;
-            this.Data_Grid_View2.RowTemplate.Height = 50;
-            this.Data_Grid_View2.RowTemplate.ReadOnly = true;
-            this.Data_Grid_View2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Data_Grid_View2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data_Grid_View2.Size = new System.Drawing.Size(549, 265);
-            this.Data_Grid_View2.TabIndex = 112;
-            this.Data_Grid_View2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Data_Grid_View2_CellClick);
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(836, 536);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 32);
+            this.label2.TabIndex = 112;
+            this.label2.Text = "Quantity :";
             // 
-            // dataGridViewTextBoxColumn1
+            // LB_Quantity_Data
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 110;
+            this.LB_Quantity_Data.AutoSize = true;
+            this.LB_Quantity_Data.BackColor = System.Drawing.Color.White;
+            this.LB_Quantity_Data.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Quantity_Data.ForeColor = System.Drawing.Color.Firebrick;
+            this.LB_Quantity_Data.Location = new System.Drawing.Point(959, 536);
+            this.LB_Quantity_Data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Quantity_Data.Name = "LB_Quantity_Data";
+            this.LB_Quantity_Data.Size = new System.Drawing.Size(33, 32);
+            this.LB_Quantity_Data.TabIndex = 113;
+            this.LB_Quantity_Data.Text = "...";
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "FullName";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Full Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Price";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Gender";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "UseFor";
-            this.dataGridViewTextBoxColumn4.HeaderText = "UseFor";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Country";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Country";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Picture";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Picture";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // Add_Cart_Detail_Form
+            // Add_BunchFlowers_Detail_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1768, 800);
-            this.Controls.Add(this.Data_Grid_View2);
+            this.Controls.Add(this.LB_Quantity_Data);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.LB_Saved);
-            this.Controls.Add(this.LB_CartID);
+            this.Controls.Add(this.LB_BunchID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TB_Quantity);
             this.Controls.Add(this.LB_Quantity);
             this.Controls.Add(this.PB_Picture);
-            this.Controls.Add(this.LB_Money);
-            this.Controls.Add(this.LB_UseFor_Data);
-            this.Controls.Add(this.LB_UseFor);
             this.Controls.Add(this.LB_Country_Data);
-            this.Controls.Add(this.LB_Price_Data);
-            this.Controls.Add(this.LB_ID_Data);
+            this.Controls.Add(this.LB_FlowerID);
             this.Controls.Add(this.LB_Name_Data);
-            this.Controls.Add(this.LB_Price);
             this.Controls.Add(this.BT_Save);
             this.Controls.Add(this.BT_CLose_Form);
             this.Controls.Add(this.LB_ID);
@@ -574,13 +426,12 @@
             this.Controls.Add(this.Data_Grid_View);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Add_Cart_Detail_Form";
+            this.Name = "Add_BunchFlowers_Detail_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_Cart_Detail_Form";
             this.Load += new System.EventHandler(this.Add_Cart_Detail_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PB_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data_Grid_View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Data_Grid_View2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -595,14 +446,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn c1;
-        private System.Windows.Forms.Label LB_Money;
-        private System.Windows.Forms.Label LB_UseFor_Data;
-        private System.Windows.Forms.Label LB_UseFor;
         private System.Windows.Forms.Label LB_Country_Data;
-        private System.Windows.Forms.Label LB_Price_Data;
-        private System.Windows.Forms.Label LB_ID_Data;
+        private System.Windows.Forms.Label LB_FlowerID;
         private System.Windows.Forms.Label LB_Name_Data;
-        private System.Windows.Forms.Label LB_Price;
         private System.Windows.Forms.Button BT_Save;
         private System.Windows.Forms.Button BT_CLose_Form;
         private System.Windows.Forms.Label LB_ID;
@@ -615,14 +461,9 @@
         private System.Windows.Forms.Label LB_Quantity;
         private System.Windows.Forms.TextBox TB_Quantity;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LB_CartID;
+        private System.Windows.Forms.Label LB_BunchID;
         private System.Windows.Forms.Label LB_Saved;
-        private System.Windows.Forms.DataGridView Data_Grid_View2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LB_Quantity_Data;
     }
 }

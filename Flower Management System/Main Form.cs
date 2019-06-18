@@ -101,7 +101,7 @@ namespace Flower_Management_System
         {
             Flower_Management_Form FMF = new Flower_Management_Form();
             FMF.Show();
-        }
+        }       
         private void BT_Flower_Management_MouseEnter(object sender, EventArgs e)
         {
             BT_Flower_Management.FlatStyle = FlatStyle.Flat;
@@ -112,6 +112,23 @@ namespace Flower_Management_System
         {
             BT_Flower_Management.FlatStyle = FlatStyle.Flat;
             BT_Flower_Management.FlatAppearance.BorderSize = 0;
+        }
+
+        private void BT_FlowerShop_MouseEnter(object sender, EventArgs e)
+        {
+            BT_FlowerShop.FlatStyle = FlatStyle.Flat;
+            BT_FlowerShop.FlatAppearance.BorderSize = 1;
+            BT_FlowerShop.FlatAppearance.BorderColor = Color.DodgerBlue;
+        }
+        private void BT_FlowerShop_MouseLeave(object sender, EventArgs e)
+        {
+            BT_FlowerShop.FlatStyle = FlatStyle.Flat;
+            BT_FlowerShop.FlatAppearance.BorderSize = 0;
+        }
+        private void BT_FlowerShop_MouseClick(object sender, MouseEventArgs e)
+        {
+            FlowerShop_Management_Form FMF = new FlowerShop_Management_Form();
+            FMF.Show();
         }
 
         private void BT_CLose_Form_Click(object sender, EventArgs e)
@@ -139,5 +156,6 @@ namespace Flower_Management_System
             StatiticForm SF = new StatiticForm();
             SF.Show();
         }
+
     }
 }

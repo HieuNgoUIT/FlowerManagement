@@ -8,33 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Flower_Management_System.Database;
-using Flower_Management_System.Employee_Management;
+using System.IO;
 
-namespace Flower_Management_System.Customer_Management
+namespace Flower_Management_System.Cart_Management
 {
-    public partial class Customer_Management_Form : Form
+    public partial class Add_BunchFlowers_Detail_Form : Form
     {
-        System_Database_SQL Customer = new System_Database_SQL();
+        System_Database_SQL Cart_Detail = new System_Database_SQL();
 
-        public Customer_Management_Form()
+        public Add_BunchFlowers_Detail_Form()
         {
             InitializeComponent();
         }
 
-        // +--------------+
-        // | MAIN SETTING |
-        // +--------------+
-
-        // -------------------------------------------------------------------------
-        private void Customer_Management_Form_Load(object sender, EventArgs e)
+        private void Add_Cart_Detail_Form_Load(object sender, EventArgs e)
         {
-            Customer_Management_Form_Setting();
+            Add_Cart_Detail_Form_Setting();
             Label_Setting();
             Button_Setting();
             TextBox_Setting();
+            PictureBox_Setting();
             DataGridView_Setting();
             Database_setting();
         }
+
         // -------------------------------------------------------------------------
 
         // +------------------+
@@ -48,9 +45,8 @@ namespace Flower_Management_System.Customer_Management
         //      +--------------+
 
         // -------------------------------------------------------------------------
-        private void Customer_Management_Form_Setting()
+        private void Add_Cart_Detail_Form_Setting()
         {
-            this.BackColor = Color.FromArgb(237, 28, 36);
             this.TransparencyKey = Color.FromArgb(237, 28, 36);
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -71,55 +67,22 @@ namespace Flower_Management_System.Customer_Management
         // -------------------------------------------------------------------------
         private void Label_Title_Setting()
         {
-            LB_Title.Text = "CUSTOMER MANAGEMENT";
-            LB_Title.Font = new Font("Impact", 25, FontStyle.Regular);
             LB_Title.BackColor = Color.Transparent;
         }
         private void Label_Attribute_Setting()
         {
-            LB_Name.Text = "Name :";
-            LB_Name.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
             LB_Name.BackColor = Color.Transparent;
-
-            LB_ID.Text = "ID :";
-            LB_ID.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
             LB_ID.BackColor = Color.Transparent;
-
-            LB_Birthday.Text = "Birthday :";
-            LB_Birthday.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
-            LB_Birthday.BackColor = Color.Transparent;
-
-            LB_Gender.Text = "Gender :";
-            LB_Gender.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
-            LB_Gender.BackColor = Color.Transparent;
-
-            LB_Nationality.Text = "Nationality :";
-            LB_Nationality.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
-            LB_Nationality.BackColor = Color.Transparent;
+            //LB_Price.BackColor = Color.Transparent;
+           // LB_UseFor.BackColor = Color.Transparent;
+            LB_Country.BackColor = Color.Transparent;
         }
         private void Label_Attribute_Data_Setting()
         {
-            LB_Name_Data.Text = "...";
-            LB_Name_Data.Text = LB_Name_Data.Text.ToUpper();
-            LB_Name_Data.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
             LB_Name_Data.BackColor = Color.Transparent;
-
-            LB_ID_Data.Text = "...";
-            LB_ID_Data.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
-            LB_ID_Data.BackColor = Color.Transparent;
-
-            LB_Birthday_Data.Text = "...";
-            LB_Birthday_Data.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
-            LB_Birthday_Data.BackColor = Color.Transparent;
-
-            LB_Gender_Data.Text = "...";
-            LB_Gender_Data.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
-            LB_Gender_Data.Location = new Point(LB_Gender.Location.X + 100, LB_Birthday.Location.Y);
-            LB_Gender_Data.BackColor = Color.Transparent;
-
-            LB_Nationality_Data.Text = "...";
-            LB_Nationality_Data.Font = new Font("Segoe UI Semibold", 16, FontStyle.Regular);
-            LB_Nationality_Data.BackColor = Color.Transparent;
+            LB_FlowerID.BackColor = Color.Transparent;
+          //  LB_Price_Data.BackColor = Color.Transparent;
+            LB_Country_Data.BackColor = Color.Transparent;
         }
         // -------------------------------------------------------------------------
 
@@ -131,12 +94,8 @@ namespace Flower_Management_System.Customer_Management
         private void Button_Setting()
         {
             Button_Search_Setting();
-            Button_Add_Employee_Setting();
-            Button_Update_Employee_Setting();
-            Button_Delete_Employee_Setting();
             Button_Save_Employee_Setting();
             Button_Close_Form_Setting();
-            Button_Refresh_Form_Setting();
         }
 
         // -------------------------------------------------------------------------
@@ -145,69 +104,58 @@ namespace Flower_Management_System.Customer_Management
             BT_Search.FlatStyle = FlatStyle.Flat;
             BT_Search.FlatAppearance.BorderSize = 0;
         }
-        private void Button_Add_Employee_Setting()
-        {
-            BT_Add.FlatStyle = FlatStyle.Flat;
-            BT_Add.FlatAppearance.BorderSize = 0;
-        }
-        private void Button_Update_Employee_Setting()
-        {
-            BT_Update.FlatStyle = FlatStyle.Flat;
-            BT_Update.FlatAppearance.BorderSize = 0;
-        }
-        private void Button_Delete_Employee_Setting()
-        {
-            BT_Delete.FlatStyle = FlatStyle.Flat;
-            BT_Delete.FlatAppearance.BorderSize = 0;
-        }
         private void Button_Save_Employee_Setting()
         {
-            //BT_Save.FlatStyle = FlatStyle.Flat;
-           // BT_Save.FlatAppearance.BorderSize = 0;
+            BT_Save.FlatStyle = FlatStyle.Flat;
+            BT_Save.FlatAppearance.BorderSize = 0;
         }
         private void Button_Close_Form_Setting()
         {
             BT_CLose_Form.FlatStyle = FlatStyle.Flat;
             BT_CLose_Form.FlatAppearance.BorderSize = 0;
         }
-        private void Button_Refresh_Form_Setting()
-        {
-            BT_Refresh.FlatStyle = FlatStyle.Flat;
-            BT_Refresh.FlatAppearance.BorderSize = 0;
-        }
         // -------------------------------------------------------------------------
         private void BT_Search_Click(object sender, EventArgs e)
         {
-            string search_name_query = "select * from Customer where FullName collate Latin1_General_CS_AS like N'%" + TB_Search.Text + "%'";
-            this.Data_Grid_View.DataSource = Customer.Search_Value_From_Database(search_name_query);
+            string search_name_query = "select * from Flower where FullName collate Latin1_General_CS_AS like N'%" + TB_Search.Text + "%'";
+            this.Data_Grid_View.DataSource = Cart_Detail.Search_Value_From_Database(search_name_query);
             Bing_Data();
-        }
-        private void BT_Refresh_Click(object sender, EventArgs e)
-        {
-            Database_setting();
-        }
-        private void BT_Add_Click(object sender, EventArgs e)
-        {
-            Open_Add_Customer_Form();
-        }
-        private void BT_Update_Click(object sender, EventArgs e)
-        {
-            Open_Update_Update_Form();
-        }
-        private void BT_Delete_Click(object sender, EventArgs e)
-        {
-            string delete_query_from_Customer_table = "delete from Customer where ID = '" + LB_ID_Data.Text + "'";
-            Customer.Basic_Query(delete_query_from_Customer_table);
-            Database_setting();
         }
         private void BT_Save_Click(object sender, EventArgs e)
         {
-            Close();
+            if (TB_Quantity.Text != "")
+            {
+                LB_Saved.Visible = true;
+                Save_Process();
+                TB_Quantity.Text = "";
+
+                Get_Flower_Database();
+                Bing_Data();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void Save_Process()
+        {
+            string add_query = "insert into BunchFlowersDetail (BunchFlowersID, FlowerID, Quantity) values"
+                                     + " ('" + LB_BunchID.Text + "'"
+                                     + ", '" + LB_FlowerID.Text + "'"
+                                     + ", '" + TB_Quantity.Text + "')";
+            string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_FlowerID.Text + "';";
+
+            Cart_Detail.Basic_Query(add_query);
+            Cart_Detail.Basic_Query(updateFlowerQuantity);
         }
         private void BT_CLose_Form_Click(object sender, EventArgs e)
         {
+            string update_price_Cart_Detail = "update CartDetail set Price = (Quantity * (select Price from Flower where CartDetail.Flower_ID = Flower.ID))";
+            Cart_Detail.Basic_Query(update_price_Cart_Detail);
+            string update_total_price_Cart = "update Cart set TotalPrice = (select sum(Price) from CartDetail where CartDetail.Cart_ID = '" + LB_BunchID.Text + "') where Cart.ID = '" + LB_BunchID.Text + "'";
+            Cart_Detail.Basic_Query(update_total_price_Cart);
             Close();
-            this.Dispose();
         }
         // -------------------------------------------------------------------------
         private void BT_Search_MouseEnter(object sender, EventArgs e)
@@ -219,33 +167,6 @@ namespace Flower_Management_System.Customer_Management
             this.Cursor = Cursors.Default;
         }
         // -------------------------------------------------------------------------
-        private void BT_Add_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Hand;
-        }
-        private void BT_Add_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Default;
-        }
-        // -------------------------------------------------------------------------
-        private void BT_Update_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Hand;
-        }
-        private void BT_Update_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Default;
-        }
-        // -------------------------------------------------------------------------
-        private void BT_Delete_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Hand;
-        }
-        private void BT_Delete_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Default;
-        }
-        // -------------------------------------------------------------------------
         private void BT_Save_MouseEnter(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Hand;
@@ -253,6 +174,7 @@ namespace Flower_Management_System.Customer_Management
         private void BT_Save_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
+            LB_Saved.Visible = false;
         }
         // -------------------------------------------------------------------------
         private void BT_CLose_Form_MouseEnter(object sender, EventArgs e)
@@ -260,15 +182,6 @@ namespace Flower_Management_System.Customer_Management
             this.Cursor = Cursors.Hand;
         }
         private void BT_CLose_Form_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Default;
-        }
-        // -------------------------------------------------------------------------
-        private void BT_Refresh_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Hand;
-        }
-        private void BT_Refresh_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
         }
@@ -286,9 +199,8 @@ namespace Flower_Management_System.Customer_Management
         // -------------------------------------------------------------------------
         private void TextBox_Search_Setting()
         {
-            TB_Search.Location = new Point(83, 126);
             TB_Search.BorderStyle = BorderStyle.None;
-            TB_Search.Font = new Font("Segoe UI Semibold", 20, FontStyle.Bold);
+            TB_Search.Font = new Font("Segoe UI Semibold", 14, FontStyle.Bold);
             TB_Search.Multiline = false;
             TB_Search.TextAlign = HorizontalAlignment.Center;
         }
@@ -318,23 +230,23 @@ namespace Flower_Management_System.Customer_Management
             this.Data_Grid_View.MultiSelect = false;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.Columns[0].DataPropertyName = "ID";
-            this.Data_Grid_View.Columns[0].Width = 124;
+            this.Data_Grid_View.Columns[0].Width = 110;
             this.Data_Grid_View.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             this.Data_Grid_View.Columns[1].DataPropertyName = "FullName";
-            this.Data_Grid_View.Columns[1].Width = 420;
-            this.Data_Grid_View.Columns[2].DataPropertyName = "Birthday";
+            this.Data_Grid_View.Columns[1].Width = 275;
+            this.Data_Grid_View.Columns[2].DataPropertyName = "Price";
             this.Data_Grid_View.Columns[2].Visible = false;
-            this.Data_Grid_View.Columns[3].DataPropertyName = "Gender";
+            this.Data_Grid_View.Columns[3].DataPropertyName = "UseFor";
             this.Data_Grid_View.Columns[3].Visible = false;
-            this.Data_Grid_View.Columns[4].DataPropertyName = "PhoneNumber";
+            this.Data_Grid_View.Columns[4].DataPropertyName = "Country";
             this.Data_Grid_View.Columns[4].Visible = false;
-            this.Data_Grid_View.Columns[5].DataPropertyName = "Nationality";
+            this.Data_Grid_View.Columns[5].DataPropertyName = "Picture";
             this.Data_Grid_View.Columns[5].Visible = false;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
-            this.Data_Grid_View.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 16, FontStyle.Bold);
+            this.Data_Grid_View.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             this.Data_Grid_View.ColumnHeadersDefaultCellStyle.ForeColor = Color.Navy;
             this.Data_Grid_View.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
             this.Data_Grid_View.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // căn giữa chữ ô header
@@ -347,10 +259,10 @@ namespace Flower_Management_System.Customer_Management
             this.Data_Grid_View.EnableHeadersVisualStyles = false;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.DefaultCellStyle.BackColor = Color.White;
-            this.Data_Grid_View.DefaultCellStyle.Font = new Font("Segoe UI Semibold", 15, FontStyle.Regular);
+            this.Data_Grid_View.DefaultCellStyle.Font = new Font("Segoe UI", 13, FontStyle.Bold);
             this.Data_Grid_View.DefaultCellStyle.ForeColor = Color.Black;
             this.Data_Grid_View.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            this.Data_Grid_View.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue;
+            this.Data_Grid_View.DefaultCellStyle.SelectionBackColor = Color.MediumPurple;
             this.Data_Grid_View.DefaultCellStyle.SelectionForeColor = Color.White;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.RowHeadersVisible = false; // false : có thể chỉnh design theo ý mình
@@ -363,6 +275,35 @@ namespace Flower_Management_System.Customer_Management
             // -------------------------------------------------------------------------
             this.Data_Grid_View.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+        private void Data_Grid_View_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            byte[] imageData = (byte[])Data_Grid_View.CurrentRow.Cells[7].Value;
+            try
+            {
+                MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length);
+                ms.Write(imageData, 0, imageData.Length);
+                PB_Picture.Image = Image.FromStream(ms, true);
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
+        }
+        // -------------------------------------------------------------------------
+
+        //      +--------------------+
+        //      | PICTUREBOX SETTING |
+        //      +--------------------+
+
+        // -------------------------------------------------------------------------
+        private void PictureBox_Setting()
+        {
+            this.PB_Picture.BackColor = Color.Transparent;
+            this.PB_Picture.BackgroundImageLayout = ImageLayout.Center;
+            // -------------------------------------------------------------------------
+            this.PB_Picture.Size = new Size(345, 378);
+            this.PB_Picture.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
         // -------------------------------------------------------------------------
 
         //      +------------------+
@@ -372,57 +313,51 @@ namespace Flower_Management_System.Customer_Management
         // -------------------------------------------------------------------------
         private void Database_setting()
         {
-            Get_Customer_Database();
+            Get_Flower_Database();
             Bing_Data();
         }
         // -------------------------------------------------------------------------
-        private void Get_Customer_Database()
+        private void Get_Flower_Database()
         {
-            string query_SQL_command = "select * from Customer order by ID asc";
-            Data_Grid_View.DataSource = Customer.Get_Database(query_SQL_command);
+            string query_SQL_command = "select * from Flower order by ID asc";
+            Data_Grid_View.DataSource = Cart_Detail.Get_Database(query_SQL_command);
         }
         public void Bing_Data()
         {
             LB_Name_Data.DataBindings.Clear();
             LB_Name_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "FullName");
 
-            LB_ID_Data.DataBindings.Clear();
-            LB_ID_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "ID");
+            LB_FlowerID.DataBindings.Clear();
+            LB_FlowerID.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "ID");
 
-            LB_Birthday_Data.DataBindings.Clear();
-            LB_Birthday_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Birthday");
+          //  LB_Price_Data.DataBindings.Clear();
+          //  LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Price");
 
-            LB_Gender_Data.DataBindings.Clear();
-            LB_Gender_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Gender");
+          //  LB_UseFor_Data.DataBindings.Clear();
+          //  LB_UseFor_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "UseFor");
 
-            LB_PhoneNumer_Data.DataBindings.Clear();
-            LB_PhoneNumer_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "PhoneNumber");
+            LB_Country_Data.DataBindings.Clear();
+            LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
 
-            LB_Nationality_Data.DataBindings.Clear();
-            LB_Nationality_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Nationality");
+            LB_Quantity_Data.DataBindings.Clear();
+            LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
         }
-        // -------------------------------------------------------------------------
 
-        //      +-----------+
-        //      | OPEN FORM |
-        //      +-----------+
-
-        // -------------------------------------------------------------------------
-        private void Open_Add_Customer_Form()
+        private void TB_Quantity_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Add_New_Customer_Form Add_Customer_form = new Add_New_Customer_Form();
-            Add_Customer_form.Show();
+            char c = e.KeyChar;
+            if (!Char.IsDigit(c) && c != 8)
+            {
+                e.Handled = true;
+            }
         }
-        private void Open_Update_Update_Form()
+
+        public string ID
         {
-            Update_Customer_Form Update_Employee_Form = new Update_Customer_Form();
-            Update_Employee_Form.Show();
-            Update_Employee_Form.ID = LB_ID_Data.Text;
-            Update_Employee_Form.FullName = LB_Name_Data.Text;
-            Update_Employee_Form.Birthday = LB_Birthday_Data.Text;
-            Update_Employee_Form.Gender = LB_Gender_Data.Text;
-            Update_Employee_Form.PhoneNumber = LB_PhoneNumer_Data.Text;
-            Update_Employee_Form.Nationality = LB_Nationality_Data.Text;
+            set
+            {
+                LB_BunchID.Text = value;
+            }
         }
     }
 }

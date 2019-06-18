@@ -126,8 +126,8 @@ namespace Flower_Management_System.Cart_Management
         }
         private void Button_Save_Employee_Setting()
         {
-            BT_Save.FlatStyle = FlatStyle.Flat;
-            BT_Save.FlatAppearance.BorderSize = 0;
+            //BT_Save.FlatStyle = FlatStyle.Flat;
+            //BT_Save.FlatAppearance.BorderSize = 0;
         }
         private void Button_Close_Form_Setting()
         {
@@ -443,6 +443,7 @@ namespace Flower_Management_System.Cart_Management
             //LB_Price_Data.DataBindings.Clear();
             //LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "TotalPrice");
         }
+
         private void DGV_CartDetail_Click(object sender, EventArgs e)
         {
             byte[] imageData = (byte[])DGV_CartDetail.CurrentRow.Cells[5].Value;
@@ -481,8 +482,28 @@ namespace Flower_Management_System.Cart_Management
 
         private void LB_CardID_Data_TextChanged(object sender, EventArgs e)
         {
-            string query_SQL_command = "select Cart_ID, Flower_ID, Flower.FullName, Quantity, CartDetail.Price, Flower.Picture from CartDetail, Flower, Cart where CartDetail.Cart_ID = Cart.ID and Cart.ID = '" + LB_CardID_Data.Text + "' and CartDetail.Flower_ID = Flower.ID order by Cart_ID asc";
+            string query_SQL_command = "select Cart_ID,Flower_ID,FlowerShop.FullName,CartDetail.Quantity,CartDetail.Price,FlowerShop.Picture from CartDetail ,FlowerShop where Cart_ID='" + LB_CardID_Data.Text+ "' and Flower_ID = FlowerShop.ID UNION select Cart_ID,Flower_ID,BunchFlowersShop.FullName,CartDetail.Quantity,CartDetail.Price,BunchFlowersShop.Picture from CartDetail ,BunchFlowersShop where Cart_ID='" + LB_CardID_Data.Text+"' and Flower_ID = BunchFlowersShop.ID ";
             DGV_CartDetail.DataSource = Cart.Get_Database(query_SQL_command);
+        }
+
+        private void DGV_CartDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void LB_CardID_Data_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LB_Price_Data_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LB_TotalPrice_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
