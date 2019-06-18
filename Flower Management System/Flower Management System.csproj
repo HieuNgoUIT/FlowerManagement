@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -137,6 +138,12 @@
     <Compile Include="Flower Management\Update Flower Form.Designer.cs">
       <DependentUpon>Update Flower Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Statitic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statitic.Designer.cs">
+      <DependentUpon>Statitic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Login Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +208,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Flower Management\Update Flower Form.resx">
       <DependentUpon>Update Flower Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statitic.aa-DJ.resx">
+      <DependentUpon>Statitic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statitic.resx">
+      <DependentUpon>Statitic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login Form.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
