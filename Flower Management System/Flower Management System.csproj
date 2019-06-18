@@ -296,5 +296,8 @@
   <ItemGroup>
     <None Include="Resources\BT_Shop.BackgroundImage.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\64311546_355770018468456_2729418344712110080_n.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

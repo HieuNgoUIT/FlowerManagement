@@ -153,9 +153,13 @@ namespace Flower_Management_System
 
         private void LB_Title_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void BT_Static_Click(object sender, EventArgs e)
+        {
             StatiticForm SF = new StatiticForm();
             SF.Show();
         }
-
     }
 }
