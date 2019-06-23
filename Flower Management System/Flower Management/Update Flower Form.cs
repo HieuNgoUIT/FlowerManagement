@@ -53,17 +53,17 @@ namespace Flower_Management_System.Flower_Management
             LB_ID.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
             LB_ID.BackColor = Color.Transparent;
 
-            LB_Price.Text = "Price :";
-            LB_Price.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_Price.BackColor = Color.Transparent;
+            //LB_Price.Text = "Price :";
+            //LB_Price.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            //LB_Price.BackColor = Color.Transparent;
 
-            LB_UseFor.Text = "Use For :";
-            LB_UseFor.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_UseFor.BackColor = Color.Transparent;
+            //LB_UseFor.Text = "Use For :";
+            //LB_UseFor.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            //LB_UseFor.BackColor = Color.Transparent;
 
-            LB_Country.Text = "Country :";
-            LB_Country.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_Country.BackColor = Color.Transparent;
+            //LB_Country.Text = "Country :";
+            //LB_Country.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            //LB_Country.BackColor = Color.Transparent;
         }
         // -------------------------------------------------------------------------
         private void LB_Browse_Click(object sender, EventArgs e)
@@ -117,9 +117,9 @@ namespace Flower_Management_System.Flower_Management
             {
                 string update_query = "update FLower set "
                                   + "FullName = N'" + TB_Name.Text + "'"
-                                  + ", Price = '" + TB_Price.Text + "'"
-                                  + ", UseFor = N'" + TB_UseFor.Text + "'"
-                                  + ", Country = '" + TB_Country.Text + "'"
+                                  //+ ", Price = '" + TB_Price.Text + "'"
+                                  //+ ", UseFor = N'" + TB_UseFor.Text + "'"
+                               //   + ", Country = '" + TB_Country.Text + "'"
                                   + ", Picture = @img"
                                   + " where ID = '" + TB_ID.Text + "'";
                 U.Advance_Query(image_location, update_query);
@@ -128,9 +128,9 @@ namespace Flower_Management_System.Flower_Management
             {
                 string update_query = "update FLower set "
                                   + "FullName = N'" + TB_Name.Text + "'"
-                                  + ", Price = '" + TB_Price.Text + "'"
-                                  + ", UseFor = N'" + TB_UseFor.Text + "'"
-                                  + ", Country = '" + TB_Country.Text + "'"
+                                  //+ ", Price = '" + TB_Price.Text + "'"
+                                  //+ ", UseFor = N'" + TB_UseFor.Text + "'"
+                                 // + ", Country = '" + TB_Country.Text + "'"
                                   + " where ID = '" + TB_ID.Text + "'";
                 U.Basic_Query(update_query);
             }
@@ -236,21 +236,21 @@ namespace Flower_Management_System.Flower_Management
         {
             set
             {
-                TB_Price.Text = value;
+                //TB_Price.Text = value;
             }
         }
         public string UseFor
         {
             set
             {
-                TB_UseFor.Text = value;
+               // TB_UseFor.Text = value;
             }
         }
         public string Country
         {
             set
             {
-                TB_Country.Text = value;
+                //TB_Country.Text = value;
             }
         }
         public Image Flower_Image

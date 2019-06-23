@@ -87,17 +87,17 @@ namespace Flower_Management_System.Flower_Management
             LB_ID.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
             LB_ID.BackColor = Color.Transparent;
 
-            LB_Price.Text = "Price :";
-            LB_Price.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_Price.BackColor = Color.Transparent;
+          //  LB_Price.Text = "Price :";
+           // LB_Price.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+          //  LB_Price.BackColor = Color.Transparent;
 
-            LB_UseFor.Text = "Use For :";
-            LB_UseFor.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_UseFor.BackColor = Color.Transparent;
+          //  LB_UseFor.Text = "Use For :";
+          //  LB_UseFor.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+          //  LB_UseFor.BackColor = Color.Transparent;
 
-            LB_Country.Text = "Country :";
-            LB_Country.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_Country.BackColor = Color.Transparent;
+            //LB_Country.Text = "Country :";
+            //LB_Country.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            //LB_Country.BackColor = Color.Transparent;
         }
         private void Label_Attribute_Data_Setting()
         {
@@ -109,13 +109,13 @@ namespace Flower_Management_System.Flower_Management
             LB_Name.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
             LB_ID_Data.BackColor = Color.Transparent;
 
-            LB_Price_Data.Text = "...";
+          //  LB_Price_Data.Text = "...";
             LB_Name.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_Price_Data.BackColor = Color.Transparent;
+           // LB_Price_Data.BackColor = Color.Transparent;
 
-            LB_Country_Data.Text = "...";
+          //  LB_Country_Data.Text = "...";
             LB_Name.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_Country_Data.BackColor = Color.Transparent;
+          //  LB_Country_Data.BackColor = Color.Transparent;
         }
         // -------------------------------------------------------------------------
 
@@ -412,14 +412,14 @@ namespace Flower_Management_System.Flower_Management
             LB_ID_Data.DataBindings.Clear();
             LB_ID_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "ID");
 
-            LB_Price_Data.DataBindings.Clear();
-            LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Price");
+          //  LB_Price_Data.DataBindings.Clear();
+          //  LB_Price_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Price");
 
-            LB_UseFor_Data.DataBindings.Clear();
-            LB_UseFor_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "UseFor");
+           // LB_UseFor_Data.DataBindings.Clear();
+          //  LB_UseFor_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "UseFor");
 
-            LB_Country_Data.DataBindings.Clear();
-            LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
+          //  LB_Country_Data.DataBindings.Clear();
+          //  LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
 
             LB_Quantity_Data.DataBindings.Clear();
             LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
@@ -442,9 +442,9 @@ namespace Flower_Management_System.Flower_Management
             Update_Employee_Form.Show();
             Update_Employee_Form.ID = LB_ID_Data.Text;
             Update_Employee_Form.FullName = LB_Name_Data.Text;
-            Update_Employee_Form.Price = LB_Price_Data.Text;
-            Update_Employee_Form.UseFor = LB_UseFor_Data.Text;
-            Update_Employee_Form.Country = LB_Country_Data.Text;
+        //    Update_Employee_Form.Price = LB_Price_Data.Text;
+         //   Update_Employee_Form.UseFor = LB_UseFor_Data.Text;
+         //   Update_Employee_Form.Country = LB_Country_Data.Text;
             Update_Employee_Form.Flower_Image = PB_Picture.Image;
         }
     }

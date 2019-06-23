@@ -138,6 +138,7 @@
             // 
             this.BT_Static.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Static.BackgroundImage")));
             this.BT_Static.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BT_Static.Cursor = System.Windows.Forms.Cursors.Default;
             this.BT_Static.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_Static.ForeColor = System.Drawing.Color.Black;
             this.BT_Static.Location = new System.Drawing.Point(999, 390);

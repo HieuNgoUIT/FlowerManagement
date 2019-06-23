@@ -237,7 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Cus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
+           
         }
 
         #endregion

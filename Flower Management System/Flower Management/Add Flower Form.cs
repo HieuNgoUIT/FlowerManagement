@@ -66,17 +66,17 @@ namespace Flower_Management_System.Flower_Management
             LB_ID.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
             LB_ID.BackColor = Color.Transparent;
 
-            LB_Price.Text = "Price :";
-            LB_Price.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_Price.BackColor = Color.Transparent;
+            //LB_Price.Text = "Price :";
+            //LB_Price.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            //LB_Price.BackColor = Color.Transparent;
 
-            LB_UseFor.Text = "Use For :";
-            LB_UseFor.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_UseFor.BackColor = Color.Transparent;
+            //LB_UseFor.Text = "Use For :";
+            //LB_UseFor.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            //LB_UseFor.BackColor = Color.Transparent;
 
-            LB_Country.Text = "Country :";
-            LB_Country.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_Country.BackColor = Color.Transparent;
+            //LB_Country.Text = "Country :";
+            //LB_Country.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            //LB_Country.BackColor = Color.Transparent;
         }
         // -------------------------------------------------------------------------
         private void LB_Browse_Click(object sender, EventArgs e)
@@ -144,12 +144,12 @@ namespace Flower_Management_System.Flower_Management
             string check_id = "select ID from Flower where ID = '" + TB_ID.Text + "'";
             if (A.Check_Exist_Value(check_id) == false)
             {
-                string add_query = "insert into Flower (ID, FullName, Price, UseFor, Country, Quantity ,ImportDate,Picture) values"
+                string add_query = "insert into Flower (ID, FullName,Quantity,ImportDate, Picture) values"
                                                        + " ('" + TB_ID.Text + "'"
                                                        + ", '" + TB_Name.Text + "'"
-                                                       + ", '" + TB_Price.Text + "'"
-                                                       + ", '" + TB_UseFor.Text + "'"
-                                                       + ", '" + TB_Country.Text + "'"
+                                                       //+ ", '" + TB_Price.Text + "'"
+                                                       //+ ", '" + TB_UseFor.Text + "'"
+                                                       //+ ", '" + TB_Country.Text + "'"
                                                        + ", '" + TB_Quantity.Text + "'"
                                                        + ", '" + TB_ImportDate.Text + "'"
                                                        + ", @img)";
@@ -255,6 +255,11 @@ namespace Flower_Management_System.Flower_Management
         }
 
         private void TB_Country_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TB_ImportDate_TextChanged(object sender, EventArgs e)
         {
 
         }
