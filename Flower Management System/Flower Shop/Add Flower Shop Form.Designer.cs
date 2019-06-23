@@ -46,6 +46,11 @@
             this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LB_Quantity = new System.Windows.Forms.Label();
             this.TB_Quantity = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TB_UseFor = new System.Windows.Forms.TextBox();
+            this.TB_Country = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data_Grid_View)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +59,7 @@
             // 
             this.TB_Price.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Price.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Price.Location = new System.Drawing.Point(157, 335);
+            this.TB_Price.Location = new System.Drawing.Point(175, 608);
             this.TB_Price.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Price.Name = "TB_Price";
             this.TB_Price.Size = new System.Drawing.Size(87, 34);
@@ -139,9 +144,9 @@
             this.Data_Grid_View.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.c1,
             this.Column2,
-            this.Price,
-            this.Column1,
-            this.Nationality,
+            //this.Price,
+          //  this.Column1,
+          //  this.Nationality,
             this.Picture});
             this.Data_Grid_View.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -152,7 +157,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Data_Grid_View.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Data_Grid_View.Location = new System.Drawing.Point(13, 124);
+            this.Data_Grid_View.Location = new System.Drawing.Point(13, 119);
             this.Data_Grid_View.Margin = new System.Windows.Forms.Padding(4);
             this.Data_Grid_View.MultiSelect = false;
             this.Data_Grid_View.Name = "Data_Grid_View";
@@ -161,7 +166,7 @@
             this.Data_Grid_View.RowTemplate.ReadOnly = true;
             this.Data_Grid_View.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Data_Grid_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data_Grid_View.Size = new System.Drawing.Size(607, 518);
+            this.Data_Grid_View.Size = new System.Drawing.Size(607, 256);
             this.Data_Grid_View.TabIndex = 105;
             this.Data_Grid_View.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Data_Grid_View_CellContentClick);
             // 
@@ -184,23 +189,23 @@
             // 
             // Price
             // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
+            //this.Price.DataPropertyName = "Price";
+          //  this.Price.HeaderText = "Price";
+         //   this.Price.Name = "Price";
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "UseFor";
-            this.Column1.HeaderText = "UseFor";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
+         //   this.Column1.DataPropertyName = "UseFor";
+           // this.Column1.HeaderText = "UseFor";
+          //  this.Column1.Name = "Column1";
+          //  this.Column1.Visible = false;
             // 
             // Nationality
             // 
-            this.Nationality.DataPropertyName = "Country";
-            this.Nationality.HeaderText = "Country";
-            this.Nationality.Name = "Nationality";
-            this.Nationality.Visible = false;
+       //     this.Nationality.DataPropertyName = "Country";
+       //     this.Nationality.HeaderText = "Country";
+        //    this.Nationality.Name = "Nationality";
+        //    this.Nationality.Visible = false;
             // 
             // Picture
             // 
@@ -214,7 +219,7 @@
             this.LB_Quantity.AutoSize = true;
             this.LB_Quantity.BackColor = System.Drawing.Color.White;
             this.LB_Quantity.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Quantity.Location = new System.Drawing.Point(7, 671);
+            this.LB_Quantity.Location = new System.Drawing.Point(32, 427);
             this.LB_Quantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Quantity.Name = "LB_Quantity";
             this.LB_Quantity.Size = new System.Drawing.Size(117, 32);
@@ -225,13 +230,71 @@
             // 
             this.TB_Quantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Quantity.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Quantity.Location = new System.Drawing.Point(182, 671);
+            this.TB_Quantity.Location = new System.Drawing.Point(157, 427);
             this.TB_Quantity.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Quantity.Name = "TB_Quantity";
             this.TB_Quantity.Size = new System.Drawing.Size(125, 34);
             this.TB_Quantity.TabIndex = 108;
             this.TB_Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Quantity.TextChanged += new System.EventHandler(this.TB_Quantity_TextChanged_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 490);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 32);
+            this.label1.TabIndex = 109;
+            this.label1.Text = "UseFor";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(32, 534);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 32);
+            this.label2.TabIndex = 110;
+            this.label2.Text = "Country";
+            // 
+            // TB_UseFor
+            // 
+            this.TB_UseFor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_UseFor.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_UseFor.Location = new System.Drawing.Point(157, 490);
+            this.TB_UseFor.Margin = new System.Windows.Forms.Padding(4);
+            this.TB_UseFor.Name = "TB_UseFor";
+            this.TB_UseFor.Size = new System.Drawing.Size(125, 34);
+            this.TB_UseFor.TabIndex = 111;
+            this.TB_UseFor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TB_Country
+            // 
+            this.TB_Country.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Country.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_Country.Location = new System.Drawing.Point(157, 549);
+            this.TB_Country.Margin = new System.Windows.Forms.Padding(4);
+            this.TB_Country.Name = "TB_Country";
+            this.TB_Country.Size = new System.Drawing.Size(125, 34);
+            this.TB_Country.TabIndex = 112;
+            this.TB_Country.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(32, 596);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 32);
+            this.label3.TabIndex = 113;
+            this.label3.Text = "Price";
             // 
             // Add_FlowerShop_Form
             // 
@@ -240,6 +303,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1164, 705);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.TB_Country);
+            this.Controls.Add(this.TB_UseFor);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.TB_Quantity);
             this.Controls.Add(this.LB_Quantity);
             this.Controls.Add(this.Data_Grid_View);
@@ -277,5 +345,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Label LB_Quantity;
         private System.Windows.Forms.TextBox TB_Quantity;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TB_UseFor;
+        private System.Windows.Forms.TextBox TB_Country;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -148,30 +148,21 @@ namespace Flower_Management_System.Flower_Management
             System_Database_SQL A = new System_Database_SQL();
             string query = @"INSERT INTO FlowerShop VALUES( ";
             byte[] a = null;
-            object iDFlower = null;
-            for (int i = 0; i < Data_Grid_View.ColumnCount; i++)
-            {
-                var currentIndex = Data_Grid_View.CurrentRow.Index;
-                iDFlower = Data_Grid_View.Rows[currentIndex].Cells[0].Value;
-
-                if (i == 7)
-                {
-                    a = (byte[])A.GetColumnValue("select Picture from Flower where ID='" + iDFlower + "';");
-                    query += "@img";
-                }
-                else if (i == 5)
-                {
-                    query += "'" + TB_Quantity.Text + "',";
-                }
-                else
-                {
-                    query += "'" + Data_Grid_View.Rows[currentIndex].Cells[i].Value + "',";
-                }
-            }
+            string iDFlower = null;
+            var currentIndex = Data_Grid_View.CurrentRow.Index;
+            query += "'" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "',";
+            query += "'" + Data_Grid_View.Rows[currentIndex].Cells[1].Value + "',";
+            query += "'" + TB_Price.Text + "',";
+            query += "'" + TB_UseFor.Text + "',";
+            query += "'" + TB_Country.Text + "',";
+            query += "'" + TB_Quantity.Text + "',";
+            query += "'" + Data_Grid_View.Rows[currentIndex].Cells[3].Value + "',";
+            a = (byte[])A.GetColumnValue("select Picture from Flower where ID='" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "';");
+            query += "@img";       
             query += ");";
             A.Advance_Query(a, query);
 
-            string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + iDFlower.ToString() + "';";
+            string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "';";
             Flower.Basic_Query(updateFlowerQuantity);
         }
         public static string ByteArrayToString(byte[] ba)
@@ -274,13 +265,13 @@ namespace Flower_Management_System.Flower_Management
             this.Data_Grid_View.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             this.Data_Grid_View.Columns[1].DataPropertyName = "FullName";
             this.Data_Grid_View.Columns[1].Width = 275;
-            this.Data_Grid_View.Columns[2].DataPropertyName = "Price";
+            //this.Data_Grid_View.Columns[2].DataPropertyName = "Price";
             //this.Data_Grid_View.Columns[2].Visible = false;
-            this.Data_Grid_View.Columns[3].DataPropertyName = "UseFor";
+            //this.Data_Grid_View.Columns[3].DataPropertyName = "UseFor";
             // this.Data_Grid_View.Columns[3].Visible = false;
-            this.Data_Grid_View.Columns[4].DataPropertyName = "Country";
+           // this.Data_Grid_View.Columns[4].DataPropertyName = "Country";
             //this.Data_Grid_View.Columns[4].Visible = false;
-            this.Data_Grid_View.Columns[5].DataPropertyName = "Picture";
+            this.Data_Grid_View.Columns[2].DataPropertyName = "Picture";
             //  this.Data_Grid_View.Columns[5].Visible = false;
             // -------------------------------------------------------------------------
             this.Data_Grid_View.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
