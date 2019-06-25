@@ -117,9 +117,9 @@ namespace Flower_Management_System.Flower_Management
             {
                 string update_query = "update FLower set "
                                   + "FullName = N'" + TB_Name.Text + "'"
-                                  //+ ", Price = '" + TB_Price.Text + "'"
+                                   + ", Quantity = '" + TB_Quantity.Text + "'"
                                   //+ ", UseFor = N'" + TB_UseFor.Text + "'"
-                               //   + ", Country = '" + TB_Country.Text + "'"
+                                  //   + ", Country = '" + TB_Country.Text + "'"
                                   + ", Picture = @img"
                                   + " where ID = '" + TB_ID.Text + "'";
                 U.Advance_Query(image_location, update_query);
@@ -128,7 +128,7 @@ namespace Flower_Management_System.Flower_Management
             {
                 string update_query = "update FLower set "
                                   + "FullName = N'" + TB_Name.Text + "'"
-                                  //+ ", Price = '" + TB_Price.Text + "'"
+                                  + ", Quantity = '" + TB_Quantity.Text + "'"
                                   //+ ", UseFor = N'" + TB_UseFor.Text + "'"
                                  // + ", Country = '" + TB_Country.Text + "'"
                                   + " where ID = '" + TB_ID.Text + "'";

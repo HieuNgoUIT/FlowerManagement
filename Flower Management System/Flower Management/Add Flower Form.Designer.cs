@@ -214,6 +214,7 @@
             this.TB_Quantity.TabIndex = 102;
             this.TB_Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Quantity.TextChanged += new System.EventHandler(this.TB_Quantity_TextChanged);
+            this.TB_Quantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Quantity_KeyPress);
             // 
             // LB_ImportDate
             // 
@@ -238,6 +239,7 @@
             this.TB_ImportDate.TabIndex = 104;
             this.TB_ImportDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_ImportDate.TextChanged += new System.EventHandler(this.TB_ImportDate_TextChanged);
+            this.TB_ImportDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_ImportDate_KeyPress);
             // 
             // Add_Flower_Form
             // 

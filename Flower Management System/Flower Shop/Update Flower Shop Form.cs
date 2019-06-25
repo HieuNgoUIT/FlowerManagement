@@ -53,17 +53,17 @@ namespace Flower_Management_System.Flower_Management
             LB_ID.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
             LB_ID.BackColor = Color.Transparent;
 
-            LB_Price.Text = "Price :";
+            LB_Price.Text = "Quantity :";
             LB_Price.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
             LB_Price.BackColor = Color.Transparent;
 
-            LB_UseFor.Text = "Use For :";
-            LB_UseFor.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_UseFor.BackColor = Color.Transparent;
+            //LB_UseFor.Text = "Use For :";
+            //LB_UseFor.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            //LB_UseFor.BackColor = Color.Transparent;
 
-            LB_Country.Text = "Country :";
-            LB_Country.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
-            LB_Country.BackColor = Color.Transparent;
+            //LB_Country.Text = "Country :";
+            //LB_Country.Font = new Font("Segoe UI Semibold", 14, FontStyle.Regular);
+            //LB_Country.BackColor = Color.Transparent;
         }
         // -------------------------------------------------------------------------
         private void LB_Browse_Click(object sender, EventArgs e)
@@ -113,26 +113,31 @@ namespace Flower_Management_System.Flower_Management
         private void Save_Process()
         {
             System_Database_SQL U = new System_Database_SQL();
-            if (image_location != "")
+            var currentQ =(int)U.GetColumnValue("Select Quantity from FlowerShop where ID ='" + TB_ID.Text + "'");
+            
+            if (int.Parse(TB_Quantity.Text)> currentQ)
             {
-                string update_query = "update FLower set "
+                string update_query = "update FLowerShop set "
                                   + "FullName = N'" + TB_Name.Text + "'"
-                                  + ", Price = '" + TB_Price.Text + "'"
-                                  + ", UseFor = N'" + TB_UseFor.Text + "'"
-                                  + ", Country = '" + TB_Country.Text + "'"
-                                  + ", Picture = @img"
+                                  + ", Quantity = '" + TB_Quantity.Text + "'"                                                    
                                   + " where ID = '" + TB_ID.Text + "'";
-                U.Advance_Query(image_location, update_query);
+                string update_query1 = "update FLower set "
+                                  + " Quantity = Quantity -" + (int.Parse(TB_Quantity.Text) - currentQ)+ ""                             
+                                  + " where ID = '" + TB_ID.Text + "'";
+                U.Basic_Query(update_query);
+                U.Basic_Query(update_query1);
             }
             else
             {
-                string update_query = "update FLower set "
-                                  + "FullName = N'" + TB_Name.Text + "'"
-                                  + ", Price = '" + TB_Price.Text + "'"
-                                  + ", UseFor = N'" + TB_UseFor.Text + "'"
-                                  + ", Country = '" + TB_Country.Text + "'"
+                string update_query = "update FLowerShop set "
+                                   + "FullName = N'" + TB_Name.Text + "'"
+                                   + ", Quantity = '" + TB_Quantity.Text + "'"
+                                   + " where ID = '" + TB_ID.Text + "'";
+                string update_query1 = "update FLower set "
+                                  + " Quantity = Quantity +" + Math.Abs((int.Parse(TB_Quantity.Text) - currentQ)) + ""
                                   + " where ID = '" + TB_ID.Text + "'";
                 U.Basic_Query(update_query);
+                U.Basic_Query(update_query1);
             }
         }
         private void BT_Browse_Click(object sender, EventArgs e)
@@ -236,21 +241,21 @@ namespace Flower_Management_System.Flower_Management
         {
             set
             {
-                TB_Price.Text = value;
+                TB_Quantity.Text = value;
             }
         }
         public string UseFor
         {
             set
             {
-                TB_UseFor.Text = value;
+                //TB_UseFor.Text = value;
             }
         }
         public string Country
         {
             set
             {
-                TB_Country.Text = value;
+               // TB_Country.Text = value;
             }
         }
         public Image Flower_Image

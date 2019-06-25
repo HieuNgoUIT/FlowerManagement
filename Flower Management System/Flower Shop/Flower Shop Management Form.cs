@@ -615,13 +615,13 @@ namespace Flower_Management_System.Flower_Management
         }
         private void Open_Update_Flower_Form()
         {
-            Update_Flower_Form Update_Employee_Form = new Update_Flower_Form();
+            Update_FlowerShop_Form Update_Employee_Form = new Update_FlowerShop_Form();
             Update_Employee_Form.Show();
             Update_Employee_Form.ID = LB_ID_Data.Text;
             Update_Employee_Form.FullName = LB_Name_Data.Text;
-            Update_Employee_Form.Price = LB_Price_Data.Text;
-            Update_Employee_Form.UseFor = LB_UseFor_Data.Text;
-            Update_Employee_Form.Country = LB_Country_Data.Text;
+           // Update_Employee_Form.Price = LB_Price_Data.Text;
+            //Update_Employee_Form.UseFor = LB_UseFor_Data.Text;
+           // Update_Employee_Form.Country = LB_Country_Data.Text;
             Update_Employee_Form.Flower_Image = PB_Picture.Image;
         }
 

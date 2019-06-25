@@ -336,8 +336,8 @@ namespace Flower_Management_System.Cart_Management
           //  LB_UseFor_Data.DataBindings.Clear();
           //  LB_UseFor_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "UseFor");
 
-            LB_Country_Data.DataBindings.Clear();
-            LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
+           // LB_Country_Data.DataBindings.Clear();
+           // LB_Country_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Country");
 
             LB_Quantity_Data.DataBindings.Clear();
             LB_Quantity_Data.DataBindings.Add("Text", this.Data_Grid_View.DataSource, "Quantity");
@@ -351,6 +351,7 @@ namespace Flower_Management_System.Cart_Management
                 e.Handled = true;
             }
         }
+
 
         public string ID
         {

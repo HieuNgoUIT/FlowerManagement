@@ -130,6 +130,7 @@
             this.BT_FlowerShop.Size = new System.Drawing.Size(333, 308);
             this.BT_FlowerShop.TabIndex = 96;
             this.BT_FlowerShop.UseVisualStyleBackColor = true;
+            this.BT_FlowerShop.Click += new System.EventHandler(this.BT_FlowerShop_Click);
             this.BT_FlowerShop.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BT_FlowerShop_MouseClick);
             this.BT_FlowerShop.MouseEnter += new System.EventHandler(this.BT_FlowerShop_MouseEnter);
             this.BT_FlowerShop.MouseLeave += new System.EventHandler(this.BT_FlowerShop_MouseLeave);

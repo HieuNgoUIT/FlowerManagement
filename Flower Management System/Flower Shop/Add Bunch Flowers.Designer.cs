@@ -188,6 +188,7 @@
             this.TB_Price.TabIndex = 124;
             this.TB_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Price.TextChanged += new System.EventHandler(this.TB_Price_TextChanged);
+            this.TB_Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Price_KeyPress);
             // 
             // LB_Quantity
             // 
@@ -211,6 +212,7 @@
             this.TB_Quantity.Size = new System.Drawing.Size(165, 32);
             this.TB_Quantity.TabIndex = 126;
             this.TB_Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TB_Quantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Quantity_KeyPress);
             // 
             // LB_DueDate
             // 
@@ -234,6 +236,7 @@
             this.TB_DueDate.Size = new System.Drawing.Size(236, 32);
             this.TB_DueDate.TabIndex = 128;
             this.TB_DueDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TB_DueDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_DueDate_KeyPress);
             // 
             // PB_Picture
             // 

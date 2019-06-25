@@ -362,7 +362,14 @@ namespace Flower_Management_System.Flower_Management
                 e.Handled = true;
             }
         }
-
+        private void TB_Quantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            if (!Char.IsDigit(c) && c != 8)
+            {
+                e.Handled = true;
+            }
+        }
         private void TB_ID_TextChanged(object sender, EventArgs e)
         {
             //if (TB_ID.Text != "")
@@ -401,6 +408,11 @@ namespace Flower_Management_System.Flower_Management
         }
 
         private void TB_Quantity_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TB_Price_TextChanged(object sender, EventArgs e)
         {
 
         }

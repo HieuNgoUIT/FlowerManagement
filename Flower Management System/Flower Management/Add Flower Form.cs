@@ -218,7 +218,15 @@ namespace Flower_Management_System.Flower_Management
 
         // -------------------------------------------------------------------------
 
-        private void TB_Price_KeyPress(object sender, KeyPressEventArgs e)
+        private void TB_Quantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            if (!Char.IsDigit(c) && c != 8)
+            {
+                e.Handled = true;
+            }
+        }
+        private void TB_ImportDate_KeyPress(object sender, KeyPressEventArgs e)
         {
             char c = e.KeyChar;
             if (!Char.IsDigit(c) && c != 8)

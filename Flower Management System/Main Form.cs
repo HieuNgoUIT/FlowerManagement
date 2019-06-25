@@ -41,6 +41,12 @@ namespace Flower_Management_System
             BT_Flower_Management.FlatStyle = FlatStyle.Flat;
             BT_Flower_Management.FlatAppearance.BorderSize = 0;
 
+            BT_FlowerShop.FlatStyle = FlatStyle.Flat;
+            BT_FlowerShop.FlatAppearance.BorderSize = 0;
+
+            BT_Static.FlatStyle = FlatStyle.Flat;
+            BT_Static.FlatAppearance.BorderSize = 0;
+
             BT_CLose_Form.FlatStyle = FlatStyle.Flat;
             BT_CLose_Form.FlatAppearance.BorderSize = 0;
         }
@@ -160,6 +166,11 @@ namespace Flower_Management_System
         {
             StatiticForm SF = new StatiticForm();
             SF.Show();
+        }
+
+        private void BT_FlowerShop_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

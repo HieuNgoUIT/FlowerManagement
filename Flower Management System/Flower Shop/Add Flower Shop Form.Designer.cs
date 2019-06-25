@@ -40,10 +40,10 @@
             this.Data_Grid_View = new System.Windows.Forms.DataGridView();
             this.c1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LB_Quantity = new System.Windows.Forms.Label();
             this.TB_Quantity = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,6 +65,7 @@
             this.TB_Price.Size = new System.Drawing.Size(87, 34);
             this.TB_Price.TabIndex = 91;
             this.TB_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TB_Price.TextChanged += new System.EventHandler(this.TB_Price_TextChanged);
             this.TB_Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Price_KeyPress);
             // 
             // PB_Picture
@@ -144,9 +145,6 @@
             this.Data_Grid_View.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.c1,
             this.Column2,
-            //this.Price,
-          //  this.Column1,
-          //  this.Nationality,
             this.Picture});
             this.Data_Grid_View.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -187,32 +185,24 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 300;
             // 
-            // Price
-            // 
-            //this.Price.DataPropertyName = "Price";
-          //  this.Price.HeaderText = "Price";
-         //   this.Price.Name = "Price";
-            // 
-            // Column1
-            // 
-         //   this.Column1.DataPropertyName = "UseFor";
-           // this.Column1.HeaderText = "UseFor";
-          //  this.Column1.Name = "Column1";
-          //  this.Column1.Visible = false;
-            // 
-            // Nationality
-            // 
-       //     this.Nationality.DataPropertyName = "Country";
-       //     this.Nationality.HeaderText = "Country";
-        //    this.Nationality.Name = "Nationality";
-        //    this.Nationality.Visible = false;
-            // 
             // Picture
             // 
             this.Picture.DataPropertyName = "Picture";
             this.Picture.HeaderText = "Picture";
             this.Picture.Name = "Picture";
             this.Picture.Visible = false;
+            // 
+            // Price
+            // 
+            this.Price.Name = "Price";
+            // 
+            // Column1
+            // 
+            this.Column1.Name = "Column1";
+            // 
+            // Nationality
+            // 
+            this.Nationality.Name = "Nationality";
             // 
             // LB_Quantity
             // 
@@ -237,6 +227,7 @@
             this.TB_Quantity.TabIndex = 108;
             this.TB_Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Quantity.TextChanged += new System.EventHandler(this.TB_Quantity_TextChanged_1);
+            this.TB_Quantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Quantity_KeyPress);
             // 
             // label1
             // 
