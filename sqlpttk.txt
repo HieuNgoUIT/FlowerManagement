@@ -35,10 +35,7 @@ create table Customer
 create table Flower
 (
 	ID				nvarchar(10) not NULL,
-	FullName		nvarchar(65),
-	Price			float,
-	UseFor			nvarchar(40),
-	Country			nvarchar(50),
+	FullName		nvarchar(65),	
 	Quantity                int,
 	ImportDate		nvarchar(20),
 	Picture			varbinary(max),
@@ -136,49 +133,31 @@ insert into Customer values ('C-00013', N'M', '16/10/1998', 'Female', '012563851
 insert into Customer values ('C-00014', N'N', '09/11/1997', 'Female', '5157711171', 'Vietnam')
 
 
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00001', N'Romance', 5, 'Anniversary', 'Europe',10,'6/10/2019', BulkColumn 
+insert into Flower (ID, FullName,Quantity,ImportDate, Picture) 
+select 'F-00001', N'Romance',10,'6/10/2019', BulkColumn 
 from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Anniversary\Romance.jpg', single_blob) as FlowerImage
 
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00002', N'Two Dozen Red Roses', 10, 'Anniversary', '',20,'6/10/2019', BulkColumn 
+insert into Flower (ID, FullName,Quantity,ImportDate, Picture) 
+select 'F-00002', N'Two Dozen Red Roses',20,'6/10/2019', BulkColumn 
 from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Anniversary\Two Dozen Red Roses.jpg', single_blob) as FlowerImage
 
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00003', N'Expressions of Pink', 15, 'Anniversary', '',30,'6/10/2019', BulkColumn 
+insert into Flower (ID, FullName,Quantity,ImportDate, Picture) 
+select 'F-00003', N'Expressions of Pink',30,'6/10/2019', BulkColumn 
 from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Anniversary\Expressions of Pink.jpg', single_blob) as FlowerImage
 
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00004', N'Red Roses', 20, 'Anniversary', '',40, '6/10/2019',BulkColumn 
+insert into Flower (ID, FullName,Quantity,ImportDate, Picture) 
+select 'F-00004', N'Red Roses', 40, '6/10/2019',BulkColumn 
 from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Anniversary\Red Roses.jpg', single_blob) as FlowerImage
 
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00005', N'Floral Treasures Bouquet', 25, 'Anniversary', '',50, '6/10/2019',BulkColumn 
+insert into Flower (ID, FullName,Quantity,ImportDate, Picture) 
+select 'F-00005', N'Floral Treasures Bouquet',50, '6/10/2019',BulkColumn 
 from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Anniversary\Floral Treasures Bouquet.jpg', single_blob) as FlowerImage
 
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00006', N'Magnificent Pink Rose and Lily', 30, 'Anniversary', '',60,'6/10/2019', BulkColumn 
+insert into Flower (ID, FullName,Quantity,ImportDate, Picture) 
+select 'F-00006', N'Magnificent Pink Rose and Lily',60,'6/10/2019', BulkColumn 
 from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Anniversary\Magnificent Pink Rose and Lily.jpg', single_blob) as FlowerImage
 
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00007', N'Ocean Breeze Orchids', 35, 'Anniversary', '',70,'6/10/2019', BulkColumn 
-from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Anniversary\Ocean Breeze Orchids.jpg', single_blob) as FlowerImage
 
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00008', N'Happy Birthday', 40, 'Birthday', '',80,'6/10/2019', BulkColumn 
-from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Birthday\Happy Birthday.jpg', single_blob) as FlowerImage
-
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00009', N'Floral Treasures Bouquet', 50, 'Birthday', '',90,'6/10/2019', BulkColumn 
-from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Birthday\Floral Treasures Bouquet.jpg', single_blob) as FlowerImage
-
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00010', N'For Spring', 51.11, 'Birthday', '',100,'6/10/2019', BulkColumn 
-from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Birthday\For Spring.jpg', single_blob) as FlowerImage
-
-insert into Flower (ID, FullName, Price, UseFor, Country,Quantity,ImportDate, Picture) 
-select 'F-00011', N'Country Charm', 51.11, 'Birthday', '',11,'6/10/2019', BulkColumn 
-from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Birthday\Country Charm.jpg', single_blob) as FlowerImage
 
 insert into Cart (ID, Customer_ID, OnDate) values ('SC-00001', 'C-00001', '15/02/2017')
 insert into Cart (ID, Customer_ID, OnDate) values ('SC-00002', 'C-00001', '15/02/2017')
@@ -192,13 +171,13 @@ insert into CartDetail (Cart_ID, Flower_ID, Quantity) values ('SC-00003', 'F-000
 insert into CartDetail (Cart_ID, Flower_ID, Quantity) values ('SC-00004', 'F-00009', 2)
 insert into CartDetail (Cart_ID, Flower_ID, Quantity) values ('SC-00005', 'F-00011', 2)
 
-insert into BunchFlowersShop(ID,Fullname,Price,Quantity,DueDate,Picture)
-select 'B-00001', N'Bohoa', 100, '1','6/10/2019', BulkColumn 
-from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Birthday\For Spring.jpg', single_blob) as FlowerImage
+insert into BunchFlowersShop(ID,Fullname,Price,Quantity,DueDate) 
+select 'B-00001', N'Bo hoa',100,1,'6/10/2019', BulkColumn 
+from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Anniversary\Magnificent Pink Rose and Lily.jpg', single_blob) as FlowerImage
 
-insert into BunchFlowersDetail(BunchFlowersID, FlowerID,Quantity) values ('B-1','F-00001',2)
-insert into BunchFlowersDetail(BunchFlowersID, FlowerID,Quantity) values ('B-1','F-00002',3)
-insert into BunchFlowersDetail(BunchFlowersID, FlowerID,Quantity) values ('B-1','F-00003',4)
+insert into BunchFlowersDetail(BunchFlowersID, FlowerID,Quantity) values ('B-00001','F-00001',2)
+insert into BunchFlowersDetail(BunchFlowersID, FlowerID,Quantity) values ('B-00001','F-00002',3)
+insert into BunchFlowersDetail(BunchFlowersID, FlowerID,Quantity) values ('B-00001','F-00003',4)
 
 insert into FlowerShop (ID, FullName, Price, UseFor, Country,Quantity,DueDate, Picture) 
 select 'F-00010', N'For Spring', 51.11, 'Birthday', '',100,'6/10/2019', BulkColumn 
