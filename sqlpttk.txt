@@ -171,7 +171,7 @@ insert into CartDetail (Cart_ID, Flower_ID, Quantity) values ('SC-00003', 'F-000
 insert into CartDetail (Cart_ID, Flower_ID, Quantity) values ('SC-00004', 'F-00009', 2)
 insert into CartDetail (Cart_ID, Flower_ID, Quantity) values ('SC-00005', 'F-00011', 2)
 
-insert into BunchFlowersShop(ID,Fullname,Price,Quantity,DueDate) 
+insert into BunchFlowersShop(ID,Fullname,Price,Quantity,DueDate,Picture) 
 select 'B-00001', N'Bo hoa',100,1,'6/10/2019', BulkColumn 
 from Openrowset(Bulk 'D:\SchoolAssignment\PTTK\Flower Management System\Images\Flower Management\Flower\Anniversary\Magnificent Pink Rose and Lily.jpg', single_blob) as FlowerImage
 
