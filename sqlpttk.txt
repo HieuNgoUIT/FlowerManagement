@@ -36,7 +36,7 @@ create table Flower
 (
 	ID				nvarchar(10) not NULL,
 	FullName		nvarchar(65),	
-	Quantity                int,
+	Quantity                int CHECK (Quantity >= 0),
 	ImportDate		nvarchar(20),
 	Picture			varbinary(max),
 	primary key (ID),
@@ -48,7 +48,7 @@ create table FlowerShop
 	Price			float,
 	UseFor			nvarchar(40),
 	Country			nvarchar(50),
-	Quantity                int,
+	Quantity                int CHECK (Quantity >= 0),
 	DueDate		nvarchar(20),
 	Picture			varbinary(max),
 	primary key (ID),
@@ -58,7 +58,7 @@ create table BunchFlowersShop
 	ID				nvarchar(10) not NULL,
 	FullName		nvarchar(65),
 	Price			float,
-	Quantity                int,
+	Quantity                int CHECK (Quantity >= 0),
 	DueDate		nvarchar(20),
 	Picture			varbinary(max),
 	primary key (ID),
@@ -67,7 +67,7 @@ create table BunchFlowersDetail
 (
 	BunchFlowersID		nvarchar(10),
 	FlowerID		nvarchar(10) not NULL,
-	Quantity                int,
+	Quantity                int CHECK (Quantity >= 0),
 	foreign key (BunchFlowersID) references BunchFlowersShop(ID),
 	foreign key (FlowerID) references Flower (ID)
 )
@@ -86,7 +86,7 @@ create table CartDetail
 (
 	Cart_ID				nvarchar(10) ,
 	Flower_ID			nvarchar(10) not NULL,
-	Quantity			int,
+	Quantity			int CHECK (Quantity >= 0),
 	Price				float,
 	foreign key (Cart_ID) references Cart (ID),
 )

@@ -137,37 +137,58 @@ namespace Flower_Management_System.Flower_Management
         // -------------------------------------------------------------------------
         private void BT_Save_Click(object sender, EventArgs e)
         {
-            if (image_location != "")
+
+            if (Save_Process())
             {
-                Save_Process();
                 BT_CLose_Form_Click(sender, e);
             }
+           
+                
+           
         }
-        private void Save_Process()
+        private bool Save_Process()
         {
             System_Database_SQL A = new System_Database_SQL();
-          
-            string query = @"INSERT INTO FlowerShop VALUES( ";
-            byte[] a = null;
-            string iDFlower = null;
-            var currentIndex = Data_Grid_View.CurrentRow.Index;
-            var currentday = Data_Grid_View.Rows[currentIndex].Cells[3].Value;
-            var tcurrentday = Convert.ToDateTime(currentday);
-            var storeDate = tcurrentday.AddDays(int.Parse(TB_ExpiredTime.Text));
-            query += "'" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "',";
-            query += "'" + Data_Grid_View.Rows[currentIndex].Cells[1].Value + "',";
-            query += "'" + TB_Price.Text + "',";
-            query += "'" + TB_UseFor.Text + "',";
-            query += "'" + TB_Country.Text + "',";
-            query += "'" + TB_Quantity.Text + "',";
-            query += "'" + storeDate.ToString("MM/dd/yyyy") + "',";
-            a = (byte[])A.GetColumnValue("select Picture from Flower where ID='" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "';");
-            query += "@img";       
-            query += ");";
-            A.Advance_Query(a, query);
-
-            string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "';";
-            Flower.Basic_Query(updateFlowerQuantity);
+            if (TB_Quantity.Text == "" || TB_Price.Text == "" || TB_ExpiredTime.Text == "" )
+            {
+                 MessageBox.Show("Please fill in enough information");
+                //LB_Notice.Text = "Please fill in enough information";
+                return false;
+            }
+            else
+            {
+                string query = @"INSERT INTO FlowerShop VALUES( ";
+                byte[] a = null;
+                string iDFlower = null;
+                var currentIndex = Data_Grid_View.CurrentRow.Index;
+                var currentday = Data_Grid_View.Rows[currentIndex].Cells[3].Value;
+                var tcurrentday = Convert.ToDateTime(currentday);
+                var storeDate = tcurrentday.AddDays(int.Parse(TB_ExpiredTime.Text));
+                query += "'" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "',";
+                query += "'" + Data_Grid_View.Rows[currentIndex].Cells[1].Value + "',";
+                query += "'" + TB_Price.Text + "',";
+                query += "'" + TB_UseFor.Text + "',";
+                query += "'" + TB_Country.Text + "',";
+                query += "'" + TB_Quantity.Text + "',";
+                query += "'" + storeDate.ToString("MM/dd/yyyy") + "',";
+                a = (byte[])A.GetColumnValue("select Picture from Flower where ID='" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "';");
+                query += "@img";
+                query += ");";
+                try
+                {                  
+                    string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "';";
+                    Flower.Basic_Query(updateFlowerQuantity);
+                    A.Advance_Query(a, query);
+                }
+                catch
+                {
+                    MessageBox.Show("Error occured");
+                    return false;
+                }
+               
+                return true;
+            }
+              
         }
         public static string ByteArrayToString(byte[] ba)
         {

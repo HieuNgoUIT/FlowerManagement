@@ -149,20 +149,29 @@ namespace Flower_Management_System.Database
         }
         internal void Advance_Query(byte[] image_byte, string query)
         {
-            Connect.Open();
+            try
+            {
+                Connect.Open();
+
+                Command.CommandText = query;
+
+                Command.CommandType = CommandType.Text;
+                Command.Connection = Connect;
+                Command.Parameters.Clear();
+                Command.Parameters.Add(new SqlParameter("@img", image_byte));
+
+                Command.ExecuteNonQuery();
+
+                Command.Dispose();
+            }
+            finally
+            {
+                Connect.Close();
+            }
+           
          
-            Command.CommandText = query;
 
-            Command.CommandType = CommandType.Text;
-            Command.Connection = Connect;
-            Command.Parameters.Clear();
-            Command.Parameters.Add(new SqlParameter("@img", image_byte));
-
-            Command.ExecuteNonQuery();
-
-            Command.Dispose();
-
-            Connect.Close();
+            
         }
 
 
