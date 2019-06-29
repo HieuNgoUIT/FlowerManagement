@@ -199,6 +199,7 @@
             this.MTB_Birthday.TabIndex = 73;
             this.MTB_Birthday.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MTB_Birthday.ValidatingType = typeof(System.DateTime);
+            this.MTB_Birthday.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MTB_Birthday_MaskInputRejected);
             // 
             // TB_Gender
             // 

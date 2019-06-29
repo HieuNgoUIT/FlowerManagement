@@ -142,16 +142,16 @@ namespace Flower_Management_System.Flower_Management
             {
                 BT_CLose_Form_Click(sender, e);
             }
-           
-                
-           
+
+
+
         }
         private bool Save_Process()
         {
             System_Database_SQL A = new System_Database_SQL();
-            if (TB_Quantity.Text == "" || TB_Price.Text == "" || TB_ExpiredTime.Text == "" )
+            if (TB_Quantity.Text == "" || TB_Price.Text == "" || TB_ExpiredTime.Text == "")
             {
-                 MessageBox.Show("Please fill in enough information");
+                MessageBox.Show("Please fill in enough information");
                 //LB_Notice.Text = "Please fill in enough information";
                 return false;
             }
@@ -175,7 +175,7 @@ namespace Flower_Management_System.Flower_Management
                 query += "@img";
                 query += ");";
                 try
-                {                  
+                {
                     string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "';";
                     Flower.Basic_Query(updateFlowerQuantity);
                     A.Advance_Query(a, query);
@@ -185,10 +185,10 @@ namespace Flower_Management_System.Flower_Management
                     MessageBox.Show("Error occured");
                     return false;
                 }
-               
+
                 return true;
             }
-              
+
         }
         public static string ByteArrayToString(byte[] ba)
         {
@@ -294,7 +294,7 @@ namespace Flower_Management_System.Flower_Management
             //this.Data_Grid_View.Columns[2].Visible = false;
             //this.Data_Grid_View.Columns[3].DataPropertyName = "UseFor";
             // this.Data_Grid_View.Columns[3].Visible = false;
-           // this.Data_Grid_View.Columns[4].DataPropertyName = "Country";
+            // this.Data_Grid_View.Columns[4].DataPropertyName = "Country";
             //this.Data_Grid_View.Columns[4].Visible = false;
             this.Data_Grid_View.Columns[2].DataPropertyName = "Picture";
             //  this.Data_Grid_View.Columns[5].Visible = false;
@@ -388,6 +388,14 @@ namespace Flower_Management_System.Flower_Management
             }
         }
         private void TB_Quantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            if (!Char.IsDigit(c) && c != 8)
+            {
+                e.Handled = true;
+            }
+        }
+        private void TB_ExDate_KeyPress(object sender, KeyPressEventArgs e)
         {
             char c = e.KeyChar;
             if (!Char.IsDigit(c) && c != 8)

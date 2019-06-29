@@ -43,7 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TB_Quantity = new System.Windows.Forms.TextBox();
             this.LB_ImportDate = new System.Windows.Forms.Label();
-            this.TB_ImportDate = new System.Windows.Forms.TextBox();
+            this.TB_ImportDate = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -232,14 +232,14 @@
             // 
             this.TB_ImportDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_ImportDate.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_ImportDate.Location = new System.Drawing.Point(199, 426);
+            this.TB_ImportDate.Location = new System.Drawing.Point(215, 426);
             this.TB_ImportDate.Margin = new System.Windows.Forms.Padding(4);
+            this.TB_ImportDate.Mask = "00/00/0000";
             this.TB_ImportDate.Name = "TB_ImportDate";
-            this.TB_ImportDate.Size = new System.Drawing.Size(253, 34);
-            this.TB_ImportDate.TabIndex = 104;
+            this.TB_ImportDate.Size = new System.Drawing.Size(177, 34);
+            this.TB_ImportDate.TabIndex = 105;
             this.TB_ImportDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_ImportDate.TextChanged += new System.EventHandler(this.TB_ImportDate_TextChanged);
-            this.TB_ImportDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_ImportDate_KeyPress);
+            this.TB_ImportDate.ValidatingType = typeof(System.DateTime);
             // 
             // Add_Flower_Form
             // 
@@ -291,6 +291,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TB_Quantity;
         private System.Windows.Forms.Label LB_ImportDate;
-        private System.Windows.Forms.TextBox TB_ImportDate;
+        private System.Windows.Forms.MaskedTextBox TB_ImportDate;
     }
 }

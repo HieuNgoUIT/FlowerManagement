@@ -43,9 +43,9 @@
             this.LB_Quantity = new System.Windows.Forms.Label();
             this.TB_Quantity = new System.Windows.Forms.TextBox();
             this.LB_DueDate = new System.Windows.Forms.Label();
-            this.TB_DueDate = new System.Windows.Forms.TextBox();
             this.PB_Picture = new System.Windows.Forms.PictureBox();
             this.LB_Browse = new System.Windows.Forms.Label();
+            this.TB_DueDate = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,18 +226,6 @@
             this.LB_DueDate.TabIndex = 127;
             this.LB_DueDate.Text = "DueDate:";
             // 
-            // TB_DueDate
-            // 
-            this.TB_DueDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_DueDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_DueDate.Location = new System.Drawing.Point(211, 591);
-            this.TB_DueDate.Margin = new System.Windows.Forms.Padding(4);
-            this.TB_DueDate.Name = "TB_DueDate";
-            this.TB_DueDate.Size = new System.Drawing.Size(236, 32);
-            this.TB_DueDate.TabIndex = 128;
-            this.TB_DueDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_DueDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_DueDate_KeyPress);
-            // 
             // PB_Picture
             // 
             this.PB_Picture.BackColor = System.Drawing.Color.White;
@@ -264,6 +252,19 @@
             this.LB_Browse.Text = "Browse";
             this.LB_Browse.Click += new System.EventHandler(this.LB_Browse_Click);
             // 
+            // TB_DueDate
+            // 
+            this.TB_DueDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_DueDate.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_DueDate.Location = new System.Drawing.Point(211, 587);
+            this.TB_DueDate.Margin = new System.Windows.Forms.Padding(4);
+            this.TB_DueDate.Mask = "00/00/0000";
+            this.TB_DueDate.Name = "TB_DueDate";
+            this.TB_DueDate.Size = new System.Drawing.Size(177, 34);
+            this.TB_DueDate.TabIndex = 131;
+            this.TB_DueDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TB_DueDate.ValidatingType = typeof(System.DateTime);
+            // 
             // Add_BunchFlowers_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,9 +272,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1011, 651);
+            this.Controls.Add(this.TB_DueDate);
             this.Controls.Add(this.LB_Browse);
             this.Controls.Add(this.PB_Picture);
-            this.Controls.Add(this.TB_DueDate);
             this.Controls.Add(this.LB_DueDate);
             this.Controls.Add(this.TB_Quantity);
             this.Controls.Add(this.LB_Quantity);
@@ -315,8 +316,8 @@
         private System.Windows.Forms.Label LB_Quantity;
         private System.Windows.Forms.TextBox TB_Quantity;
         private System.Windows.Forms.Label LB_DueDate;
-        private System.Windows.Forms.TextBox TB_DueDate;
         private System.Windows.Forms.PictureBox PB_Picture;
         private System.Windows.Forms.Label LB_Browse;
+        private System.Windows.Forms.MaskedTextBox TB_DueDate;
     }
 }

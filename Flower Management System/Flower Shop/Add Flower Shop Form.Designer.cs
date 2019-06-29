@@ -61,10 +61,10 @@
             // 
             this.TB_Price.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Price.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Price.Location = new System.Drawing.Point(175, 608);
+            this.TB_Price.Location = new System.Drawing.Point(153, 590);
             this.TB_Price.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Price.Name = "TB_Price";
-            this.TB_Price.Size = new System.Drawing.Size(87, 34);
+            this.TB_Price.Size = new System.Drawing.Size(147, 34);
             this.TB_Price.TabIndex = 91;
             this.TB_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Price.TextChanged += new System.EventHandler(this.TB_Price_TextChanged);
@@ -166,7 +166,7 @@
             this.Data_Grid_View.RowTemplate.ReadOnly = true;
             this.Data_Grid_View.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Data_Grid_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data_Grid_View.Size = new System.Drawing.Size(607, 256);
+            this.Data_Grid_View.Size = new System.Drawing.Size(607, 190);
             this.Data_Grid_View.TabIndex = 105;
             this.Data_Grid_View.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Data_Grid_View_CellContentClick);
             // 
@@ -211,7 +211,7 @@
             this.LB_Quantity.AutoSize = true;
             this.LB_Quantity.BackColor = System.Drawing.Color.White;
             this.LB_Quantity.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Quantity.Location = new System.Drawing.Point(32, 427);
+            this.LB_Quantity.Location = new System.Drawing.Point(7, 331);
             this.LB_Quantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Quantity.Name = "LB_Quantity";
             this.LB_Quantity.Size = new System.Drawing.Size(117, 32);
@@ -222,10 +222,10 @@
             // 
             this.TB_Quantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Quantity.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Quantity.Location = new System.Drawing.Point(157, 427);
+            this.TB_Quantity.Location = new System.Drawing.Point(175, 329);
             this.TB_Quantity.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Quantity.Name = "TB_Quantity";
-            this.TB_Quantity.Size = new System.Drawing.Size(125, 34);
+            this.TB_Quantity.Size = new System.Drawing.Size(74, 34);
             this.TB_Quantity.TabIndex = 108;
             this.TB_Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Quantity.TextChanged += new System.EventHandler(this.TB_Quantity_TextChanged_1);
@@ -236,7 +236,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 490);
+            this.label1.Location = new System.Drawing.Point(10, 408);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 32);
@@ -248,7 +248,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 534);
+            this.label2.Location = new System.Drawing.Point(10, 507);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 32);
@@ -259,10 +259,10 @@
             // 
             this.TB_UseFor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_UseFor.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_UseFor.Location = new System.Drawing.Point(157, 490);
+            this.TB_UseFor.Location = new System.Drawing.Point(144, 408);
             this.TB_UseFor.Margin = new System.Windows.Forms.Padding(4);
             this.TB_UseFor.Name = "TB_UseFor";
-            this.TB_UseFor.Size = new System.Drawing.Size(125, 34);
+            this.TB_UseFor.Size = new System.Drawing.Size(105, 34);
             this.TB_UseFor.TabIndex = 111;
             this.TB_UseFor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -270,7 +270,7 @@
             // 
             this.TB_Country.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Country.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Country.Location = new System.Drawing.Point(157, 549);
+            this.TB_Country.Location = new System.Drawing.Point(175, 507);
             this.TB_Country.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Country.Name = "TB_Country";
             this.TB_Country.Size = new System.Drawing.Size(125, 34);
@@ -282,7 +282,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 596);
+            this.label3.Location = new System.Drawing.Point(18, 590);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 32);
@@ -294,7 +294,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 654);
+            this.label4.Location = new System.Drawing.Point(18, 664);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 32);
@@ -305,12 +305,13 @@
             // 
             this.TB_ExpiredTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_ExpiredTime.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_ExpiredTime.Location = new System.Drawing.Point(208, 652);
+            this.TB_ExpiredTime.Location = new System.Drawing.Point(226, 663);
             this.TB_ExpiredTime.Margin = new System.Windows.Forms.Padding(4);
             this.TB_ExpiredTime.Name = "TB_ExpiredTime";
-            this.TB_ExpiredTime.Size = new System.Drawing.Size(125, 34);
+            this.TB_ExpiredTime.Size = new System.Drawing.Size(131, 34);
             this.TB_ExpiredTime.TabIndex = 115;
             this.TB_ExpiredTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TB_ExpiredTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_ExDate_KeyPress);
             // 
             // Add_FlowerShop_Form
             // 

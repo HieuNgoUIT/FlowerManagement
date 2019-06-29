@@ -203,5 +203,10 @@ namespace Flower_Management_System.Customer_Management
         {
 
         }
+
+        private void MTB_Birthday_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

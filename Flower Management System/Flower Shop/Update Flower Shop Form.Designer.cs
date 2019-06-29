@@ -77,7 +77,7 @@
             this.BT_CLose_Form.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_CLose_Form.BackgroundImage")));
             this.BT_CLose_Form.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BT_CLose_Form.Location = new System.Drawing.Point(560, 18);
-            this.BT_CLose_Form.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BT_CLose_Form.Margin = new System.Windows.Forms.Padding(4);
             this.BT_CLose_Form.Name = "BT_CLose_Form";
             this.BT_CLose_Form.Size = new System.Drawing.Size(43, 39);
             this.BT_CLose_Form.TabIndex = 114;
@@ -91,7 +91,7 @@
             this.BT_Save.BackColor = System.Drawing.Color.White;
             this.BT_Save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Save.BackgroundImage")));
             this.BT_Save.Location = new System.Drawing.Point(219, 530);
-            this.BT_Save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BT_Save.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Save.Name = "BT_Save";
             this.BT_Save.Size = new System.Drawing.Size(85, 79);
             this.BT_Save.TabIndex = 113;
@@ -106,7 +106,7 @@
             this.PB_Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PB_Picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PB_Picture.Location = new System.Drawing.Point(668, 103);
-            this.PB_Picture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_Picture.Margin = new System.Windows.Forms.Padding(4);
             this.PB_Picture.Name = "PB_Picture";
             this.PB_Picture.Size = new System.Drawing.Size(459, 465);
             this.PB_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +117,7 @@
             // 
             this.BT_Browse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BT_Browse.BackgroundImage")));
             this.BT_Browse.Location = new System.Drawing.Point(811, 587);
-            this.BT_Browse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BT_Browse.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Browse.Name = "BT_Browse";
             this.BT_Browse.Size = new System.Drawing.Size(161, 60);
             this.BT_Browse.TabIndex = 111;
@@ -131,7 +131,7 @@
             this.TB_Quantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Quantity.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_Quantity.Location = new System.Drawing.Point(189, 398);
-            this.TB_Quantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_Quantity.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Quantity.Name = "TB_Quantity";
             this.TB_Quantity.Size = new System.Drawing.Size(115, 34);
             this.TB_Quantity.TabIndex = 108;
@@ -143,7 +143,7 @@
             this.TB_ID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_ID.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_ID.Location = new System.Drawing.Point(127, 175);
-            this.TB_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_ID.Margin = new System.Windows.Forms.Padding(4);
             this.TB_ID.Name = "TB_ID";
             this.TB_ID.Size = new System.Drawing.Size(139, 34);
             this.TB_ID.TabIndex = 107;
@@ -154,7 +154,7 @@
             this.TB_Name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Name.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_Name.Location = new System.Drawing.Point(111, 313);
-            this.TB_Name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_Name.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Name.Name = "TB_Name";
             this.TB_Name.Size = new System.Drawing.Size(387, 34);
             this.TB_Name.TabIndex = 105;
@@ -216,7 +216,7 @@
             this.Controls.Add(this.LB_ID);
             this.Controls.Add(this.LB_Name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Update_FlowerShop_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update_Flower_Form";
