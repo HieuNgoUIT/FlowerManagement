@@ -107,33 +107,48 @@ namespace Flower_Management_System.Flower_Management
         // -------------------------------------------------------------------------
         private void BT_Save_Click(object sender, EventArgs e)
         {
-            Save_Process();
-            BT_CLose_Form_Click(sender, e);
+            if (Save_Process())
+            {
+                BT_CLose_Form_Click(sender, e);
+            }
+           
+           
         }
-        private void Save_Process()
+        private bool Save_Process()
         {
             System_Database_SQL U = new System_Database_SQL();
-            if (image_location != "")
+            if(TB_Quantity.Text=="" || int.Parse(TB_Quantity.Text) < 0)
             {
-                string update_query = "update FLower set "
-                                  + "FullName = N'" + TB_Name.Text + "'"
-                                   + ", Quantity = '" + TB_Quantity.Text + "'"
-                                  //+ ", UseFor = N'" + TB_UseFor.Text + "'"
-                                  //   + ", Country = '" + TB_Country.Text + "'"
-                                  + ", Picture = @img"
-                                  + " where ID = '" + TB_ID.Text + "'";
-                U.Advance_Query(image_location, update_query);
+                MessageBox.Show("Please fill in approriate information");
+                return false;
             }
             else
             {
-                string update_query = "update FLower set "
-                                  + "FullName = N'" + TB_Name.Text + "'"
-                                  + ", Quantity = '" + TB_Quantity.Text + "'"
-                                  //+ ", UseFor = N'" + TB_UseFor.Text + "'"
-                                 // + ", Country = '" + TB_Country.Text + "'"
-                                  + " where ID = '" + TB_ID.Text + "'";
-                U.Basic_Query(update_query);
+                if (image_location != "")
+                {
+                    string update_query = "update FLower set "
+                                      + "FullName = N'" + TB_Name.Text + "'"
+                                       + ", Quantity = '" + TB_Quantity.Text + "'"
+                                      //+ ", UseFor = N'" + TB_UseFor.Text + "'"
+                                      //   + ", Country = '" + TB_Country.Text + "'"
+                                      + ", Picture = @img"
+                                      + " where ID = '" + TB_ID.Text + "'";
+                    U.Advance_Query(image_location, update_query);
+                    return true;
+                }
+                else
+                {
+                    string update_query = "update FLower set "
+                                      + "FullName = N'" + TB_Name.Text + "'"
+                                      + ", Quantity = '" + TB_Quantity.Text + "'"
+                                      //+ ", UseFor = N'" + TB_UseFor.Text + "'"
+                                      // + ", Country = '" + TB_Country.Text + "'"
+                                      + " where ID = '" + TB_ID.Text + "'";
+                    U.Basic_Query(update_query);
+                    return true;
+                }
             }
+            
         }
         private void BT_Browse_Click(object sender, EventArgs e)
         {
