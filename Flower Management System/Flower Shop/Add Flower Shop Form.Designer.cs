@@ -51,6 +51,8 @@
             this.TB_UseFor = new System.Windows.Forms.TextBox();
             this.TB_Country = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TB_ExpiredTime = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data_Grid_View)).BeginInit();
             this.SuspendLayout();
@@ -287,6 +289,29 @@
             this.label3.TabIndex = 113;
             this.label3.Text = "Price";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(32, 654);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 32);
+            this.label4.TabIndex = 114;
+            this.label4.Text = "Expired Time";
+            // 
+            // TB_ExpiredTime
+            // 
+            this.TB_ExpiredTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_ExpiredTime.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_ExpiredTime.Location = new System.Drawing.Point(208, 652);
+            this.TB_ExpiredTime.Margin = new System.Windows.Forms.Padding(4);
+            this.TB_ExpiredTime.Name = "TB_ExpiredTime";
+            this.TB_ExpiredTime.Size = new System.Drawing.Size(125, 34);
+            this.TB_ExpiredTime.TabIndex = 115;
+            this.TB_ExpiredTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Add_FlowerShop_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -294,6 +319,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1164, 705);
+            this.Controls.Add(this.TB_ExpiredTime);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TB_Country);
             this.Controls.Add(this.TB_UseFor);
@@ -341,5 +368,7 @@
         private System.Windows.Forms.TextBox TB_UseFor;
         private System.Windows.Forms.TextBox TB_Country;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TB_ExpiredTime;
     }
 }

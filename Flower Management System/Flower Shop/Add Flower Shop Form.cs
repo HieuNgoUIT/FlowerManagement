@@ -146,17 +146,21 @@ namespace Flower_Management_System.Flower_Management
         private void Save_Process()
         {
             System_Database_SQL A = new System_Database_SQL();
+          
             string query = @"INSERT INTO FlowerShop VALUES( ";
             byte[] a = null;
             string iDFlower = null;
             var currentIndex = Data_Grid_View.CurrentRow.Index;
+            var currentday = Data_Grid_View.Rows[currentIndex].Cells[3].Value;
+            var tcurrentday = Convert.ToDateTime(currentday);
+            var storeDate = tcurrentday.AddDays(int.Parse(TB_ExpiredTime.Text));
             query += "'" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "',";
             query += "'" + Data_Grid_View.Rows[currentIndex].Cells[1].Value + "',";
             query += "'" + TB_Price.Text + "',";
             query += "'" + TB_UseFor.Text + "',";
             query += "'" + TB_Country.Text + "',";
             query += "'" + TB_Quantity.Text + "',";
-            query += "'" + Data_Grid_View.Rows[currentIndex].Cells[3].Value + "',";
+            query += "'" + storeDate.ToString("MM/dd/yyyy") + "',";
             a = (byte[])A.GetColumnValue("select Picture from Flower where ID='" + Data_Grid_View.Rows[currentIndex].Cells[0].Value + "';");
             query += "@img";       
             query += ");";
