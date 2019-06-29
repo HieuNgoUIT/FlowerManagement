@@ -177,21 +177,21 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 374);
+            this.label1.Location = new System.Drawing.Point(13, 401);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 32);
+            this.label1.Size = new System.Drawing.Size(117, 32);
             this.label1.TabIndex = 117;
-            this.label1.Text = "Quantity :";
+            this.label1.Text = "Quantity ";
             // 
             // TB_Quantity
             // 
             this.TB_Quantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Quantity.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Quantity.Location = new System.Drawing.Point(191, 374);
+            this.TB_Quantity.Location = new System.Drawing.Point(209, 401);
             this.TB_Quantity.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Quantity.Name = "TB_Quantity";
-            this.TB_Quantity.Size = new System.Drawing.Size(139, 34);
+            this.TB_Quantity.Size = new System.Drawing.Size(83, 34);
             this.TB_Quantity.TabIndex = 118;
             this.TB_Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

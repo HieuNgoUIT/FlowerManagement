@@ -105,16 +105,24 @@ namespace Flower_Management_System.Database
         }
         internal void Basic_Query(string query)
         {
-            Connect.Open();
+            try
+            {
+                Connect.Open();
 
-            Command.CommandText = query;
+                Command.CommandText = query;
 
-            Command.CommandType = CommandType.Text;
-            Command.Connection = Connect;
-            Command.ExecuteNonQuery();
-            Command.Dispose();
-
-            Connect.Close();
+                Command.CommandType = CommandType.Text;
+                Command.Connection = Connect;
+                Command.ExecuteNonQuery();
+                Command.Dispose();
+            }
+            finally
+            {
+                Connect.Close();
+            }
+           
+            
+           
         }
         internal void Advance_Query(string image_location, string query)
         {

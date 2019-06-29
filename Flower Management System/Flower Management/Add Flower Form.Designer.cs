@@ -55,9 +55,9 @@
             this.LB_ID.Location = new System.Drawing.Point(13, 175);
             this.LB_ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_ID.Name = "LB_ID";
-            this.LB_ID.Size = new System.Drawing.Size(52, 32);
+            this.LB_ID.Size = new System.Drawing.Size(46, 32);
             this.LB_ID.TabIndex = 84;
-            this.LB_ID.Text = "ID :";
+            this.LB_ID.Text = "ID ";
             // 
             // LB_Name
             // 
@@ -67,9 +67,9 @@
             this.LB_Name.Location = new System.Drawing.Point(13, 255);
             this.LB_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Name.Name = "LB_Name";
-            this.LB_Name.Size = new System.Drawing.Size(93, 32);
+            this.LB_Name.Size = new System.Drawing.Size(87, 32);
             this.LB_Name.TabIndex = 82;
-            this.LB_Name.Text = "Name :";
+            this.LB_Name.Text = "Name ";
             // 
             // TB_ID
             // 
@@ -195,22 +195,22 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 344);
+            this.label1.Location = new System.Drawing.Point(13, 342);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 32);
+            this.label1.Size = new System.Drawing.Size(110, 32);
             this.label1.TabIndex = 101;
-            this.label1.Text = "Quantity:";
+            this.label1.Text = "Quantity";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // TB_Quantity
             // 
             this.TB_Quantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Quantity.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Quantity.Location = new System.Drawing.Point(144, 344);
+            this.TB_Quantity.Location = new System.Drawing.Point(168, 340);
             this.TB_Quantity.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Quantity.Name = "TB_Quantity";
-            this.TB_Quantity.Size = new System.Drawing.Size(125, 34);
+            this.TB_Quantity.Size = new System.Drawing.Size(98, 34);
             this.TB_Quantity.TabIndex = 102;
             this.TB_Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Quantity.TextChanged += new System.EventHandler(this.TB_Quantity_TextChanged);
@@ -221,7 +221,7 @@
             this.LB_ImportDate.AutoSize = true;
             this.LB_ImportDate.BackColor = System.Drawing.Color.White;
             this.LB_ImportDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_ImportDate.Location = new System.Drawing.Point(13, 424);
+            this.LB_ImportDate.Location = new System.Drawing.Point(13, 428);
             this.LB_ImportDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_ImportDate.Name = "LB_ImportDate";
             this.LB_ImportDate.Size = new System.Drawing.Size(149, 32);
@@ -232,10 +232,10 @@
             // 
             this.TB_ImportDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_ImportDate.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_ImportDate.Location = new System.Drawing.Point(199, 422);
+            this.TB_ImportDate.Location = new System.Drawing.Point(199, 426);
             this.TB_ImportDate.Margin = new System.Windows.Forms.Padding(4);
             this.TB_ImportDate.Name = "TB_ImportDate";
-            this.TB_ImportDate.Size = new System.Drawing.Size(264, 34);
+            this.TB_ImportDate.Size = new System.Drawing.Size(253, 34);
             this.TB_ImportDate.TabIndex = 104;
             this.TB_ImportDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_ImportDate.TextChanged += new System.EventHandler(this.TB_ImportDate_TextChanged);

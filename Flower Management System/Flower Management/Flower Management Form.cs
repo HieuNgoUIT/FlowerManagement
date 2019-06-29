@@ -193,7 +193,15 @@ namespace Flower_Management_System.Flower_Management
         private void BT_Delete_Click(object sender, EventArgs e)
         {
             string delete_query_from_Customer_table = "delete from Flower where ID = '" + LB_ID_Data.Text + "'";
-            Flower.Basic_Query(delete_query_from_Customer_table);
+            try
+            {
+                Flower.Basic_Query(delete_query_from_Customer_table);
+            }
+            catch
+            {
+                MessageBox.Show("Error occured while trying to delete");
+            }
+            
             Database_setting();
         }
         private void BT_Save_Click(object sender, EventArgs e)

@@ -117,7 +117,7 @@ namespace Flower_Management_System.Flower_Management
         {
             BT_Save.FlatStyle = FlatStyle.Flat;
             BT_Save.FlatAppearance.BorderSize = 0;
-            BT_Save.Visible = false;
+           // BT_Save.Visible = false;
         }
         private void Button_Close_Form_Setting()
         {
@@ -132,33 +132,51 @@ namespace Flower_Management_System.Flower_Management
         // -------------------------------------------------------------------------
         private void BT_Save_Click(object sender, EventArgs e)
         {
-            if (image_location != "")
+          
+            if (Save_Process() == true)
             {
-                Save_Process();
-                BT_CLose_Form_Click(sender, e);
-            }
-        }
-        private void Save_Process()
-        {
-            System_Database_SQL A = new System_Database_SQL();
-            string check_id = "select ID from Flower where ID = '" + TB_ID.Text + "'";
-            if (A.Check_Exist_Value(check_id) == false)
-            {
-                string add_query = "insert into Flower (ID, FullName,Quantity,ImportDate, Picture) values"
-                                                       + " ('" + TB_ID.Text + "'"
-                                                       + ", '" + TB_Name.Text + "'"
-                                                       //+ ", '" + TB_Price.Text + "'"
-                                                       //+ ", '" + TB_UseFor.Text + "'"
-                                                       //+ ", '" + TB_Country.Text + "'"
-                                                       + ", '" + TB_Quantity.Text + "'"
-                                                       + ", '" + TB_ImportDate.Text + "'"
-                                                       + ", @img)";
-                A.Advance_Query(image_location, add_query);
+                BT_CLose_Form_Click(sender,e);
             }
             else
             {
                 LB_Notice.Visible = true;
             }
+        }
+        private bool Save_Process()
+        {
+            System_Database_SQL A = new System_Database_SQL();
+            string check_id = "select ID from Flower where ID = '" + TB_ID.Text + "'";
+            if (TB_Name.Text == "" || TB_Name.Text == "" || TB_ID.Text == "" || image_location == null)
+            {
+                // MessageBox.Show("Please fill in enough information");
+                LB_Notice.Text = "Please fill in enough information";
+                return false;
+            }
+            else
+            {
+                if (A.Check_Exist_Value(check_id) == false)
+                {
+                    string add_query = "insert into Flower (ID, FullName,Quantity,ImportDate, Picture) values"
+                                                           + " ('" + TB_ID.Text + "'"
+                                                           + ", '" + TB_Name.Text + "'"
+                                                           //+ ", '" + TB_Price.Text + "'"
+                                                           //+ ", '" + TB_UseFor.Text + "'"
+                                                           //+ ", '" + TB_Country.Text + "'"
+                                                           + ", '" + TB_Quantity.Text + "'"
+                                                           + ", '" + TB_ImportDate.Text + "'"
+                                                           + ", @img)";
+                    A.Advance_Query(image_location, add_query);
+                    return true;
+                }
+                else
+                {            
+                    return false;
+                }
+            }
+
+          
+           
+
         }
         private void BT_Browse_Click(object sender, EventArgs e)
         {
@@ -237,14 +255,14 @@ namespace Flower_Management_System.Flower_Management
 
         private void TB_ID_TextChanged(object sender, EventArgs e)
         {
-            if (TB_ID.Text != "")
-            {
-                BT_Save.Visible = true;
-            }
-            else
-            {
-                BT_Save.Visible = false;
-            }
+            //if (TB_ID.Text != "")
+            //{
+            //    BT_Save.Visible = true;
+            //}
+            //else
+            //{
+            //    BT_Save.Visible = false;
+            //}
         }
 
         private void label1_Click(object sender, EventArgs e)

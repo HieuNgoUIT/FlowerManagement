@@ -197,7 +197,19 @@ namespace Flower_Management_System.Customer_Management
         private void BT_Delete_Click(object sender, EventArgs e)
         {
             string delete_query_from_Customer_table = "delete from Customer where ID = '" + LB_ID_Data.Text + "'";
-            Customer.Basic_Query(delete_query_from_Customer_table);
+            try
+            {
+                Customer.Basic_Query(delete_query_from_Customer_table);
+            }
+            catch
+            {
+                MessageBox.Show("Delete unsucessfully");
+            }
+            finally
+            {
+
+            }
+           
             Database_setting();
         }
         private void BT_Save_Click(object sender, EventArgs e)

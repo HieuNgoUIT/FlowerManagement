@@ -94,7 +94,7 @@ namespace Flower_Management_System.Customer_Management
         {
             BT_Save.FlatStyle = FlatStyle.Flat;
             BT_Save.FlatAppearance.BorderSize = 0;
-            BT_Save.Visible = false;
+           // BT_Save.Visible = false;
         }
         private void Button_Close_Form_Setting()
         {
@@ -112,7 +112,7 @@ namespace Flower_Management_System.Customer_Management
             else
             {
                 LB_Notice.Visible = true;
-                TB_ID.Text = "";
+                //TB_ID.Text = "";
             }
 
         }
@@ -120,22 +120,33 @@ namespace Flower_Management_System.Customer_Management
         {
             System_Database_SQL A = new System_Database_SQL();
             string check_id = "select ID from Customer where ID = '" + TB_ID.Text + "'";
-            if (A.Check_Exist_Value(check_id) == false)
+            if(TB_Name.Text =="" || TB_PhoneNumber.Text == "" || TB_ID.Text == "" )
             {
-                string add_query = "insert into Customer (ID, FullName, Birthday, Gender, PhoneNumber, Nationality) values"
-                                                              + " ('" + TB_ID.Text + "'"
-                                                              + ", N'" + TB_Name.Text + "'" // N : recieve vietnamse language
-                                                              + ", '" + MTB_Birthday.Text + "'"
-                                                              + ", N'" + TB_Gender.Text + "'"
-                                                              + ", '" + TB_PhoneNumber.Text + "'"
-                                                              + ", '" + TB_Nationality.Text + "')";
-                A.Basic_Query(add_query);
-                return true;
+                // MessageBox.Show("Please fill in enough information");
+                LB_Notice.Text = "Please fill in enough information";
+                return false;
             }
             else
             {
-                return false;
+                if (A.Check_Exist_Value(check_id) == false)
+                {
+                    string add_query = "insert into Customer (ID, FullName, Birthday, Gender, PhoneNumber, Nationality) values"
+                                                                  + " ('" + TB_ID.Text + "'"
+                                                                  + ", N'" + TB_Name.Text + "'" // N : recieve vietnamse language
+                                                                  + ", '" + MTB_Birthday.Text + "'"
+                                                                  + ", N'" + TB_Gender.Text + "'"
+                                                                  + ", '" + TB_PhoneNumber.Text + "'"
+                                                                  + ", '" + TB_Nationality.Text + "')";
+                    A.Basic_Query(add_query);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
             }
+           
         }
         private void BT_CLose_Form_Click(object sender, EventArgs e)
         {
@@ -178,14 +189,19 @@ namespace Flower_Management_System.Customer_Management
 
         private void TB_ID_TextChanged(object sender, EventArgs e)
         {
-            if (TB_ID.Text != "")
-            {
-                BT_Save.Visible = true;
-            }
-            else
-            {
-                BT_Save.Visible = false;
-            }
+            //if (TB_ID.Text != "")
+            //{
+            //    BT_Save.Visible = true;
+            //}
+            //else
+            //{
+            //    BT_Save.Visible = false;
+            //}
+        }
+
+        private void LB_Notice_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

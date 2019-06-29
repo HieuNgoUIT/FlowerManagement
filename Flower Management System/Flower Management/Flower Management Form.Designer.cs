@@ -314,7 +314,7 @@
             // 
             this.PB_Picture.BackColor = System.Drawing.Color.White;
             this.PB_Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PB_Picture.Location = new System.Drawing.Point(1197, 277);
+            this.PB_Picture.Location = new System.Drawing.Point(1194, 182);
             this.PB_Picture.Margin = new System.Windows.Forms.Padding(4);
             this.PB_Picture.Name = "PB_Picture";
             this.PB_Picture.Size = new System.Drawing.Size(460, 465);
