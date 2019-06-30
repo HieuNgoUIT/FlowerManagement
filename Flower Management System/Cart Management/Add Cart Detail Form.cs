@@ -140,34 +140,42 @@ namespace Flower_Management_System.Cart_Management
 
         private void Save_Process()
         {
-            string FirstCharacter = LB_ID_Data.Text.Substring(0, 1);
-            string add_query = "";
-            string updateFlowerQuantity = "";
-            float price = float.Parse(LB_Price_Data.Text.ToString());
-            float quantity = float.Parse(TB_Quantity.Text.ToString());
-            float result = price * quantity;
-            if (FirstCharacter == "F")
+            try
             {
-                add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity,Price) values"
-                                    + " ('" + LB_CartID.Text + "'"
-                                    + ", '" + LB_ID_Data.Text + "'"
-                                    + ", '" + TB_Quantity.Text + "'"
-                                     + ", '" + result + "')";
-                updateFlowerQuantity = "UPDATE FlowerShop set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
+                string FirstCharacter = LB_ID_Data.Text.Substring(0, 1);
+                string add_query = "";
+                string updateFlowerQuantity = "";
+                float price = float.Parse(LB_Price_Data.Text.ToString());
+                float quantity = float.Parse(TB_Quantity.Text.ToString());
+                float result = price * quantity;
+                if (FirstCharacter == "F")
+                {
+                    add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity,Price) values"
+                                        + " ('" + LB_CartID.Text + "'"
+                                        + ", '" + LB_ID_Data.Text + "'"
+                                        + ", '" + TB_Quantity.Text + "'"
+                                         + ", '" + result + "')";
+                    updateFlowerQuantity = "UPDATE FlowerShop set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
+                }
+                else
+                {
+                    add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity,Price) values"
+                                      + " ('" + LB_CartID.Text + "'"
+                                      + ", '" + LB_ID_Data.Text + "'"
+                                      + ", '" + TB_Quantity.Text + "'"
+                                       + ", '" + result + "')";
+                    updateFlowerQuantity = "UPDATE BunchFlowersShop set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
+                }
+
+                Cart_Detail.Basic_Query(updateFlowerQuantity);
+                Cart_Detail.Basic_Query(add_query);
             }
-            else
+            catch
             {
-                add_query = "insert into CartDetail (Cart_ID, Flower_ID, Quantity,Price) values"
-                                  + " ('" + LB_CartID.Text + "'"
-                                  + ", '" + LB_ID_Data.Text + "'"
-                                  + ", '" + TB_Quantity.Text + "'"
-                                   + ", '" + result + "')";
-                updateFlowerQuantity = "UPDATE BunchFlowersShop set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_ID_Data.Text + "';";
+                MessageBox.Show("Error happened");
             }
-
-
-            Cart_Detail.Basic_Query(add_query);
-            Cart_Detail.Basic_Query(updateFlowerQuantity);
+          
+           
 
         }
         private void BT_CLose_Form_Click(object sender, EventArgs e)
