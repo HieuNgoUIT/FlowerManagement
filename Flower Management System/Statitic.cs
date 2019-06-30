@@ -33,22 +33,47 @@ namespace Flower_Management_System
             //this.TransparencyKey = Color.FromArgb(237, 28, 36);
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
+            numThang.Value = DateTime.Now.Month;
+            numNam.Maximum = DateTime.Now.Year;
+            numNam.Value = DateTime.Now.Year;
         }
 
         private void LoadDatabase() {
-            string query_SQL_command = "select Flower.ID as FlowerID, Flower.FullName as FullName, CONVERT(varchar, 100*  COUNT(CartDetail.Cart_ID)/ (select count(CartDetail.Cart_ID) from Flower left join CartDetail on Flower.ID = CartDetail.Flower_ID))+ '%' as Percents";
-            query_SQL_command += " from Flower left join CartDetail on Flower.ID = CartDetail.Flower_ID";
-            query_SQL_command  += " group by Flower.ID, Flower.FullName";
+            //string query_SQL_command = "select Flower.ID as FlowerID, Flower.FullName as FullName, CONVERT(varchar, 100*  COUNT(CartDetail.Cart_ID)/ (select count(CartDetail.Cart_ID) from Flower left join CartDetail on Flower.ID = CartDetail.Flower_ID))+ '%' as Percents";
+            //query_SQL_command += " from Flower left join CartDetail on Flower.ID = CartDetail.Flower_ID";
+            //query_SQL_command  += " group by Flower.ID, Flower.FullName";
+            //query_SQL_command += " order by COUNT(CartDetail.Cart_ID) desc";
+            string numMonth = "";
+            if (numThang.Value.ToString().Length == 1)
+                numMonth = '0' + numThang.Value.ToString();
+            else numMonth = numThang.Value.ToString();
+            string query_SQL_command = "DECLARE @tags NVARCHAR(400) = '%/"+ numMonth +"/" + numNam.Value +"'";
+            query_SQL_command += " select Flower.ID as FlowerID, Flower.FullName as FullName, CONVERT(varchar, 100 * COUNT(CartDetail.Cart_ID) / (select count(CartDetail.Cart_ID) from Flower left join CartDetail on Flower.ID = CartDetail.Flower_ID left join Cart on Cart.Id = CartDetail.Cart_ID where Cart.OnDate like @tags))+'%' as Percents";
+            query_SQL_command += " from Flower left";
+            query_SQL_command += " join CartDetail on Flower.ID = CartDetail.Flower_ID";
+            query_SQL_command += " left join Cart on Cart.ID = CartDetail.Cart_ID";
+            query_SQL_command += " where Cart.OnDate Like @tags";
+            query_SQL_command += " group by Flower.ID, Flower.FullName";
             query_SQL_command += " order by COUNT(CartDetail.Cart_ID) desc";
+
             dbPercentage = Statitic.Get_Database(query_SQL_command);
             DGV__Percentage.DataSource = dbPercentage;
-            query_SQL_command = "select Customer.ID as Customer_ID, Customer.FullName as FullName, COUNT(Cart.ID) as Carts, SUM(coalesce(CartDetail.Quantity * Flower.Price, 0)) as Price";
+            query_SQL_command = "DECLARE @tags NVARCHAR(400) = '%/" + numMonth + "/" + numNam.Value + "'";
+            query_SQL_command += " select Customer.ID as Customer_ID, Customer.FullName as FullName, COUNT(Cart.ID) as Carts, SUM(coalesce(CartDetail.Quantity * CartDetail.Price, 0)) as Prices";
             query_SQL_command += " from Customer";
             query_SQL_command += " left join Cart on Customer.ID = Cart.Customer_ID";
             query_SQL_command += " left join CartDetail on Cart.ID = CartDetail.Cart_ID";
             query_SQL_command += " left join Flower on Flower.ID = CartDetail.Flower_ID";
+            query_SQL_command += " where Cart.OnDate Like @tags";
             query_SQL_command += " group by Customer.ID, Customer.FullName";
-            query_SQL_command += " order by  SUM(coalesce(CartDetail.Quantity * Flower.Price, 0)) desc";
+            query_SQL_command += " order by SUM(coalesce(CartDetail.Quantity* CartDetail.Price, 0)) desc";
+            //query_SQL_command = "select Customer.ID as Customer_ID, Customer.FullName as FullName, COUNT(Cart.ID) as Carts, SUM(coalesce(CartDetail.Quantity * Flower.Price, 0)) as Price";
+            //query_SQL_command += " from Customer";
+            //query_SQL_command += " left join Cart on Customer.ID = Cart.Customer_ID";
+            //query_SQL_command += " left join CartDetail on Cart.ID = CartDetail.Cart_ID";
+            //query_SQL_command += " left join Flower on Flower.ID = CartDetail.Flower_ID";
+            //query_SQL_command += " group by Customer.ID, Customer.FullName";
+            //query_SQL_command += " order by  SUM(coalesce(CartDetail.Quantity * Flower.Price, 0)) desc";
             dbCus = Statitic.Get_Database(query_SQL_command);
             DGV_Cus.DataSource = dbCus;
             //chart1.ChartAreas= Chart
@@ -164,6 +189,16 @@ namespace Flower_Management_System
         {
             Close();
      
+        }
+
+        private void numThang_ValueChanged(object sender, EventArgs e)
+        {
+            LoadDatabase();
+        }
+
+        private void numNam_ValueChanged(object sender, EventArgs e)
+        {
+            LoadDatabase();
         }
     }
 }
