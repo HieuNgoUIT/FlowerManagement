@@ -140,14 +140,23 @@ namespace Flower_Management_System.Cart_Management
 
         private void Save_Process()
         {
-            string add_query = "insert into BunchFlowersDetail (BunchFlowersID, FlowerID, Quantity) values"
+            try
+            {
+                string add_query = "insert into BunchFlowersDetail (BunchFlowersID, FlowerID, Quantity) values"
                                      + " ('" + LB_BunchID.Text + "'"
                                      + ", '" + LB_FlowerID.Text + "'"
                                      + ", '" + TB_Quantity.Text + "')";
-            string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_FlowerID.Text + "';";
+                string updateFlowerQuantity = "UPDATE Flower set Quantity=Quantity-" + TB_Quantity.Text + " where ID='" + LB_FlowerID.Text + "';";
 
-            Cart_Detail.Basic_Query(add_query);
-            Cart_Detail.Basic_Query(updateFlowerQuantity);
+                Cart_Detail.Basic_Query(updateFlowerQuantity);
+                Cart_Detail.Basic_Query(add_query);
+                
+            }
+            catch
+            {
+                MessageBox.Show("Error happened");
+            }
+            
         }
         private void BT_CLose_Form_Click(object sender, EventArgs e)
         {
